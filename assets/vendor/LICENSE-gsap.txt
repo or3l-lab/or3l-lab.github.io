@@ -1,0 +1,7 @@
+GSAP (GreenSock Animation Platform) — fichiers *.min.js de ce dossier, hors lenis.min.js
+
+Copyright GreenSock / Webflow. Utilisation soumise à la licence standard GSAP (gratuite) :
+https://gsap.com/standard-license
+
+Les en-têtes de licence d'origine sont conservés en tête de chaque fichier.
+Lenis (lenis.min.js) : licence MIT, voir LICENSE-lenis.txt.
