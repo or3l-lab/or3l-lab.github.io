@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>See it before it breaks — Case study · Or3L</title>
-  <meta name="description" content="A machine-fleet dashboard that does more than display states: it helps anticipate stops and prioritise actions.">
+  <meta name="description" content="A machine-fleet dashboard that goes beyond status displays to help anticipate downtime and prioritise action.">
   <meta name="author" content="Or3L">
   <meta name="theme-color" content="#0a0e13">
   <meta name="color-scheme" content="dark">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Or3L">
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="See it before it breaks — Case study · Or3L">
-  <meta property="og:description" content="A machine-fleet dashboard that does more than display states: it helps anticipate stops and prioritise actions.">
+  <meta property="og:description" content="A machine-fleet dashboard that goes beyond status displays to help anticipate downtime and prioritise action.">
   <meta property="og:url" content="https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html">
   <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og-image-en.png">
   <meta property="og:image:width" content="1200">
@@ -67,7 +67,7 @@
           <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../projects.html">Projects</a></li><li aria-current="page">04</li></ol></nav>
           <p class="case-kicker"><span class="case-num">Case study 04 / 10</span>Monitoring · Data · Decision support</p>
           <h1 class="case-title" data-reveal="lines">See it before it breaks</h1>
-          <p class="case-pitch">A machine-fleet dashboard that does more than display states: it helps anticipate stops and prioritise actions.</p>
+          <p class="case-pitch">A machine-fleet dashboard that goes beyond status displays to help anticipate downtime and prioritise action.</p>
           <ul class="card-tags"><li><span class="led-dot tag-data" aria-hidden="true"></span>Data</li><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li><li><span class="led-dot tag-lean" aria-hidden="true"></span>Continuous improvement</li></ul>
           <div class="case-entry-links">
             <a class="btn btn-primary magnetic" href="#demo">Explore the demo <span aria-hidden="true">↓</span></a>
@@ -93,7 +93,7 @@
             <li><a href="#skills-used"><span class="toc-num">06</span>Skills used</a></li>
             <li><a href="#takeaway"><span class="toc-num">07</span>Key takeaway</a></li>
         </ol>
-        <p class="case-conf">An approach inspired by professional experience, presented in broad strokes.</p>
+        <p class="case-conf">Project details are presented at a high level; demonstration data are synthetic.</p>
       </aside>
       <article class="case-content">
           <section class="case-section" id="demo" data-hud="Interactive demo">
@@ -114,7 +114,7 @@
               <div class="hmi-actions"><p class="hmi-actions-title">Action plan</p><ol data-actions></ol></div>
             </div>
             <p class="demo-note">Animated mock-up: machines, states and risks are simulated.</p>
-            <script type="application/json" class="demo-i18n">{"title": "FLEET.HMI", "tag": "Synthetic data", "avail": "Availability", "stops": "Current stops", "high": "High risk", "expected": "Expected short-term stops", "actions": "Action plan", "states": {"run": "Running", "stop": "Prod. stop", "fault": "Failure", "pm": "Overdue PM"}, "urg": {"now": "Immediate", "week": "This week"}, "act": {"stop": "Unblock {n} current production stop(s)", "pm": "Perform {n} overdue preventive task(s) on at-risk machines", "high": "Inspect {n} high-risk machine(s)", "fault": "Close {n} open failure(s)"}, "none": "No urgent action", "risk": "risk", "note": "Animated mock-up: machines, states and risks are simulated."}</script>
+            <script type="application/json" class="demo-i18n">{"title": "FLEET.HMI", "tag": "Synthetic data", "avail": "Availability", "stops": "Current stops", "high": "High risk", "expected": "Expected short-term stops", "actions": "Action plan", "states": {"run": "Running", "stop": "Prod. stop", "fault": "Fault", "pm": "Overdue PM"}, "urg": {"now": "Immediate", "week": "This week"}, "act": {"stop": "Resolve active production stoppages ({n})", "pm": "Complete overdue maintenance tasks on at-risk machines ({n})", "high": "Inspect high-risk machines ({n})", "fault": "Resolve open faults ({n})"}, "none": "No urgent action", "risk": "risk", "note": "Animated mock-up: machines, states and risks are simulated."}</script>
           </div></div>
       <div class="showcase-progress" aria-hidden="true"><span></span></div>
       <noscript><p class="showcase-fallback">Non-animated version. The principle and explanations remain available below.</p></noscript>
@@ -123,7 +123,7 @@
           <div class="case-overview">
             <dl class="case-meta">
               <div><dt>Period</dt><dd>2025 · ongoing</dd></div>
-              <div><dt>Context</dt><dd>Machine fleet of an industrial site</dd></div>
+              <div><dt>Context</dt><dd>An industrial site&#x27;s machine fleet</dd></div>
               <div><dt>Role</dt><dd>Design and development</dd></div>
             </dl>
             <div class="case-tldr" role="region" aria-label="In short">
@@ -132,7 +132,7 @@
           </div>
           <section class="case-section" id="challenge" data-hud="The challenge">
             <h2 class="case-h2"><span class="case-h2-num">02</span>The challenge</h2>
-            <p class="case-lead">Knowing machine states is not enough: teams need to know where to act first.</p>
+            <p class="case-lead">Knowing machine status is not enough; teams also need to know where to act first.</p>
           </section>
           <section class="case-section" id="what-i-did" data-hud="What I did">
             <h2 class="case-h2"><span class="case-h2-num">03</span>What I did</h2>
@@ -181,7 +181,7 @@
           </section>
           <section class="case-section" id="results" data-hud="Results">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Results</h2>
-            <ul class="results"><li class="result"><p class="result-value result-value--text" data-count-text>Anticipate</p><p class="result-label">likely short-term stops</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Prioritise</p><p class="result-label">actions by urgency</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Decide</p><p class="result-label">the tool advises, teams decide</p></li></ul>
+            <ul class="results"><li class="result"><p class="result-value result-value--text" data-count-text>Anticipate</p><p class="result-label">likely short-term downtime</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Prioritise</p><p class="result-label">actions by urgency</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Decide</p><p class="result-label">the tool advises; the teams decide</p></li></ul>
           </section>
           <section class="case-section" id="skills-used" data-hud="Skills used">
             <h2 class="case-h2"><span class="case-h2-num">06</span>Skills used</h2>
@@ -189,14 +189,14 @@
           </section>
           <section class="case-section" id="takeaway" data-hud="Key takeaway">
             <h2 class="case-h2"><span class="case-h2-num">07</span>Key takeaway</h2>
-            <blockquote class="takeaway"><p>A KPI is only worth something if it triggers an action: the action plan has more impact than any chart.</p><footer>— Or3L</footer></blockquote>
+            <blockquote class="takeaway"><p>An indicator is valuable only if it prompts action: a prioritised action plan matters more than any chart.</p><footer>— Or3L</footer></blockquote>
           </section>
       </article>
     </div>
 
     <!-- ===== NAVIGATION ENTRE ÉTUDES ===== -->
     <nav class="case-nav container" aria-label="Case study">
-      <a class="case-nav-link prev" href="local-ai-assistant.html"><span class="case-nav-label">← Previous case</span><span class="case-nav-title">A local, sovereign AI assistant</span></a>
+      <a class="case-nav-link prev" href="local-ai-assistant.html"><span class="case-nav-label">← Previous case</span><span class="case-nav-title">A private AI assistant that runs locally</span></a>
       <a class="case-nav-link all" href="../projects.html">All case studies</a>
       <a class="case-nav-link next" href="custom-cmms.html"><span class="case-nav-label">Next case →</span><span class="case-nav-title">Custom CMMS: from machine fleet to preventive maintenance</span></a>
     </nav>
@@ -208,7 +208,7 @@
     <div class="container footer-inner">
       <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
       <ul class="footer-links">
-        <li><a href="../cv.html">Résumé</a></li>
+        <li><a href="../cv.html">CV</a></li>
         <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
