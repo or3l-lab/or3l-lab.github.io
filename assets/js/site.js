@@ -90,12 +90,14 @@
 
   /* ---------- En-tête, barre de progression ---------- */
   var header = $('.site-header');
+  var backToTop = $('.back-to-top');
   var bar = $('.progress span');
   var lastY = window.pageYOffset;
   function onScroll() {
     var y = window.pageYOffset;
     var max = document.documentElement.scrollHeight - window.innerHeight;
     if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+    if (backToTop) backToTop.classList.toggle('is-visible', y > 320);
     if (header) {
       header.classList.toggle('is-scrolled', y > 24);
       var hide = y > 320 && y > lastY + 4 && !html.classList.contains('menu-open');
