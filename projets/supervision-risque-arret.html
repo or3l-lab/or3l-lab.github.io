@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voir avant que ça casse — Étude de cas · Or3L</title>
+  <meta name="description" content="Un tableau de bord du parc machines qui ne se contente pas d&#x27;afficher des états : il aide à anticiper les arrêts et à prioriser les actions.">
+  <meta name="author" content="Or3L">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Adresse du site : remplacer « https://or3l-lab.github.io » par l'adresse finale (voir LISEZ-MOI.md) -->
+  <link rel="canonical" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html">
+  <link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html">
+  <link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html">
+  <link rel="alternate" hreflang="x-default" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Or3L">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Voir avant que ça casse — Étude de cas · Or3L">
+  <meta property="og:description" content="Un tableau de bord du parc machines qui ne se contente pas d&#x27;afficher des états : il aide à anticiper les arrêts et à prioriser les actions.">
+  <meta property="og:url" content="https://or3l-lab.github.io/projets/supervision-risque-arret.html">
+  <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Or3L — De l&#x27;automate à l&#x27;agent IA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/head.js"></script>
+</head>
+<body class="page-case" data-page="case">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Or3L — accueil">
+        <span class="brand-mark" aria-hidden="true">Or3L</span>
+        <span class="brand-text">Or3L<small>Informatique industrielle · IA</small></span>
+      </a>
+      <nav class="main-nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="../parcours.html">Parcours</a></li>
+          <li><a href="../competences.html">Compétences</a></li>
+          <li><a href="../projets.html">Projets</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="../en/projects/downtime-risk-monitoring.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" class="case">
+
+    <!-- ===== EN-TÊTE DE L'ÉTUDE DE CAS ===== -->
+    <section class="case-hero" data-hud="Étude de cas">
+      <div class="container case-hero-inner">
+        <div class="case-hero-copy">
+          <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="../index.html">Accueil</a></li><li><a href="../projets.html">Projets</a></li><li aria-current="page">06</li></ol></nav>
+          <p class="case-kicker"><span class="case-num">Étude de cas 06 / 10</span>Supervision · Data · Aide à la décision</p>
+          <h1 class="case-title" data-reveal="lines">Voir avant que ça casse</h1>
+          <p class="case-pitch">Un tableau de bord du parc machines qui ne se contente pas d&#x27;afficher des états : il aide à anticiper les arrêts et à prioriser les actions.</p>
+          <ul class="card-tags"><li><span class="led-dot tag-data" aria-hidden="true"></span>Data</li><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li><li><span class="led-dot tag-lean" aria-hidden="true"></span>Amélioration continue</li></ul>
+          <div class="case-entry-links">
+            <a class="btn btn-primary magnetic" href="#demo">Explorer la démo <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#defi">Les grandes lignes <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="case-visual vt-monitoring">
+          <svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="g-line" d="M48 120A72 72 0 0 1 192 120"/><path class="g-accent" d="M48 120A72 72 0 0 1 162 66"/><path class="g-line" d="M120 120L160 72"/><circle class="g-dot" cx="120" cy="120" r="5"/><path class="g-line g-thin" d="M40 140h32M88 140h32M136 140h32M184 140h16"/></g></svg>
+          <span class="card-num">06</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container case-body">
+      <aside class="case-toc" aria-label="Sur cette page">
+        <p class="case-toc-title">Sur cette page</p>
+        <ol>
+            <li><a href="#demo"><span class="toc-num">01</span>Démo interactive</a></li>
+            <li><a href="#defi"><span class="toc-num">02</span>Le défi</a></li>
+            <li><a href="#realisation"><span class="toc-num">03</span>Ce que j&#x27;ai fait</a></li>
+            <li><a href="#principe"><span class="toc-num">04</span>Schéma de principe</a></li>
+            <li><a href="#resultats"><span class="toc-num">05</span>Résultats</a></li>
+            <li><a href="#competences"><span class="toc-num">06</span>Compétences mobilisées</a></li>
+            <li><a href="#retenir"><span class="toc-num">07</span>Ce que j&#x27;en retiens</a></li>
+        </ol>
+        <p class="case-conf">Démarche inspirée du parcours, présentée dans ses grandes lignes.</p>
+      </aside>
+      <article class="case-content">
+          <section class="case-section" id="demo" data-hud="Démo interactive">
+            <h2 class="case-h2"><span class="case-h2-num">01</span>Démo interactive</h2>
+<div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="#defi">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-hmi" data-demo="hmi">
+            <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span><span class="demo-title">PARC.HMI</span><span class="demo-tag">Données fictives</span></div>
+            <div class="hmi-kpis">
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Disponibilité</span><span class="hmi-kpi-value" data-k="avail">—</span></div>
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Arrêts en cours</span><span class="hmi-kpi-value" data-k="stops">—</span></div>
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Risque élevé</span><span class="hmi-kpi-value" data-k="high">—</span></div>
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Arrêts attendus à court terme</span><span class="hmi-kpi-value" data-k="expected">—</span></div>
+            </div>
+            <div class="hmi-body">
+              <ul class="hmi-grid" data-grid></ul>
+              <div class="hmi-actions"><p class="hmi-actions-title">Plan d&#x27;actions</p><ol data-actions></ol></div>
+            </div>
+            <p class="demo-note">Maquette animée : machines, états et risques sont simulés.</p>
+            <script type="application/json" class="demo-i18n">{"title": "PARC.HMI", "tag": "Données fictives", "avail": "Disponibilité", "stops": "Arrêts en cours", "high": "Risque élevé", "expected": "Arrêts attendus à court terme", "actions": "Plan d'actions", "states": {"run": "En marche", "stop": "Arrêt prod.", "fault": "Défaillance", "pm": "Préventif échu"}, "urg": {"now": "Immédiat", "week": "Cette semaine"}, "act": {"stop": "Débloquer {n} arrêt(s) de production en cours", "pm": "Réaliser {n} préventif(s) échu(s) sur machines à risque", "high": "Inspecter {n} machine(s) à risque élevé", "fault": "Solder {n} défaillance(s) ouverte(s)"}, "none": "Aucune action urgente", "risk": "risque", "note": "Maquette animée : machines, états et risques sont simulés."}</script>
+          </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+          </section>
+          <div class="case-overview">
+            <dl class="case-meta">
+              <div><dt>Période</dt><dd>2025 · en cours</dd></div>
+              <div><dt>Contexte</dt><dd>Parc machines d&#x27;un site industriel</dd></div>
+              <div><dt>Rôle</dt><dd>Conception et développement</dd></div>
+            </dl>
+            <div class="case-tldr" role="region" aria-label="En bref">
+              <p class="eyebrow">En bref</p><ol class="tldr"><li><span class="tldr-num">1</span><p>L&#x27;état du parc lisible en un coup d&#x27;œil.</p></li><li><span class="tldr-num">2</span><p>Une estimation du risque d&#x27;arrêt à court terme.</p></li><li><span class="tldr-num">3</span><p>Un plan d&#x27;actions priorisé pour les équipes.</p></li></ol>
+            </div>
+          </div>
+          <section class="case-section" id="defi" data-hud="Le défi">
+            <h2 class="case-h2"><span class="case-h2-num">02</span>Le défi</h2>
+            <p class="case-lead">Connaître l&#x27;état des machines ne suffit pas : les équipes ont besoin de savoir où agir en priorité.</p>
+          </section>
+          <section class="case-section" id="realisation" data-hud="Ce que j&#x27;ai fait">
+            <h2 class="case-h2"><span class="case-h2-num">03</span>Ce que j&#x27;ai fait</h2>
+            <ul class="case-list"><li>Conception du tableau de bord avec les équipes de maintenance.</li><li>Indicateurs d&#x27;aide à la décision tirés de l&#x27;historique.</li><li>Plan d&#x27;actions classé par urgence.</li><li>Supervision technique de la plateforme elle-même.</li></ul>
+          </section>
+          <section class="case-section" id="principe" data-hud="Schéma de principe">
+            <h2 class="case-h2"><span class="case-h2-num">04</span>Schéma de principe</h2>
+            <figure class="diagram-figure">
+              <svg class="diagram" viewBox="0 0 760 360" role="img" aria-label="Schéma de principe : Voir avant que ça casse">
+<defs><marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dg-arrowhead"/></marker></defs>
+<g class="dg-edges">
+<path class="dg-edge" d="M190.0 181.0C210.0 181.0 210.0 181.0 230.0 181.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M380.0 181.0C400.0 181.0 400.0 91.0 420.0 91.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M380.0 181.0C400.0 181.0 400.0 271.0 420.0 271.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M575.0 91.0C595.0 91.0 595.0 181.0 615.0 181.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M575.0 271.0C595.0 271.0 595.0 181.0 615.0 181.0" marker-end="url(#dg-arrow)"/>
+</g><g class="dg-nodes">
+<g class="dg-node">
+<rect x="20" y="150" width="170" height="62" rx="6"/>
+<text class="dg-title" x="32" y="174">Données</text>
+<text class="dg-sub" x="32" y="193">historique maintenance</text>
+</g>
+<g class="dg-node dg-main">
+<rect x="230" y="150" width="150" height="62" rx="6"/>
+<text class="dg-title" x="242" y="174">Analyse</text>
+<text class="dg-sub" x="242" y="193">risque d&#x27;arrêt</text>
+</g>
+<g class="dg-node">
+<rect x="420" y="60" width="155" height="62" rx="6"/>
+<text class="dg-title" x="432" y="84">Tableau de bord</text>
+<text class="dg-sub" x="432" y="103">état du parc</text>
+</g>
+<g class="dg-node dg-andon">
+<rect x="420" y="240" width="155" height="62" rx="6"/>
+<text class="dg-title" x="432" y="264">Plan d&#x27;actions</text>
+<text class="dg-sub" x="432" y="283">par urgence</text>
+</g>
+<g class="dg-node">
+<rect x="615" y="150" width="125" height="62" rx="6"/>
+<text class="dg-title" x="627" y="174">Équipes</text>
+<text class="dg-sub" x="627" y="193">maintenance</text>
+</g>
+</g></svg>
+              <figcaption>Schéma de principe : des données de maintenance aux décisions.</figcaption>
+            </figure>
+          </section>
+          <section class="case-section" id="resultats" data-hud="Résultats">
+            <h2 class="case-h2"><span class="case-h2-num">05</span>Résultats</h2>
+            <ul class="results"><li class="result"><p class="result-value result-value--text" data-count-text>Anticiper</p><p class="result-label">les arrêts probables à court terme</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Prioriser</p><p class="result-label">les actions par urgence</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Décider</p><p class="result-label">l&#x27;outil conseille, les équipes tranchent</p></li></ul>
+          </section>
+          <section class="case-section" id="competences" data-hud="Compétences mobilisées">
+            <h2 class="case-h2"><span class="case-h2-num">06</span>Compétences mobilisées</h2>
+            <ul class="chips chips-lg"><li>Data</li><li>Full-stack</li><li>Amélioration continue</li></ul>
+          </section>
+          <section class="case-section" id="retenir" data-hud="Ce que j&#x27;en retiens">
+            <h2 class="case-h2"><span class="case-h2-num">07</span>Ce que j&#x27;en retiens</h2>
+            <blockquote class="takeaway"><p>Un indicateur n&#x27;a de valeur que s&#x27;il déclenche une action : le plan d&#x27;actions a plus d&#x27;impact que n&#x27;importe quel graphique.</p><footer>— Or3L</footer></blockquote>
+          </section>
+      </article>
+    </div>
+
+    <!-- ===== NAVIGATION ENTRE ÉTUDES ===== -->
+    <nav class="case-nav container" aria-label="Étude de cas">
+      <a class="case-nav-link prev" href="digitalisation-atelier.html"><span class="case-nav-label">← Étude précédente</span><span class="case-nav-title">Digitaliser l&#x27;usine, module par module</span></a>
+      <a class="case-nav-link all" href="../projets.html">Toutes les études de cas</a>
+      <a class="case-nav-link next" href="gmao-sur-mesure.html"><span class="case-nav-label">Étude suivante →</span><span class="case-nav-title">GMAO sur mesure : du parc machines au préventif</span></a>
+    </nav>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
+      <ul class="footer-links">
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">04</span><span class="hud-label"></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->
+  <script defer src="../assets/vendor/gsap.min.js"></script>
+  <script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="../assets/vendor/SplitText.min.js"></script>
+  <script defer src="../assets/vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="../assets/vendor/DrawSVGPlugin.min.js"></script>
+  <script defer src="../assets/vendor/lenis.min.js"></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/contact.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+  <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/showcase.js"></script>
+  <script defer src="../assets/js/demos/hmi.js"></script>
+</body>
+</html>

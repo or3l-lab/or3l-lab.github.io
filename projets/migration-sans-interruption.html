@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moderniser un portail de production sans arrêter l&#x27;usine — Étude de cas · Or3L</title>
+  <meta name="description" content="Une montée de version progressive et réversible d&#x27;un portail utilisé chaque jour par les ateliers.">
+  <meta name="author" content="Or3L">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Adresse du site : remplacer « https://or3l-lab.github.io » par l'adresse finale (voir LISEZ-MOI.md) -->
+  <link rel="canonical" href="https://or3l-lab.github.io/projets/migration-sans-interruption.html">
+  <link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/migration-sans-interruption.html">
+  <link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/zero-downtime-migration.html">
+  <link rel="alternate" hreflang="x-default" href="https://or3l-lab.github.io/projets/migration-sans-interruption.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Or3L">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Moderniser un portail de production sans arrêter l&#x27;usine — Étude de cas · Or3L">
+  <meta property="og:description" content="Une montée de version progressive et réversible d&#x27;un portail utilisé chaque jour par les ateliers.">
+  <meta property="og:url" content="https://or3l-lab.github.io/projets/migration-sans-interruption.html">
+  <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Or3L — De l&#x27;automate à l&#x27;agent IA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/head.js"></script>
+</head>
+<body class="page-case" data-page="case">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Or3L — accueil">
+        <span class="brand-mark" aria-hidden="true">Or3L</span>
+        <span class="brand-text">Or3L<small>Informatique industrielle · IA</small></span>
+      </a>
+      <nav class="main-nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="../parcours.html">Parcours</a></li>
+          <li><a href="../competences.html">Compétences</a></li>
+          <li><a href="../projets.html">Projets</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="../en/projects/zero-downtime-migration.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" class="case">
+
+    <!-- ===== EN-TÊTE DE L'ÉTUDE DE CAS ===== -->
+    <section class="case-hero" data-hud="Étude de cas">
+      <div class="container case-hero-inner">
+        <div class="case-hero-copy">
+          <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="../index.html">Accueil</a></li><li><a href="../projets.html">Projets</a></li><li aria-current="page">04</li></ol></nav>
+          <p class="case-kicker"><span class="case-num">Étude de cas 04 / 10</span>Pilotage · Qualité logicielle · Exploitation</p>
+          <h1 class="case-title" data-reveal="lines">Moderniser un portail de production sans arrêter l&#x27;usine</h1>
+          <p class="case-pitch">Une montée de version progressive et réversible d&#x27;un portail utilisé chaque jour par les ateliers.</p>
+          <ul class="card-tags"><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li></ul>
+          <div class="case-entry-links">
+            <a class="btn btn-primary magnetic" href="#principe">Voir le principe <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#defi">Les grandes lignes <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="case-visual vt-migration">
+          <svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="28" y="98" width="38" height="34" rx="3"/><rect class="g-line" x="76" y="78" width="38" height="54" rx="3"/><rect class="g-line" x="124" y="58" width="38" height="74" rx="3"/><rect class="g-accent" x="172" y="38" width="38" height="94" rx="3"/><path class="g-line g-dash" d="M210 26C150 6 70 18 40 84"/><path class="g-line" d="M40 84l-2-12m2 12l11-5"/></g></svg>
+          <span class="card-num">04</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container case-body">
+      <aside class="case-toc" aria-label="Sur cette page">
+        <p class="case-toc-title">Sur cette page</p>
+        <ol>
+            <li><a href="#principe"><span class="toc-num">01</span>Schéma de principe</a></li>
+            <li><a href="#defi"><span class="toc-num">02</span>Le défi</a></li>
+            <li><a href="#realisation"><span class="toc-num">03</span>Ce que j&#x27;ai fait</a></li>
+            <li><a href="#resultats"><span class="toc-num">04</span>Résultats</a></li>
+            <li><a href="#competences"><span class="toc-num">05</span>Compétences mobilisées</a></li>
+            <li><a href="#retenir"><span class="toc-num">06</span>Ce que j&#x27;en retiens</a></li>
+        </ol>
+        <p class="case-conf">Démarche inspirée du parcours, présentée dans ses grandes lignes.</p>
+      </aside>
+      <article class="case-content">
+          <section class="case-section" id="principe" data-hud="Schéma de principe">
+            <h2 class="case-h2"><span class="case-h2-num">01</span>Schéma de principe</h2>
+<div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>En un regard</p>
+        <a class="text-link" href="#defi">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame">            <figure class="diagram-figure">
+              <svg class="diagram" viewBox="0 0 760 360" role="img" aria-label="Schéma de principe : Moderniser un portail de production sans arrêter l&#x27;usine">
+<defs><marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dg-arrowhead"/></marker></defs>
+<g class="dg-edges">
+<path class="dg-edge" d="M170.0 171.0C187.5 171.0 187.5 171.0 205.0 171.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M355.0 171.0C372.5 171.0 372.5 171.0 390.0 171.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M530.0 171.0C547.5 171.0 547.5 171.0 565.0 171.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M652.5 140.0C652.5 113.0 652.5 113.0 652.5 86.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge dg-edge--dash" d="M652.5 202.0C652.5 232.0 652.5 232.0 652.5 262.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge dg-edge--dash" d="M565.0 290.0C547.5 290.0 547.5 171.0 530.0 171.0" marker-end="url(#dg-arrow)"/>
+</g><g class="dg-nodes">
+<g class="dg-node">
+<rect x="20" y="140" width="150" height="62" rx="6"/>
+<text class="dg-title" x="32" y="164">Référence</text>
+<text class="dg-sub" x="32" y="183">état actuel</text>
+</g>
+<g class="dg-node">
+<rect x="205" y="140" width="150" height="62" rx="6"/>
+<text class="dg-title" x="217" y="164">Préparation</text>
+<text class="dg-sub" x="217" y="183">hors production</text>
+</g>
+<g class="dg-node dg-main">
+<rect x="390" y="140" width="140" height="62" rx="6"/>
+<text class="dg-title" x="402" y="164">Bascule</text>
+<text class="dg-sub" x="402" y="183">par vagues</text>
+</g>
+<g class="dg-node dg-andon">
+<rect x="565" y="140" width="175" height="62" rx="6"/>
+<text class="dg-title" x="577" y="164">Contrôles</text>
+<text class="dg-sub" x="577" y="183">automatiques</text>
+</g>
+<g class="dg-node dg-run">
+<rect x="565" y="30" width="175" height="56" rx="6"/>
+<text class="dg-title" x="577" y="54">Validé</text>
+<text class="dg-sub" x="577" y="73">étape suivante</text>
+</g>
+<g class="dg-node dg-fault">
+<rect x="565" y="262" width="175" height="56" rx="6"/>
+<text class="dg-title" x="577" y="286">Retour arrière</text>
+<text class="dg-sub" x="577" y="305">automatique</text>
+</g>
+</g></svg>
+              <figcaption>Schéma de principe : chaque étape est contrôlée ; en cas d&#x27;écart, retour arrière.</figcaption>
+            </figure></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      
+    </div>
+          </section>
+          <div class="case-overview">
+            <dl class="case-meta">
+              <div><dt>Période</dt><dd>2026</dd></div>
+              <div><dt>Contexte</dt><dd>Portail utilisé chaque jour par les ateliers</dd></div>
+              <div><dt>Rôle</dt><dd>Chef de projet</dd></div>
+            </dl>
+            <div class="case-tldr" role="region" aria-label="En bref">
+              <p class="eyebrow">En bref</p><ol class="tldr"><li><span class="tldr-num">1</span><p>Un état de référence relevé avant toute modification.</p></li><li><span class="tldr-num">2</span><p>Une bascule par étapes, contrôlée à chaque étape.</p></li><li><span class="tldr-num">3</span><p>Un retour arrière automatique en cas d&#x27;écart.</p></li></ol>
+            </div>
+          </div>
+          <section class="case-section" id="defi" data-hud="Le défi">
+            <h2 class="case-h2"><span class="case-h2-num">02</span>Le défi</h2>
+            <p class="case-lead">Impossible de tout basculer d&#x27;un coup sur un outil dont la production dépend : il fallait moderniser sans prendre de risque.</p>
+          </section>
+          <section class="case-section" id="realisation" data-hud="Ce que j&#x27;ai fait">
+            <h2 class="case-h2"><span class="case-h2-num">03</span>Ce que j&#x27;ai fait</h2>
+            <ul class="case-list"><li>Inventaire et relevé du comportement de référence.</li><li>Préparation complète hors production.</li><li>Bascule par vagues, avec contrôles automatiques.</li><li>Retour arrière testé avant le jour J.</li></ul>
+          </section>
+          <section class="case-section" id="resultats" data-hud="Résultats">
+            <h2 class="case-h2"><span class="case-h2-num">04</span>Résultats</h2>
+            <ul class="results"><li class="result"><p class="result-value result-value--text" data-count-text>Par vagues</p><p class="result-label">jamais tout d&#x27;un coup</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Auto</p><p class="result-label">retour arrière en cas d&#x27;écart</p></li><li class="result"><p class="result-value" data-count-text>0</p><p class="result-label">modification de la production pendant la préparation</p></li></ul>
+          </section>
+          <section class="case-section" id="competences" data-hud="Compétences mobilisées">
+            <h2 class="case-h2"><span class="case-h2-num">05</span>Compétences mobilisées</h2>
+            <ul class="chips chips-lg"><li>Pilotage</li><li>Full-stack</li></ul>
+          </section>
+          <section class="case-section" id="retenir" data-hud="Ce que j&#x27;en retiens">
+            <h2 class="case-h2"><span class="case-h2-num">06</span>Ce que j&#x27;en retiens</h2>
+            <blockquote class="takeaway"><p>Une migration se prépare comme une mise en service : on sait toujours comment revenir en arrière avant d&#x27;avancer.</p><footer>— Or3L</footer></blockquote>
+          </section>
+      </article>
+    </div>
+
+    <!-- ===== NAVIGATION ENTRE ÉTUDES ===== -->
+    <nav class="case-nav container" aria-label="Étude de cas">
+      <a class="case-nav-link prev" href="portail-industriel.html"><span class="case-nav-label">← Étude précédente</span><span class="case-nav-title">Un seul portail pour toute l&#x27;usine</span></a>
+      <a class="case-nav-link all" href="../projets.html">Toutes les études de cas</a>
+      <a class="case-nav-link next" href="digitalisation-atelier.html"><span class="case-nav-label">Étude suivante →</span><span class="case-nav-title">Digitaliser l&#x27;usine, module par module</span></a>
+    </nav>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
+      <ul class="footer-links">
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">04</span><span class="hud-label"></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->
+  <script defer src="../assets/vendor/gsap.min.js"></script>
+  <script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="../assets/vendor/SplitText.min.js"></script>
+  <script defer src="../assets/vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="../assets/vendor/DrawSVGPlugin.min.js"></script>
+  <script defer src="../assets/vendor/lenis.min.js"></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/contact.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+  <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/showcase.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Un seul portail pour toute l&#x27;usine — Étude de cas · Or3L</title>
+  <meta name="description" content="Rassembler les applications métier d&#x27;un site industriel dans une plateforme unique, sécurisée et évolutive.">
+  <meta name="author" content="Or3L">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Adresse du site : remplacer « https://or3l-lab.github.io » par l'adresse finale (voir LISEZ-MOI.md) -->
+  <link rel="canonical" href="https://or3l-lab.github.io/projets/portail-industriel.html">
+  <link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/portail-industriel.html">
+  <link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/industrial-portal.html">
+  <link rel="alternate" hreflang="x-default" href="https://or3l-lab.github.io/projets/portail-industriel.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Or3L">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Un seul portail pour toute l&#x27;usine — Étude de cas · Or3L">
+  <meta property="og:description" content="Rassembler les applications métier d&#x27;un site industriel dans une plateforme unique, sécurisée et évolutive.">
+  <meta property="og:url" content="https://or3l-lab.github.io/projets/portail-industriel.html">
+  <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Or3L — De l&#x27;automate à l&#x27;agent IA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/head.js"></script>
+</head>
+<body class="page-case" data-page="case">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Or3L — accueil">
+        <span class="brand-mark" aria-hidden="true">Or3L</span>
+        <span class="brand-text">Or3L<small>Informatique industrielle · IA</small></span>
+      </a>
+      <nav class="main-nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="../parcours.html">Parcours</a></li>
+          <li><a href="../competences.html">Compétences</a></li>
+          <li><a href="../projets.html">Projets</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="../en/projects/industrial-portal.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" class="case">
+
+    <!-- ===== EN-TÊTE DE L'ÉTUDE DE CAS ===== -->
+    <section class="case-hero" data-hud="Étude de cas">
+      <div class="container case-hero-inner">
+        <div class="case-hero-copy">
+          <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="../index.html">Accueil</a></li><li><a href="../projets.html">Projets</a></li><li aria-current="page">03</li></ol></nav>
+          <p class="case-kicker"><span class="case-num">Étude de cas 03 / 10</span>Architecture · Full-stack · Sécurité</p>
+          <h1 class="case-title" data-reveal="lines">Un seul portail pour toute l&#x27;usine</h1>
+          <p class="case-pitch">Rassembler les applications métier d&#x27;un site industriel dans une plateforme unique, sécurisée et évolutive.</p>
+          <ul class="card-tags"><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li></ul>
+          <div class="case-entry-links">
+            <a class="btn btn-primary magnetic" href="#demo">Explorer la démo <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#defi">Les grandes lignes <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="case-visual vt-portal">
+          <svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="62" y="30" width="34" height="28" rx="3"/><rect class="g-line" x="103" y="30" width="34" height="28" rx="3"/><rect class="g-line" x="144" y="30" width="34" height="28" rx="3"/><rect class="g-line" x="62" y="66" width="34" height="28" rx="3"/><rect class="g-accent" x="103" y="66" width="34" height="28" rx="3"/><rect class="g-line" x="144" y="66" width="34" height="28" rx="3"/><rect class="g-line" x="62" y="102" width="34" height="28" rx="3"/><rect class="g-line" x="103" y="102" width="34" height="28" rx="3"/><rect class="g-line" x="144" y="102" width="34" height="28" rx="3"/><path class="g-line g-thin" d="M20 80h42M178 80h42M120 8v22M120 130v22"/><circle class="g-dot" cx="120" cy="80" r="3"/></g></svg>
+          <span class="card-num">03</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container case-body">
+      <aside class="case-toc" aria-label="Sur cette page">
+        <p class="case-toc-title">Sur cette page</p>
+        <ol>
+            <li><a href="#demo"><span class="toc-num">01</span>Démo interactive</a></li>
+            <li><a href="#defi"><span class="toc-num">02</span>Le défi</a></li>
+            <li><a href="#realisation"><span class="toc-num">03</span>Ce que j&#x27;ai fait</a></li>
+            <li><a href="#principe"><span class="toc-num">04</span>Schéma de principe</a></li>
+            <li><a href="#resultats"><span class="toc-num">05</span>Résultats</a></li>
+            <li><a href="#competences"><span class="toc-num">06</span>Compétences mobilisées</a></li>
+            <li><a href="#retenir"><span class="toc-num">07</span>Ce que j&#x27;en retiens</a></li>
+        </ol>
+        <p class="case-conf">Démarche inspirée du parcours, présentée dans ses grandes lignes.</p>
+      </aside>
+      <article class="case-content">
+          <section class="case-section" id="demo" data-hud="Démo interactive">
+            <h2 class="case-h2"><span class="case-h2-num">01</span>Démo interactive</h2>
+<div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="#defi">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-flow" data-demo="flow">
+      <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span>
+        <span class="demo-title">PORTAL.SIM</span><span class="demo-tag">Maquette interactive</span></div>
+      <ol class="flow-steps"><li class="flow-step"><span class="flow-index">01</span><strong>Besoin</strong><small>Une demande terrain</small></li><li class="flow-step"><span class="flow-index">02</span><strong>Accès</strong><small>Le bon profil</small></li><li class="flow-step"><span class="flow-index">03</span><strong>Action</strong><small>Un parcours simple</small></li><li class="flow-step"><span class="flow-index">04</span><strong>Suivi</strong><small>Une boucle utile</small></li></ol>
+      <div class="flow-scene"><span class="flow-position" data-flow-position>01 / 04</span>
+        <p data-flow-text>Un besoin est exprimé depuis un point d&#x27;entrée commun.</p></div>
+      <div class="flow-controls">
+        <button class="btn btn-ghost btn-sm" type="button" data-flow-toggle hidden>Lecture</button>
+        <button class="btn btn-ghost btn-sm" type="button" data-flow-next hidden>Étape suivante <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="demo-note">Scénario illustratif et données fictives : aucune application interne ni donnée de production.</p>
+      <script type="application/json" class="demo-i18n">{"tag": "Maquette interactive", "steps": [["Besoin", "Une demande terrain", "Un besoin est exprimé depuis un point d'entrée commun."], ["Accès", "Le bon profil", "Le profil autorisé accède au module métier adapté."], ["Action", "Un parcours simple", "L'information est traitée dans une interface cohérente."], ["Suivi", "Une boucle utile", "Le suivi et les retours terrain alimentent l'amélioration continue."]], "pause": "Pause", "play": "Lecture", "next": "Étape suivante", "note": "Scénario illustratif et données fictives : aucune application interne ni donnée de production."}</script>
+    </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+          </section>
+          <div class="case-overview">
+            <dl class="case-meta">
+              <div><dt>Période</dt><dd>2025 · en cours</dd></div>
+              <div><dt>Contexte</dt><dd>Site industriel</dd></div>
+              <div><dt>Rôle</dt><dd>Architecte et développeur principal</dd></div>
+            </dl>
+            <div class="case-tldr" role="region" aria-label="En bref">
+              <p class="eyebrow">En bref</p><ol class="tldr"><li><span class="tldr-num">1</span><p>Un point d&#x27;entrée unique pour les applications du site.</p></li><li><span class="tldr-num">2</span><p>Des droits d&#x27;accès pensés par métier, contrôlés côté serveur.</p></li><li><span class="tldr-num">3</span><p>Une base saine pour ajouter des modules sans tout refaire.</p></li></ol>
+            </div>
+          </div>
+          <section class="case-section" id="defi" data-hud="Le défi">
+            <h2 class="case-h2"><span class="case-h2-num">02</span>Le défi</h2>
+            <p class="case-lead">Avec le temps, les outils se multiplient, chacun avec ses comptes, ses règles et son ergonomie. L&#x27;enjeu : simplifier l&#x27;accès, fiabiliser les droits et alléger la maintenance.</p>
+          </section>
+          <section class="case-section" id="realisation" data-hud="Ce que j&#x27;ai fait">
+            <h2 class="case-h2"><span class="case-h2-num">03</span>Ce que j&#x27;ai fait</h2>
+            <ul class="case-list"><li>Définition de l&#x27;architecture : un socle commun et des modules métier.</li><li>Gestion des droits par fonction, contrôlée systématiquement côté serveur.</li><li>Interface cohérente, accessible et adaptée au mobile.</li><li>Recette par profils d&#x27;utilisateurs avant chaque mise en service.</li></ul>
+          </section>
+          <section class="case-section" id="principe" data-hud="Schéma de principe">
+            <h2 class="case-h2"><span class="case-h2-num">04</span>Schéma de principe</h2>
+            <figure class="diagram-figure">
+              <svg class="diagram" viewBox="0 0 760 360" role="img" aria-label="Schéma de principe : Un seul portail pour toute l&#x27;usine">
+<defs><marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dg-arrowhead"/></marker></defs>
+<g class="dg-edges">
+<path class="dg-edge" d="M172.0 181.0C189.5 181.0 189.5 181.0 207.0 181.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M347.0 181.0C366.0 181.0 366.0 181.0 385.0 181.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M535.0 181.0C552.5 181.0 552.5 91.0 570.0 91.0" marker-end="url(#dg-arrow)"/>
+<path class="dg-edge" d="M535.0 181.0C552.5 181.0 552.5 271.0 570.0 271.0" marker-end="url(#dg-arrow)"/>
+</g><g class="dg-nodes">
+<g class="dg-node">
+<rect x="20" y="150" width="152" height="62" rx="6"/>
+<text class="dg-title" x="32" y="174">Utilisateurs</text>
+<text class="dg-sub" x="32" y="193">ordinateur · mobile</text>
+</g>
+<g class="dg-node dg-main">
+<rect x="207" y="150" width="140" height="62" rx="6"/>
+<text class="dg-title" x="219" y="174">Portail</text>
+<text class="dg-sub" x="219" y="193">accès unique</text>
+</g>
+<g class="dg-node">
+<rect x="385" y="150" width="150" height="62" rx="6"/>
+<text class="dg-title" x="397" y="174">Socle commun</text>
+<text class="dg-sub" x="397" y="193">droits · sécurité</text>
+</g>
+<g class="dg-node dg-andon">
+<rect x="570" y="60" width="172" height="62" rx="6"/>
+<text class="dg-title" x="582" y="84">Modules métier</text>
+<text class="dg-sub" x="582" y="103">maintenance · qualité…</text>
+</g>
+<g class="dg-node dg-muted">
+<rect x="570" y="240" width="172" height="62" rx="6"/>
+<text class="dg-title" x="582" y="264">Données</text>
+<text class="dg-sub" x="582" y="283">centralisées</text>
+</g>
+</g></svg>
+              <figcaption>Schéma de principe : un socle commun au service des modules métier.</figcaption>
+            </figure>
+          </section>
+          <section class="case-section" id="resultats" data-hud="Résultats">
+            <h2 class="case-h2"><span class="case-h2-num">05</span>Résultats</h2>
+            <ul class="results"><li class="result"><p class="result-value" data-count-text>1</p><p class="result-label">point d&#x27;entrée pour les applications métier</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Sécurité</p><p class="result-label">intégrée dès la conception</p></li><li class="result"><p class="result-value result-value--text" data-count-text>Évolutif</p><p class="result-label">chaque module s&#x27;appuie sur le même socle</p></li></ul>
+          </section>
+          <section class="case-section" id="competences" data-hud="Compétences mobilisées">
+            <h2 class="case-h2"><span class="case-h2-num">06</span>Compétences mobilisées</h2>
+            <ul class="chips chips-lg"><li>Full-stack</li><li>Pilotage</li></ul>
+          </section>
+          <section class="case-section" id="retenir" data-hud="Ce que j&#x27;en retiens">
+            <h2 class="case-h2"><span class="case-h2-num">07</span>Ce que j&#x27;en retiens</h2>
+            <blockquote class="takeaway"><p>La sécurité ne se rattrape pas en fin de projet : pensée dès le départ, elle profite à chaque module ajouté.</p><footer>— Or3L</footer></blockquote>
+          </section>
+      </article>
+    </div>
+
+    <!-- ===== NAVIGATION ENTRE ÉTUDES ===== -->
+    <nav class="case-nav container" aria-label="Étude de cas">
+      <a class="case-nav-link prev" href="mises-en-service-internationales.html"><span class="case-nav-label">← Étude précédente</span><span class="case-nav-title">Mises en service internationales, multi-marques</span></a>
+      <a class="case-nav-link all" href="../projets.html">Toutes les études de cas</a>
+      <a class="case-nav-link next" href="migration-sans-interruption.html"><span class="case-nav-label">Étude suivante →</span><span class="case-nav-title">Moderniser un portail de production sans arrêter l&#x27;usine</span></a>
+    </nav>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
+      <ul class="footer-links">
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">04</span><span class="hud-label"></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->
+  <script defer src="../assets/vendor/gsap.min.js"></script>
+  <script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="../assets/vendor/SplitText.min.js"></script>
+  <script defer src="../assets/vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="../assets/vendor/DrawSVGPlugin.min.js"></script>
+  <script defer src="../assets/vendor/lenis.min.js"></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/contact.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+  <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/showcase.js"></script>
+  <script defer src="../assets/js/demos/flow.js"></script>
+</body>
+</html>
