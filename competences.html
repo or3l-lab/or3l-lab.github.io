@@ -63,7 +63,7 @@
       <div class="container reading-hero-inner">
         <p class="eyebrow"><span class="eyebrow-num">01</span>Domaines d&#x27;expertise</p>
         <h1 class="reading-title" data-reveal="lines">Compétences</h1>
-        <p class="reading-lede">Une approche transversale : comprendre les besoins, garantir la qualité et améliorer les processus, du terrain au numérique.</p>
+        <p class="reading-lede">Du terrain au numérique : explorez les domaines, repérez les compétences clés et suivez le fil qui relie chaque expertise.</p>
         <a class="text-link" href="index.html">← Retour à l&#x27;accueil</a>
       </div>
       <span class="reading-hero-mark" aria-hidden="true">Or3L<span>·</span></span>
@@ -71,31 +71,45 @@
 
     <section class="reading-content" data-hud="Compétences">
       <div class="container">
-        <div class="skill-groups">        <article class="skill-group" data-reveal-card>
+        <div class="skill-explorer">
+          <div class="skill-explorer-head">
+            <p class="eyebrow">Filtrer les domaines</p>
+            <p class="skill-count" data-skill-count data-label="domaines d’expertise" aria-live="polite"></p>
+          </div>
+          <div class="skill-filters" role="group" aria-label="Filtrer les domaines" data-skill-filters><button type="button" class="skill-filter is-active" data-skill-filter="all" aria-pressed="true">Toutes</button>
+<button type="button" class="skill-filter" data-skill-filter="1" aria-pressed="false">Projets &amp; amélioration métier</button>
+<button type="button" class="skill-filter" data-skill-filter="2" aria-pressed="false">Qualité &amp; rigueur industrielle</button>
+<button type="button" class="skill-filter" data-skill-filter="3" aria-pressed="false">Développement full-stack &amp; IA</button>
+<button type="button" class="skill-filter" data-skill-filter="4" aria-pressed="false">Cybersécurité &amp; fiabilité</button>
+<button type="button" class="skill-filter" data-skill-filter="5" aria-pressed="false">Automatisme &amp; systèmes industriels</button>
+<button type="button" class="skill-filter" data-skill-filter="6" aria-pressed="false">Outils Microsoft &amp; données</button>
+<button type="button" class="skill-filter" data-skill-filter="7" aria-pressed="false">Amélioration continue</button></div>
+        </div>
+        <div class="skill-groups">        <article class="skill-group" id="skill-domain-01" data-skill-card="1" data-reveal-card>
           <span class="skill-group-index">01</span><h2>Projets &amp; amélioration métier</h2>
           <ul class="chips chips-lg"><li>Gestion de projets complexes</li><li>Étude des besoins</li><li>Audits &amp; diagnostics</li><li>Amélioration des processus métier</li><li>Conduite du changement</li></ul>
         </article>
-        <article class="skill-group" data-reveal-card>
+        <article class="skill-group" id="skill-domain-02" data-skill-card="2" data-reveal-card>
           <span class="skill-group-index">02</span><h2>Qualité &amp; rigueur industrielle</h2>
           <ul class="chips chips-lg"><li>Formation qualité</li><li>Principes qualité Airbus</li><li>Contrôle qualité aéronautique</li><li>Rigueur &amp; respect des procédures</li></ul>
         </article>
-        <article class="skill-group" data-reveal-card>
+        <article class="skill-group" id="skill-domain-03" data-skill-card="3" data-reveal-card>
           <span class="skill-group-index">03</span><h2>Développement full-stack &amp; IA</h2>
           <ul class="chips chips-lg"><li>Conception de logiciels</li><li>Développement full-stack</li><li>Applications métier</li><li>Ingénierie IA</li><li>IA appliquée</li><li>Agents IA</li><li>Orchestration</li></ul>
         </article>
-        <article class="skill-group" data-reveal-card>
+        <article class="skill-group" id="skill-domain-04" data-skill-card="4" data-reveal-card>
           <span class="skill-group-index">04</span><h2>Cybersécurité &amp; fiabilité</h2>
           <ul class="chips chips-lg"><li>Cybersécurité</li><li>Sécurité applicative</li><li>Gestion des accès</li><li>Sécurité dès la conception</li></ul>
         </article>
-        <article class="skill-group" data-reveal-card>
+        <article class="skill-group" id="skill-domain-05" data-skill-card="5" data-reveal-card>
           <span class="skill-group-index">05</span><h2>Automatisme &amp; systèmes industriels</h2>
           <ul class="chips chips-lg"><li>Automatisme industriel</li><li>Motion control</li><li>Supervision</li><li>GMAO</li><li>MES</li><li>ERP</li></ul>
         </article>
-        <article class="skill-group" data-reveal-card>
+        <article class="skill-group" id="skill-domain-06" data-skill-card="6" data-reveal-card>
           <span class="skill-group-index">06</span><h2>Outils Microsoft &amp; données</h2>
           <ul class="chips chips-lg"><li>Microsoft 365</li><li>Power BI</li><li>Analyse de données</li></ul>
         </article>
-        <article class="skill-group" data-reveal-card>
+        <article class="skill-group" id="skill-domain-07" data-skill-card="7" data-reveal-card>
           <span class="skill-group-index">07</span><h2>Amélioration continue</h2>
           <ul class="chips chips-lg"><li>Lean</li><li>Approche Six Sigma</li><li>DMAIC</li><li>PDCA</li><li>Kaizen</li><li>5S</li><li>Résolution de problèmes</li><li>Standardisation</li><li>Indicateurs de performance</li></ul>
         </article></div>
@@ -116,6 +130,11 @@
     </div>
   </footer>
 
+  <a class="back-to-top" href="#top" aria-label="Retour à la navigation" title="Retour à la navigation">
+    <span class="back-to-top-arrow" aria-hidden="true">↑</span>
+    <span>Navigation</span>
+  </a>
+
   <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">04</span><span class="hud-label"></span></div>
   <div class="cursor" aria-hidden="true"></div>
   <div class="toast" role="status" aria-live="polite"></div>
@@ -131,5 +150,6 @@
   <script defer src="assets/js/config.js"></script>
   <script defer src="assets/js/contact.js"></script>
   <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/motion-pages.js"></script>
 </body>
 </html>

@@ -51,6 +51,56 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects.html"/>
   </url>
   <url>
+    <loc>https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/continuous-improvement-dmaic.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/projects/continuous-improvement-dmaic.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/continuous-improvement-dmaic.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/projets/equipe-agents-ia.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/equipe-agents-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/ai-agent-team.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/projects/ai-agent-team.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/equipe-agents-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/ai-agent-team.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/projets/assistante-ia-locale.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/assistante-ia-locale.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/local-ai-assistant.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/projects/local-ai-assistant.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/assistante-ia-locale.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/local-ai-assistant.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/projets/supervision-risque-arret.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/projets/gmao-sur-mesure.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/gmao-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/custom-cmms.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/projects/custom-cmms.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/gmao-sur-mesure.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/custom-cmms.html"/>
+  </url>
+  <url>
     <loc>https://or3l-lab.github.io/projets/came-electronique.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/came-electronique.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/electronic-cam.html"/>
@@ -99,55 +149,5 @@
     <loc>https://or3l-lab.github.io/en/projects/shop-floor-digitalisation.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/digitalisation-atelier.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/shop-floor-digitalisation.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/projets/supervision-risque-arret.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/supervision-risque-arret.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/downtime-risk-monitoring.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/projets/gmao-sur-mesure.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/gmao-sur-mesure.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/custom-cmms.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/en/projects/custom-cmms.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/gmao-sur-mesure.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/custom-cmms.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/projets/equipe-agents-ia.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/equipe-agents-ia.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/ai-agent-team.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/en/projects/ai-agent-team.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/equipe-agents-ia.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/ai-agent-team.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/projets/assistante-ia-locale.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/assistante-ia-locale.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/local-ai-assistant.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/en/projects/local-ai-assistant.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/assistante-ia-locale.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/local-ai-assistant.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/continuous-improvement-dmaic.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/en/projects/continuous-improvement-dmaic.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/continuous-improvement-dmaic.html"/>
   </url>
 </urlset>
