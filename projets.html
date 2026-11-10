@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projets sélectionnés — Or3L</title>
+  <meta name="description" content="Quelques réalisations représentatives en automatisme, digitalisation industrielle, développement et IA.">
+  <meta name="author" content="Or3L">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Adresse du site : remplacer « https://or3l-lab.github.io » par l'adresse finale (voir LISEZ-MOI.md) -->
+  <link rel="canonical" href="https://or3l-lab.github.io/projets.html">
+  <link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets.html">
+  <link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects.html">
+  <link rel="alternate" hreflang="x-default" href="https://or3l-lab.github.io/projets.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Or3L">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Projets sélectionnés — Or3L">
+  <meta property="og:description" content="Quelques réalisations représentatives en automatisme, digitalisation industrielle, développement et IA.">
+  <meta property="og:url" content="https://or3l-lab.github.io/projets.html">
+  <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Or3L — De l&#x27;automate à l&#x27;agent IA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/head.js"></script>
+</head>
+<body class="page-reading page-reading-projects" data-page="reading">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Or3L — accueil">
+        <span class="brand-mark" aria-hidden="true">Or3L</span>
+        <span class="brand-text">Or3L<small>Informatique industrielle · IA</small></span>
+      </a>
+      <nav class="main-nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="parcours.html">Parcours</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="en/projects.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="reading-hero" data-hud="Réalisations">
+      <div class="container reading-hero-inner">
+        <p class="eyebrow"><span class="eyebrow-num">01</span>Réalisations</p>
+        <h1 class="reading-title" data-reveal="lines">Projets sélectionnés</h1>
+        <p class="reading-lede">Des projets regroupés par domaine, présentés dans leurs grandes lignes. Les interfaces de démonstration utilisent des données fictives.</p>
+        <a class="text-link" href="index.html">← Retour à l&#x27;accueil</a>
+      </div>
+      <span class="reading-hero-mark" aria-hidden="true">Or3L<span>·</span></span>
+    </section>
+
+    <section class="reading-content" data-hud="Projets">
+      <div class="container">
+        <nav class="project-group-nav" aria-label="Explorer les domaines"><ul><li><a href="#automation">Machines spéciales &amp; automatisme <span aria-hidden="true">↗</span></a></li><li><a href="#applications">Applications &amp; transformation industrielle <span aria-hidden="true">↗</span></a></li><li><a href="#maintenance">Données &amp; maintenance industrielle <span aria-hidden="true">↗</span></a></li><li><a href="#ai">IA &amp; assistance intelligente <span aria-hidden="true">↗</span></a></li><li><a href="#improvement">Amélioration continue &amp; performance <span aria-hidden="true">↗</span></a></li></ul></nav>
+      <section class="project-group" id="automation" aria-labelledby="automation-title">
+        <div class="project-group-head"><span class="project-group-index">01</span>
+          <h2 id="automation-title">Machines spéciales &amp; automatisme</h2></div>
+        <div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="projets/came-electronique.html#demo">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-cam" data-demo="cam">
+            <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span><span class="demo-title">CAME.SIM</span><span class="demo-tag">Simulation</span></div>
+            <canvas class="cam-line" role="img" aria-label="Animation : packs sur le convoyeur et tête d&#x27;application synchronisée"></canvas>
+            <div class="cam-grid">
+              <canvas class="cam-plot" aria-hidden="true"></canvas>
+              <div class="cam-controls">
+                <label class="range"><span>Cadence <output data-out="rate">150</output> cycles/min</span><input type="range" min="30" max="150" step="5" value="150" data-in="rate"></label>
+                <label class="range"><span>Pas produit <output data-out="pitch">250</output> mm</span><input type="range" min="180" max="320" step="10" value="250" data-in="pitch"></label>
+                <dl class="readouts">
+                  <div><dt>Temps de cycle</dt><dd data-read="cycle">400 ms</dd></div>
+                  <div><dt>Vitesse ligne</dt><dd data-read="speed">37.5 m/min</dd></div>
+                  <div><dt>Zone synchrone</dt><dd data-read="sync">140 ms</dd></div>
+                </dl>
+                <button class="btn btn-ghost btn-sm" type="button" data-act="toggle">Pause</button>
+              </div>
+            </div>
+            <p class="demo-note">Simulation pédagogique : loi de came simplifiée, valeurs indicatives.</p>
+            <script type="application/json" class="demo-i18n">{"title": "CAME.SIM", "tag": "Simulation", "rate": "Cadence", "rate_u": "cycles/min", "pitch": "Pas produit", "pitch_u": "mm", "cycle": "Temps de cycle", "speed": "Vitesse ligne", "sync": "Zone synchrone", "pause": "Pause", "play": "Lecture", "line_label": "Animation : packs sur le convoyeur et tête d'application synchronisée", "master": "Maître (convoyeur)", "slave": "Esclave (tête)", "note": "Simulation pédagogique : loi de came simplifiée, valeurs indicatives."}</script>
+          </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+        <ul class="project-grid project-grid-reading">        <li class="project-card" data-tags="auto" data-reveal-card>
+          <a class="card-link" href="projets/came-electronique.html">
+            <div class="card-visual vt-cam"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="g-line g-thin" d="M30 132H214M30 132V24"/><path class="g-accent" d="M30 120C60 120 66 64 96 60L150 60C178 62 184 120 214 120"/><path class="g-line g-dash" d="M96 60V132M150 60V132"/><circle class="g-dot" cx="96" cy="60" r="3.5"/><circle class="g-dot" cx="150" cy="60" r="3.5"/></g></svg><span class="card-num">01</span></div>
+            <div class="card-body"><p class="card-kicker">Motion control · Automatisme · Conditionnement</p><h3 class="card-title">Machines spéciales : poignées &amp; mise en lots</h3>
+              <p class="card-pitch">Automatisme pour l&#x27;application de poignées et la mise en lots ; la démonstration montre la synchronisation d&#x27;une tête de pose.</p><ul class="card-tags"><li><span class="led-dot tag-auto" aria-hidden="true"></span>Automatisme</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="project-card" data-tags="auto pilot" data-reveal-card>
+          <a class="card-link" href="projets/mises-en-service-internationales.html">
+            <div class="card-visual vt-commissioning"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle class="g-line" cx="120" cy="82" r="54"/><ellipse class="g-line g-thin" cx="120" cy="82" rx="24" ry="54"/><path class="g-line g-thin" d="M66 82h108M74 56h92M74 108h92"/><path class="g-accent" d="M90 58C110 40 150 46 158 98"/><circle class="g-dot" cx="90" cy="58" r="4"/><circle class="g-dot" cx="158" cy="98" r="4"/></g></svg><span class="card-num">02</span></div>
+            <div class="card-body"><p class="card-kicker">Automatisme · Terrain · International</p><h3 class="card-title">Mises en service internationales, multi-marques</h3>
+              <p class="card-pitch">Spécifier, programmer et mettre en service des machines spéciales chez les clients, 70 % du temps hors de France.</p><ul class="card-tags"><li><span class="led-dot tag-auto" aria-hidden="true"></span>Automatisme</li><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li></ul>
+      </section>
+      <section class="project-group" id="applications" aria-labelledby="applications-title">
+        <div class="project-group-head"><span class="project-group-index">02</span>
+          <h2 id="applications-title">Applications &amp; transformation industrielle</h2></div>
+        <div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="projets/portail-industriel.html#demo">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-flow" data-demo="flow">
+      <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span>
+        <span class="demo-title">PORTAL.SIM</span><span class="demo-tag">Maquette interactive</span></div>
+      <ol class="flow-steps"><li class="flow-step"><span class="flow-index">01</span><strong>Besoin</strong><small>Une demande terrain</small></li><li class="flow-step"><span class="flow-index">02</span><strong>Accès</strong><small>Le bon profil</small></li><li class="flow-step"><span class="flow-index">03</span><strong>Action</strong><small>Un parcours simple</small></li><li class="flow-step"><span class="flow-index">04</span><strong>Suivi</strong><small>Une boucle utile</small></li></ol>
+      <div class="flow-scene"><span class="flow-position" data-flow-position>01 / 04</span>
+        <p data-flow-text>Un besoin est exprimé depuis un point d&#x27;entrée commun.</p></div>
+      <div class="flow-controls">
+        <button class="btn btn-ghost btn-sm" type="button" data-flow-toggle hidden>Lecture</button>
+        <button class="btn btn-ghost btn-sm" type="button" data-flow-next hidden>Étape suivante <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="demo-note">Scénario illustratif et données fictives : aucune application interne ni donnée de production.</p>
+      <script type="application/json" class="demo-i18n">{"tag": "Maquette interactive", "steps": [["Besoin", "Une demande terrain", "Un besoin est exprimé depuis un point d'entrée commun."], ["Accès", "Le bon profil", "Le profil autorisé accède au module métier adapté."], ["Action", "Un parcours simple", "L'information est traitée dans une interface cohérente."], ["Suivi", "Une boucle utile", "Le suivi et les retours terrain alimentent l'amélioration continue."]], "pause": "Pause", "play": "Lecture", "next": "Étape suivante", "note": "Scénario illustratif et données fictives : aucune application interne ni donnée de production."}</script>
+    </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+        <ul class="project-grid project-grid-reading">        <li class="project-card" data-tags="full pilot" data-reveal-card>
+          <a class="card-link" href="projets/portail-industriel.html">
+            <div class="card-visual vt-portal"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="62" y="30" width="34" height="28" rx="3"/><rect class="g-line" x="103" y="30" width="34" height="28" rx="3"/><rect class="g-line" x="144" y="30" width="34" height="28" rx="3"/><rect class="g-line" x="62" y="66" width="34" height="28" rx="3"/><rect class="g-accent" x="103" y="66" width="34" height="28" rx="3"/><rect class="g-line" x="144" y="66" width="34" height="28" rx="3"/><rect class="g-line" x="62" y="102" width="34" height="28" rx="3"/><rect class="g-line" x="103" y="102" width="34" height="28" rx="3"/><rect class="g-line" x="144" y="102" width="34" height="28" rx="3"/><path class="g-line g-thin" d="M20 80h42M178 80h42M120 8v22M120 130v22"/><circle class="g-dot" cx="120" cy="80" r="3"/></g></svg><span class="card-num">03</span></div>
+            <div class="card-body"><p class="card-kicker">Architecture · Full-stack · Sécurité</p><h3 class="card-title">Un seul portail pour toute l&#x27;usine</h3>
+              <p class="card-pitch">Rassembler les applications métier d&#x27;un site industriel dans une plateforme unique, sécurisée et évolutive.</p><ul class="card-tags"><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="project-card" data-tags="pilot full" data-reveal-card>
+          <a class="card-link" href="projets/migration-sans-interruption.html">
+            <div class="card-visual vt-migration"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="28" y="98" width="38" height="34" rx="3"/><rect class="g-line" x="76" y="78" width="38" height="54" rx="3"/><rect class="g-line" x="124" y="58" width="38" height="74" rx="3"/><rect class="g-accent" x="172" y="38" width="38" height="94" rx="3"/><path class="g-line g-dash" d="M210 26C150 6 70 18 40 84"/><path class="g-line" d="M40 84l-2-12m2 12l11-5"/></g></svg><span class="card-num">04</span></div>
+            <div class="card-body"><p class="card-kicker">Pilotage · Qualité logicielle · Exploitation</p><h3 class="card-title">Moderniser un portail de production sans arrêter l&#x27;usine</h3>
+              <p class="card-pitch">Une montée de version progressive et réversible d&#x27;un portail utilisé chaque jour par les ateliers.</p><ul class="card-tags"><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="project-card" data-tags="full pilot lean" data-reveal-card>
+          <a class="card-link" href="projets/digitalisation-atelier.html">
+            <div class="card-visual vt-digital"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="g-line g-thin" d="M24 80H216"/><rect class="g-line" x="30" y="36" width="30" height="22" rx="3"/><path class="g-line g-thin" d="M45 58V80"/><rect class="g-line" x="68" y="102" width="30" height="22" rx="3"/><path class="g-line g-thin" d="M83 102V80"/><rect class="g-accent" x="106" y="36" width="30" height="22" rx="3"/><path class="g-line g-thin" d="M121 58V80"/><rect class="g-line" x="144" y="102" width="30" height="22" rx="3"/><path class="g-line g-thin" d="M159 102V80"/><rect class="g-line" x="182" y="36" width="30" height="22" rx="3"/><path class="g-line g-thin" d="M197 58V80"/><circle class="g-dot" cx="24" cy="80" r="4"/><circle class="g-dot" cx="216" cy="80" r="4"/></g></svg><span class="card-num">05</span></div>
+            <div class="card-body"><p class="card-kicker">Logiciels métiers · Pilotage · Conduite du changement</p><h3 class="card-title">Digitaliser l&#x27;usine, module par module</h3>
+              <p class="card-pitch">Une vingtaine d&#x27;applications métier (production, qualité, maintenance, stocks, RH…) développées et maintenues au plus près des équipes.</p><ul class="card-tags"><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li><li><span class="led-dot tag-lean" aria-hidden="true"></span>Amélioration continue</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li></ul>
+      </section>
+      <section class="project-group" id="maintenance" aria-labelledby="maintenance-title">
+        <div class="project-group-head"><span class="project-group-index">03</span>
+          <h2 id="maintenance-title">Données &amp; maintenance industrielle</h2></div>
+        <div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="projets/supervision-risque-arret.html#demo">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-hmi" data-demo="hmi">
+            <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span><span class="demo-title">PARC.HMI</span><span class="demo-tag">Données fictives</span></div>
+            <div class="hmi-kpis">
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Disponibilité</span><span class="hmi-kpi-value" data-k="avail">—</span></div>
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Arrêts en cours</span><span class="hmi-kpi-value" data-k="stops">—</span></div>
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Risque élevé</span><span class="hmi-kpi-value" data-k="high">—</span></div>
+              <div class="hmi-kpi"><span class="hmi-kpi-label">Arrêts attendus à court terme</span><span class="hmi-kpi-value" data-k="expected">—</span></div>
+            </div>
+            <div class="hmi-body">
+              <ul class="hmi-grid" data-grid></ul>
+              <div class="hmi-actions"><p class="hmi-actions-title">Plan d&#x27;actions</p><ol data-actions></ol></div>
+            </div>
+            <p class="demo-note">Maquette animée : machines, états et risques sont simulés.</p>
+            <script type="application/json" class="demo-i18n">{"title": "PARC.HMI", "tag": "Données fictives", "avail": "Disponibilité", "stops": "Arrêts en cours", "high": "Risque élevé", "expected": "Arrêts attendus à court terme", "actions": "Plan d'actions", "states": {"run": "En marche", "stop": "Arrêt prod.", "fault": "Défaillance", "pm": "Préventif échu"}, "urg": {"now": "Immédiat", "week": "Cette semaine"}, "act": {"stop": "Débloquer {n} arrêt(s) de production en cours", "pm": "Réaliser {n} préventif(s) échu(s) sur machines à risque", "high": "Inspecter {n} machine(s) à risque élevé", "fault": "Solder {n} défaillance(s) ouverte(s)"}, "none": "Aucune action urgente", "risk": "risque", "note": "Maquette animée : machines, états et risques sont simulés."}</script>
+          </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+        <ul class="project-grid project-grid-reading">        <li class="project-card" data-tags="data full lean" data-reveal-card>
+          <a class="card-link" href="projets/supervision-risque-arret.html">
+            <div class="card-visual vt-monitoring"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="g-line" d="M48 120A72 72 0 0 1 192 120"/><path class="g-accent" d="M48 120A72 72 0 0 1 162 66"/><path class="g-line" d="M120 120L160 72"/><circle class="g-dot" cx="120" cy="120" r="5"/><path class="g-line g-thin" d="M40 140h32M88 140h32M136 140h32M184 140h16"/></g></svg><span class="card-num">06</span></div>
+            <div class="card-body"><p class="card-kicker">Supervision · Data · Aide à la décision</p><h3 class="card-title">Voir avant que ça casse</h3>
+              <p class="card-pitch">Un tableau de bord du parc machines qui ne se contente pas d&#x27;afficher des états : il aide à anticiper les arrêts et à prioriser les actions.</p><ul class="card-tags"><li><span class="led-dot tag-data" aria-hidden="true"></span>Data</li><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li><li><span class="led-dot tag-lean" aria-hidden="true"></span>Amélioration continue</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="project-card" data-tags="data full" data-reveal-card>
+          <a class="card-link" href="projets/gmao-sur-mesure.html">
+            <div class="card-visual vt-cmms"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle class="g-line" cx="84" cy="80" r="30"/><circle class="g-line" cx="84" cy="80" r="11"/><path class="g-line" d="M114.0 80.0L124.0 80.0"/><path class="g-line" d="M105.2 101.2L112.3 108.3"/><path class="g-line" d="M84.0 110.0L84.0 120.0"/><path class="g-line" d="M62.8 101.2L55.7 108.3"/><path class="g-line" d="M54.0 80.0L44.0 80.0"/><path class="g-line" d="M62.8 58.8L55.7 51.7"/><path class="g-line" d="M84.0 50.0L84.0 40.0"/><path class="g-line" d="M105.2 58.8L112.3 51.7"/><rect class="g-line" x="136" y="44" width="76" height="72" rx="4"/><path class="g-line g-thin" d="M136 62h76M155 62v54M174 62v54M193 62v54M136 81h76M136 99h76"/><rect class="g-accent" x="174" y="81" width="19" height="18"/></g></svg><span class="card-num">07</span></div>
+            <div class="card-body"><p class="card-kicker">Maintenance · Data · Full-stack</p><h3 class="card-title">GMAO sur mesure : du parc machines au préventif</h3>
+              <p class="card-pitch">Une GMAO pensée pour l&#x27;atelier : parc machines, arrêts de production, maintenance préventive et reprise fiable de l&#x27;historique.</p><ul class="card-tags"><li><span class="led-dot tag-data" aria-hidden="true"></span>Data</li><li><span class="led-dot tag-full" aria-hidden="true"></span>Full-stack</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li></ul>
+      </section>
+      <section class="project-group" id="ai" aria-labelledby="ai-title">
+        <div class="project-group-head"><span class="project-group-index">04</span>
+          <h2 id="ai-title">IA &amp; assistance intelligente</h2></div>
+        <div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="projets/equipe-agents-ia.html#demo">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-agents" data-demo="agents">
+            <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span><span class="demo-title">ORCHESTRA.SIM</span><span class="demo-tag">Simulation</span></div>
+            <div class="agents-body">
+              <div class="agents-graph" data-graph></div>
+              <div class="agents-log"><ol data-log role="log" aria-live="polite"></ol></div>
+            </div>
+            <div class="agents-controls">
+              <button class="btn btn-primary btn-sm" type="button" data-run="nominal">Scénario nominal</button>
+              <button class="btn btn-ghost btn-sm" type="button" data-run="rollback">Scénario avec retour arrière</button>
+            </div>
+            <ul class="agents-legend"><li><span class="agent-id">A1</span> <strong>Orchestrateur</strong> — pilote et répartit</li><li><span class="agent-id">A2</span> <strong>Mémoire</strong> — règles du projet</li><li><span class="agent-id">A3</span> <strong>Dev back-end</strong> — serveur</li><li><span class="agent-id">A4</span> <strong>Dev données</strong> — base de données</li><li><span class="agent-id">A5</span> <strong>Dev front-end</strong> — interface</li><li><span class="agent-id">A6</span> <strong>Reviewer</strong> — relecture</li><li><span class="agent-id">A7</span> <strong>Doc</strong> — documentation</li><li><span class="agent-id">A8</span> <strong>Diagnostic</strong> — analyse des écarts</li><li><span class="agent-id">A9</span> <strong>Livraison</strong> — livraison réversible</li></ul>
+            <p class="demo-note">Illustration simplifiée : rôles et étapes génériques, contenu fictif.</p>
+            <script type="application/json" class="demo-i18n">{"title": "ORCHESTRA.SIM", "tag": "Simulation", "nominal": "Scénario nominal", "rollback": "Scénario avec retour arrière", "human": "Humain", "note": "Illustration simplifiée : rôles et étapes génériques, contenu fictif.", "agents": [["A1", "Orchestrateur", "pilote et répartit"], ["A2", "Mémoire", "règles du projet"], ["A3", "Dev back-end", "serveur"], ["A4", "Dev données", "base de données"], ["A5", "Dev front-end", "interface"], ["A6", "Reviewer", "relecture"], ["A7", "Doc", "documentation"], ["A8", "Diagnostic", "analyse des écarts"], ["A9", "Livraison", "livraison réversible"]], "steps": {"nominal": [["A1", "Demande reçue : améliorer un écran de saisie."], ["A2", "Règles du projet rappelées."], ["A1>A3,A5", "Répartition entre spécialistes."], ["A3,A5", "Modifications réalisées et testées."], ["A6", "Revue : aucun point bloquant."], ["A7", "Documentation mise à jour."], ["H", "Validation humaine."], ["A9", "Livraison appliquée et contrôlée : OK."]], "rollback": [["A1", "Demande reçue : faire évoluer un formulaire."], ["A2", "Règles du projet rappelées."], ["A1>A3,A4", "Répartition entre spécialistes."], ["A3,A4", "Modifications réalisées et testées."], ["A6", "Revue : validé."], ["H", "Validation humaine."], ["A9", "Contrôle après livraison : écart détecté !"], ["A8", "Analyse de l'écart."], ["A9", "Livraison annulée : état initial restauré."], ["A1", "Nouvelle itération planifiée."]]}}</script>
+          </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+        <ul class="project-grid project-grid-reading">        <li class="project-card" data-tags="ia pilot" data-reveal-card>
+          <a class="card-link" href="projets/equipe-agents-ia.html">
+            <div class="card-visual vt-agents"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle class="g-line" cx="120.0" cy="22.0" r="9"/><path class="g-line g-thin" d="M120 80L120.0 31.0"/><circle class="g-line" cx="157.3" cy="35.6" r="9"/><path class="g-line g-thin" d="M120 80L151.5 42.5"/><circle class="g-line" cx="177.1" cy="69.9" r="9"/><path class="g-line g-thin" d="M120 80L168.3 71.5"/><circle class="g-line" cx="170.2" cy="109.0" r="9"/><path class="g-line g-thin" d="M120 80L162.4 104.5"/><circle class="g-line" cx="139.8" cy="134.5" r="9"/><path class="g-line g-thin" d="M120 80L136.8 126.0"/><circle class="g-line" cx="100.2" cy="134.5" r="9"/><path class="g-line g-thin" d="M120 80L103.2 126.0"/><circle class="g-line" cx="69.8" cy="109.0" r="9"/><path class="g-line g-thin" d="M120 80L77.6 104.5"/><circle class="g-line" cx="62.9" cy="69.9" r="9"/><path class="g-line g-thin" d="M120 80L71.7 71.5"/><circle class="g-line" cx="82.7" cy="35.6" r="9"/><path class="g-line g-thin" d="M120 80L88.5 42.5"/><circle class="g-accent" cx="120" cy="80" r="16"/><circle class="g-dot" cx="120" cy="80" r="4"/></g></svg><span class="card-num">08</span></div>
+            <div class="card-body"><p class="card-kicker">IA agentique · Orchestration · Qualité</p><h3 class="card-title">Une équipe d&#x27;agents IA, pilotée comme une équipe projet</h3>
+              <p class="card-pitch">Des agents IA spécialisés qui conçoivent, codent, relisent et documentent, encadrés par des règles claires et une validation humaine.</p><ul class="card-tags"><li><span class="led-dot tag-ia" aria-hidden="true"></span>IA</li><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="project-card" data-tags="ia data" data-reveal-card>
+          <a class="card-link" href="projets/assistante-ia-locale.html">
+            <div class="card-visual vt-assistant"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="40" y="34" width="104" height="64" rx="10"/><path class="g-line" d="M64 98l-6 20 22-20"/><path class="g-line g-thin" d="M58 56h68M58 72h44"/><rect class="g-accent" x="150" y="72" width="54" height="54" rx="6"/><rect class="g-line" x="164" y="86" width="26" height="26" rx="3"/><path class="g-line g-thin" d="M160 66v6M177 66v6M194 66v6M160 126v6M177 126v6M194 126v6M144 82h6M144 99h6M144 116h6M204 82h6M204 99h6M204 116h6"/></g></svg><span class="card-num">09</span></div>
+            <div class="card-body"><p class="card-kicker">LLM locaux · Souveraineté · Produit</p><h3 class="card-title">Une assistante IA locale et souveraine</h3>
+              <p class="card-pitch">Un projet personnel : une assistante IA qui fonctionne entièrement sur un poste de travail, avec des garde-fous explicites.</p><ul class="card-tags"><li><span class="led-dot tag-ia" aria-hidden="true"></span>IA</li><li><span class="led-dot tag-data" aria-hidden="true"></span>Data</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li></ul>
+      </section>
+      <section class="project-group" id="improvement" aria-labelledby="improvement-title">
+        <div class="project-group-head"><span class="project-group-index">05</span>
+          <h2 id="improvement-title">Amélioration continue &amp; performance</h2></div>
+        <div class="project-showcase" data-showcase>
+      <div class="showcase-caption"><p class="eyebrow"><span class="led led-signal" aria-hidden="true"></span>À explorer</p>
+        <a class="text-link" href="projets/amelioration-continue-dmaic.html#demo">Comprendre le projet <span aria-hidden="true">↓</span></a></div>
+      <div class="showcase-frame"><div class="demo demo-dmaic" data-demo="dmaic">
+            <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span><span class="demo-title">DMAIC.SIM</span><span class="demo-tag">Exemple illustratif</span></div>
+            <div class="dmaic-steps" role="tablist" aria-label="Étapes de la démarche DMAIC"><button class="dmaic-tab is-active" type="button" role="tab" id="dmaic-tab-d" aria-controls="dmaic-d" aria-selected="true" tabindex="0" data-phase="d"><span class="dmaic-letter">D</span><span class="dmaic-name">Définir</span></button><button class="dmaic-tab" type="button" role="tab" id="dmaic-tab-m" aria-controls="dmaic-m" aria-selected="false" tabindex="-1" data-phase="m"><span class="dmaic-letter">M</span><span class="dmaic-name">Mesurer</span></button><button class="dmaic-tab" type="button" role="tab" id="dmaic-tab-a" aria-controls="dmaic-a" aria-selected="false" tabindex="-1" data-phase="a"><span class="dmaic-letter">A</span><span class="dmaic-name">Analyser</span></button><button class="dmaic-tab" type="button" role="tab" id="dmaic-tab-i" aria-controls="dmaic-i" aria-selected="false" tabindex="-1" data-phase="i"><span class="dmaic-letter">I</span><span class="dmaic-name">Améliorer</span></button><button class="dmaic-tab" type="button" role="tab" id="dmaic-tab-c" aria-controls="dmaic-c" aria-selected="false" tabindex="-1" data-phase="c"><span class="dmaic-letter">C</span><span class="dmaic-name">Maîtriser</span></button></div>
+            <div class="dmaic-progress" aria-hidden="true"><i></i></div>
+            <div class="dmaic-kpis"><div class="dmaic-kpi"><span class="dmaic-kpi-label">TRS</span><span class="dmaic-kpi-value" data-k="oee">68 %</span><span class="dmaic-kpi-to" aria-hidden="true">→ 81 %</span></div><div class="dmaic-kpi"><span class="dmaic-kpi-label">Arrêts courts / h</span><span class="dmaic-kpi-value" data-k="stops">12</span><span class="dmaic-kpi-to" aria-hidden="true">→ 5</span></div><div class="dmaic-kpi"><span class="dmaic-kpi-label">Variabilité du cycle (σ)</span><span class="dmaic-kpi-value" data-k="sigma">31 ms</span><span class="dmaic-kpi-to" aria-hidden="true">→ 12 ms</span></div></div>
+            <div class="dmaic-stage">
+              <section class="dmaic-panel is-active" id="dmaic-d" role="tabpanel" aria-labelledby="dmaic-tab-d" data-phase="d">
+                <div class="dmaic-copy"><p class="dmaic-phase">01 · Définir</p><h3>Un problème clair, un objectif chiffré</h3><p>Formuler le problème avec l&#x27;équipe, fixer un objectif mesurable et délimiter le périmètre.</p><ul class="dmaic-tools"><li>Charte projet</li><li>SIPOC</li><li>Voix du client</li></ul></div>
+                <svg class="dmaic-visual dmaic-visual-d" viewBox="0 0 420 220" aria-hidden="true" focusable="false"><path class="dm-track" d="M100.0 160.0A110 110 0 0 1 320.0 160.0"/><path class="dm-gauge dm-draw" pathLength="1" d="M100.0 160.0A110 110 0 0 1 268.9 67.1"/><path class="dm-target" d="M307.1 89.5L287.7 103.6"/><text class="dm-big" x="210" y="142" text-anchor="middle">68 %</text><text class="dm-small" x="210" y="164" text-anchor="middle">Actuel · TRS</text><text class="dm-small dm-accent" x="320.0" y="184.0" text-anchor="end">Objectif · 81 %</text></svg>
+              </section>
+              <section class="dmaic-panel" id="dmaic-m" role="tabpanel" aria-labelledby="dmaic-tab-m" data-phase="m">
+                <div class="dmaic-copy"><p class="dmaic-phase">02 · Mesurer</p><h3>Des faits plutôt que des impressions</h3><p>Relever les arrêts et la variabilité du cycle sur le terrain, avec une mesure fiable.</p><ul class="dmaic-tools"><li>Relevés terrain</li><li>Carte de suivi</li><li>Capabilité</li></ul></div>
+                <svg class="dmaic-visual dmaic-visual-m" viewBox="0 0 420 220" aria-hidden="true" focusable="false"><path class="dm-axis" d="M46 16V182H404"/><text class="dm-axis-label" x="46" y="14">Temps de cycle (ms)</text><path class="dm-mean" d="M46 104.8H404"/><text class="dm-small" x="404" y="98.8" text-anchor="end">moyenne</text><polyline class="dm-line dm-draw" pathLength="1" points="46.0,130.5 56.2,104.8 66.5,95.0 76.7,119.1 86.9,132.2 97.1,49.7 107.4,103.2 117.6,93.3 127.8,130.3 138.1,131.6 148.3,99.6 158.5,103.3 168.7,86.3 179.0,43.6 189.2,112.5 199.4,115.3 209.7,69.8 219.9,115.5 230.1,123.4 240.3,129.1 250.6,109.4 260.8,35.7 271.0,116.4 281.3,111.9 291.5,106.5 301.7,99.8 311.9,93.3 322.2,107.5 332.4,139.5 342.6,42.8 352.9,133.6 363.1,113.6 373.3,134.5 383.5,110.9 393.8,123.3 404.0,107.5"/><circle class="dm-out" cx="97.1" cy="49.7" r="4"/><circle class="dm-out" cx="179.0" cy="43.6" r="4"/><circle class="dm-out" cx="209.7" cy="69.8" r="4"/><circle class="dm-out" cx="260.8" cy="35.7" r="4"/><circle class="dm-out" cx="342.6" cy="42.8" r="4"/></svg>
+              </section>
+              <section class="dmaic-panel" id="dmaic-a" role="tabpanel" aria-labelledby="dmaic-tab-a" data-phase="a">
+                <div class="dmaic-copy"><p class="dmaic-phase">03 · Analyser</p><h3>Remonter aux causes racines</h3><p>Hiérarchiser les causes avec un Pareto, puis creuser la principale avec les 5 Pourquoi.</p><ul class="dmaic-tools"><li>Pareto</li><li>5 Pourquoi</li><li>Ishikawa</li></ul></div>
+                <svg class="dmaic-visual dmaic-visual-a" viewBox="0 0 420 220" aria-hidden="true" focusable="false"><path class="dm-axis" d="M46 16V182H404"/><rect class="dm-bar dm-bar-main" style="--i:0" x="60" y="47.6" width="56" height="134.4"/><text class="dm-tick" x="88" y="198" text-anchor="middle">Bourrage</text><rect class="dm-bar" style="--i:1" x="132" y="108.4" width="56" height="73.6"/><text class="dm-tick" x="160" y="198" text-anchor="middle">Détection</text><rect class="dm-bar" style="--i:2" x="204" y="134.0" width="56" height="48.0"/><text class="dm-tick" x="232" y="198" text-anchor="middle">Format</text><rect class="dm-bar" style="--i:3" x="276" y="143.6" width="56" height="38.4"/><text class="dm-tick" x="304" y="198" text-anchor="middle">Consommables</text><rect class="dm-bar" style="--i:4" x="348" y="156.4" width="56" height="25.6"/><text class="dm-tick" x="376" y="198" text-anchor="middle">Autres</text><polyline class="dm-cum dm-draw" pathLength="1" points="88.0,114.8 160.0,78.0 232.0,54.0 304.0,34.8 376.0,22.0"/><text class="dm-small dm-accent" x="404" y="26" text-anchor="end">cumul 100 %</text></svg>
+              </section>
+              <section class="dmaic-panel" id="dmaic-i" role="tabpanel" aria-labelledby="dmaic-tab-i" data-phase="i">
+                <div class="dmaic-copy"><p class="dmaic-phase">04 · Améliorer</p><h3>Tester petit, valider vite</h3><p>Essayer des solutions en petits pas (PDCA) et ne garder que celles qui réduisent la variabilité.</p><ul class="dmaic-tools"><li>PDCA</li><li>Kaizen</li><li>Poka-yoke</li></ul></div>
+                <svg class="dmaic-visual dmaic-visual-i" viewBox="0 0 420 220" aria-hidden="true" focusable="false"><path class="dm-axis" d="M46 16V182H404"/><text class="dm-axis-label" x="46" y="14">Temps de cycle (ms)</text><polyline class="dm-ghost" points="46.0,130.5 56.2,104.8 66.5,95.0 76.7,119.1 86.9,132.2 97.1,49.7 107.4,103.2 117.6,93.3 127.8,130.3 138.1,131.6 148.3,99.6 158.5,103.3 168.7,86.3 179.0,43.6 189.2,112.5 199.4,115.3 209.7,69.8 219.9,115.5 230.1,123.4 240.3,129.1 250.6,109.4 260.8,35.7 271.0,116.4 281.3,111.9 291.5,106.5 301.7,99.8 311.9,93.3 322.2,107.5 332.4,139.5 342.6,42.8 352.9,133.6 363.1,113.6 373.3,134.5 383.5,110.9 393.8,123.3 404.0,107.5"/><polyline class="dm-line dm-draw" pathLength="1" points="46.0,104.5 56.2,124.9 66.5,116.0 76.7,119.6 86.9,123.5 97.1,121.6 107.4,121.2 117.6,118.6 127.8,115.6 138.1,111.7 148.3,116.8 158.5,111.3 168.7,115.4 179.0,117.6 189.2,119.6 199.4,124.3 209.7,128.1 219.9,118.8 230.1,119.4 240.3,116.3 250.6,116.3 260.8,126.1 271.0,122.7 281.3,125.3 291.5,112.2 301.7,119.1 311.9,117.6 322.2,124.0 332.4,126.2 342.6,122.0 352.9,119.0 363.1,115.6 373.3,127.8 383.5,116.4 393.8,123.7 404.0,121.7"/><g class="dm-legend"><path class="dm-ghost" d="M250 12h18"/><text class="dm-small" x="272" y="16">Avant</text><path class="dm-line" d="M322 12h18"/><text class="dm-small" x="344" y="16">Après</text></g></svg>
+              </section>
+              <section class="dmaic-panel" id="dmaic-c" role="tabpanel" aria-labelledby="dmaic-tab-c" data-phase="c">
+                <div class="dmaic-copy"><p class="dmaic-phase">05 · Maîtriser</p><h3>Ancrer le gain dans la durée</h3><p>Standardiser le mode opératoire, suivre les indicateurs visuellement et réagir aux dérives.</p><ul class="dmaic-tools"><li>Standard</li><li>5S</li><li>Carte de contrôle</li></ul></div>
+                <svg class="dmaic-visual dmaic-visual-c" viewBox="0 0 420 220" aria-hidden="true" focusable="false"><path class="dm-axis" d="M46 16V182H404"/><text class="dm-axis-label" x="46" y="14">Temps de cycle (ms)</text><path class="dm-limit" d="M46 98.1H404"/><path class="dm-limit" d="M46 140.8H404"/><path class="dm-mean" d="M46 119.5H404"/><text class="dm-small" x="404" y="93.1" text-anchor="end">LSC</text><text class="dm-small" x="404" y="154.8" text-anchor="end">LIC</text><polyline class="dm-line dm-draw" pathLength="1" points="46.0,104.5 56.2,124.9 66.5,116.0 76.7,119.6 86.9,123.5 97.1,121.6 107.4,121.2 117.6,118.6 127.8,115.6 138.1,111.7 148.3,116.8 158.5,111.3 168.7,115.4 179.0,117.6 189.2,119.6 199.4,124.3 209.7,128.1 219.9,118.8 230.1,119.4 240.3,116.3 250.6,116.3 260.8,126.1 271.0,122.7 281.3,125.3 291.5,112.2 301.7,119.1 311.9,117.6 322.2,124.0 332.4,126.2 342.6,122.0 352.9,119.0 363.1,115.6 373.3,127.8 383.5,116.4 393.8,123.7 404.0,121.7"/><circle class="dm-dot" style="--i:0" cx="46.0" cy="104.5" r="2.6"/><circle class="dm-dot" style="--i:1" cx="56.2" cy="124.9" r="2.6"/><circle class="dm-dot" style="--i:2" cx="66.5" cy="116.0" r="2.6"/><circle class="dm-dot" style="--i:3" cx="76.7" cy="119.6" r="2.6"/><circle class="dm-dot" style="--i:4" cx="86.9" cy="123.5" r="2.6"/><circle class="dm-dot" style="--i:5" cx="97.1" cy="121.6" r="2.6"/><circle class="dm-dot" style="--i:6" cx="107.4" cy="121.2" r="2.6"/><circle class="dm-dot" style="--i:7" cx="117.6" cy="118.6" r="2.6"/><circle class="dm-dot" style="--i:8" cx="127.8" cy="115.6" r="2.6"/><circle class="dm-dot" style="--i:9" cx="138.1" cy="111.7" r="2.6"/><circle class="dm-dot" style="--i:10" cx="148.3" cy="116.8" r="2.6"/><circle class="dm-dot" style="--i:11" cx="158.5" cy="111.3" r="2.6"/><circle class="dm-dot" style="--i:12" cx="168.7" cy="115.4" r="2.6"/><circle class="dm-dot" style="--i:13" cx="179.0" cy="117.6" r="2.6"/><circle class="dm-dot" style="--i:14" cx="189.2" cy="119.6" r="2.6"/><circle class="dm-dot" style="--i:15" cx="199.4" cy="124.3" r="2.6"/><circle class="dm-dot" style="--i:16" cx="209.7" cy="128.1" r="2.6"/><circle class="dm-dot" style="--i:17" cx="219.9" cy="118.8" r="2.6"/><circle class="dm-dot" style="--i:18" cx="230.1" cy="119.4" r="2.6"/><circle class="dm-dot" style="--i:19" cx="240.3" cy="116.3" r="2.6"/><circle class="dm-dot" style="--i:20" cx="250.6" cy="116.3" r="2.6"/><circle class="dm-dot" style="--i:21" cx="260.8" cy="126.1" r="2.6"/><circle class="dm-dot" style="--i:22" cx="271.0" cy="122.7" r="2.6"/><circle class="dm-dot" style="--i:23" cx="281.3" cy="125.3" r="2.6"/><circle class="dm-dot" style="--i:24" cx="291.5" cy="112.2" r="2.6"/><circle class="dm-dot" style="--i:25" cx="301.7" cy="119.1" r="2.6"/><circle class="dm-dot" style="--i:26" cx="311.9" cy="117.6" r="2.6"/><circle class="dm-dot" style="--i:27" cx="322.2" cy="124.0" r="2.6"/><circle class="dm-dot" style="--i:28" cx="332.4" cy="126.2" r="2.6"/><circle class="dm-dot" style="--i:29" cx="342.6" cy="122.0" r="2.6"/><circle class="dm-dot" style="--i:30" cx="352.9" cy="119.0" r="2.6"/><circle class="dm-dot" style="--i:31" cx="363.1" cy="115.6" r="2.6"/><circle class="dm-dot" style="--i:32" cx="373.3" cy="127.8" r="2.6"/><circle class="dm-dot" style="--i:33" cx="383.5" cy="116.4" r="2.6"/><circle class="dm-dot" style="--i:34" cx="393.8" cy="123.7" r="2.6"/><circle class="dm-dot" style="--i:35" cx="404.0" cy="121.7" r="2.6"/><g class="dm-badge"><rect x="56" y="30" width="132" height="26" rx="13"/><text x="122" y="47" text-anchor="middle">✓ Processus stable</text></g></svg>
+              </section>
+            </div>
+            <div class="dmaic-controls">
+              <button class="btn btn-ghost btn-sm" type="button" data-act="toggle">Pause</button>
+              <button class="btn btn-ghost btn-sm" type="button" data-act="next">Étape suivante <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="demo-note">Exemple illustratif : ligne, causes et valeurs sont fictives. Démarche inspirée de Lean Six Sigma.</p>
+            <script type="application/json" class="demo-i18n">{"pause": "Pause", "play": "Lecture", "before": {"oee": "68 %", "stops": "12", "sigma": "31 ms"}, "after": {"oee": "81 %", "stops": "5", "sigma": "12 ms"}}</script>
+          </div></div>
+      <div class="showcase-progress" aria-hidden="true"><span></span></div>
+      <noscript><p class="showcase-fallback">Version sans animation. Le principe et les explications restent accessibles ci-dessous.</p></noscript>
+    </div>
+        <ul class="project-grid project-grid-reading">        <li class="project-card" data-tags="lean pilot data" data-reveal-card>
+          <a class="card-link" href="projets/amelioration-continue-dmaic.html">
+            <div class="card-visual vt-lean"><svg class="glyph" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="g-line" d="M127.1 22.4A58 58 0 0 1 172.6 55.5"/><path class="g-line" d="M176.9 68.9A58 58 0 0 1 159.6 122.4"/><path class="g-line" d="M148.1 130.7A58 58 0 0 1 91.9 130.7"/><path class="g-line" d="M80.4 122.4A58 58 0 0 1 63.1 68.9"/><path class="g-line" d="M67.4 55.5A58 58 0 0 1 112.9 22.4"/><path class="g-line g-thin" d="M86 112V100M102 112V92M118 112V84M134 112V74M150 112V62"/><path class="g-accent" d="M80 104L100 92L116 96L138 70L156 58"/><circle class="g-dot" cx="156" cy="58" r="4"/></g></svg><span class="card-num">10</span></div>
+            <div class="card-body"><p class="card-kicker">Lean · Six Sigma · Performance</p><h3 class="card-title">Amélioration continue : stabiliser une ligne avec DMAIC</h3>
+              <p class="card-pitch">Transformer des micro-arrêts jugés « normaux » en progrès mesurable et durable : définir, mesurer, analyser, améliorer, maîtriser.</p><ul class="card-tags"><li><span class="led-dot tag-lean" aria-hidden="true"></span>Amélioration continue</li><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Pilotage</li><li><span class="led-dot tag-data" aria-hidden="true"></span>Data</li></ul></div>
+            <span class="card-cta">Lire en bref <span aria-hidden="true">→</span></span>
+          </a>
+        </li></ul>
+      </section>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
+      <ul class="footer-links">
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">04</span><span class="hud-label"></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->
+  <script defer src="assets/vendor/gsap.min.js"></script>
+  <script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="assets/vendor/SplitText.min.js"></script>
+  <script defer src="assets/vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="assets/vendor/Flip.min.js"></script>
+  <script defer src="assets/vendor/DrawSVGPlugin.min.js"></script>
+  <script defer src="assets/vendor/lenis.min.js"></script>
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/contact.js"></script>
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/showcase.js"></script>
+  <script defer src="assets/js/demos/cam.js"></script>
+  <script defer src="assets/js/demos/flow.js"></script>
+  <script defer src="assets/js/demos/hmi.js"></script>
+  <script defer src="assets/js/demos/agents.js"></script>
+  <script defer src="assets/js/demos/dmaic.js"></script>
+</body>
+</html>
