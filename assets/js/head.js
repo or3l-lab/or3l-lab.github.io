@@ -9,9 +9,16 @@
   try {
     if (!reduce && !window.sessionStorage.getItem('ar-intro-seen')) d.classList.add('intro-on');
   } catch (e) {}
+  document.addEventListener('click', function (event) {
+    var target = event.target;
+    if (!target || !target.closest || !target.closest('[data-skip-intro]')) return;
+    d.classList.remove('intro-on', 'intro-leaving');
+    try { window.sessionStorage.setItem('ar-intro-seen', '1'); }
+    catch (error) { console.warn('Impossible de mémoriser le passage de l’introduction.', error); }
+  });
   // Filets de sécurité : si un script ne démarre pas, le contenu reste visible.
   setTimeout(function () {
     if (!d.classList.contains('motion-ready')) d.classList.add('motion-fallback');
   }, 4000);
-  setTimeout(function () { d.classList.remove('intro-on'); }, 7000);
+  setTimeout(function () { d.classList.remove('intro-on', 'intro-leaving'); }, 6000);
 })();
