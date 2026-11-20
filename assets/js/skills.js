@@ -80,7 +80,7 @@
   window.addEventListener('resize', function () { tips.forEach(function (d) { if (d.open) place(d); }); });
 
   /* ---------- Filtres par pôle ---------- */
-  var active = 'all';
+  var active = 'all', run = 0;
   function updateCount() {
     var cards = $$('.skill-group', root).filter(function (c) { return !c.closest('[hidden]'); });
     var skills = cards.reduce(function (n, c) { return n + c.querySelectorAll('.skill-item').length; }, 0);
@@ -88,6 +88,7 @@
   }
   function apply(pole, scroll) {
     if (!blocks.some(function (b) { return pole === 'all' || b.getAttribute('data-pole') === pole; })) pole = 'all';
+    var id = ++run;
     active = pole;
     closeAll(null);
     buttons.forEach(function (b) {
@@ -96,8 +97,16 @@
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     var visible = function (b) { return pole === 'all' || b.getAttribute('data-pole') === pole; };
+    if (motion) {
+      // Un filtrage encore en cours (clics rapprochés) est abandonné : ses animations s'arrêtent net.
+      var parts = $$('.skill-pole-head, .skill-group', root);
+      gsap.killTweensOf(blocks.concat(parts));
+      gsap.set(blocks, { clearProps: 'all' });
+      gsap.set(parts, { clearProps: 'opacity,transform' });
+    }
     var leaving = blocks.filter(function (b) { return !b.hidden && !visible(b); });
     var finish = function () {
+      if (id !== run) return;
       var kept = blocks.filter(function (b) { return !b.hidden && visible(b); });
       var state = motion && Flip && kept.length ? Flip.getState(kept) : null;
       var entering = blocks.filter(function (b) { return b.hidden && visible(b); });

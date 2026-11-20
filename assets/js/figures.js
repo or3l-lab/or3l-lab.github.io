@@ -157,7 +157,7 @@
     var screens = $$('.wall-screen', wall);
     var caption = wall.querySelector('.wall-caption');
     var capNum = wall.querySelector('.wall-caption-num'), capTitle = wall.querySelector('.wall-caption-title'), capKicker = wall.querySelector('.wall-caption-kicker');
-    var current = -1, timer = 0, hold = false, live = false;
+    var current = -1, timer = 0, hovered = -1, focused = -1, live = false;
     screens.forEach(register);
     var show = function (i) {
       if (i === current) return;
@@ -171,18 +171,22 @@
       capKicker.textContent = s.getAttribute('data-kicker');
       if (anim) gsap.fromTo(caption, { opacity: .3, y: 5 }, { opacity: 1, y: 0, duration: .45, ease: 'power2.out', overwrite: true, clearProps: 'opacity,transform' });
     };
+    // Le survol prime sur le focus clavier ; chacun ne libère que l'écran qu'il retenait.
+    var held = function () { return hovered >= 0 ? hovered : focused; };
     var schedule = function () {
       window.clearTimeout(timer);
-      if (!motion || hold || !live) return;
+      if (!motion || held() >= 0 || !live) return;
       timer = window.setTimeout(function () { show((current + 1) % screens.length); schedule(); }, 2800);
     };
+    var sync = function () {
+      var i = held();
+      if (i >= 0) { window.clearTimeout(timer); show(i); } else schedule();
+    };
     screens.forEach(function (s, i) {
-      var enter = function () { hold = true; window.clearTimeout(timer); show(i); };
-      var leave = function () { hold = false; schedule(); };
-      s.addEventListener('pointerenter', enter);
-      s.addEventListener('focus', enter);
-      s.addEventListener('pointerleave', leave);
-      s.addEventListener('blur', leave);
+      s.addEventListener('pointerenter', function () { hovered = i; sync(); });
+      s.addEventListener('pointerleave', function () { if (hovered === i) hovered = -1; sync(); });
+      s.addEventListener('focus', function () { focused = i; sync(); });
+      s.addEventListener('blur', function () { if (focused === i) focused = -1; sync(); });
     });
     // Survol d'un domaine dans la navigation de la page : ses écrans ressortent.
     $$('.project-group-nav a').forEach(function (a) {
