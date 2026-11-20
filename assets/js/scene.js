@@ -1602,7 +1602,7 @@
     }
 
     /* ---------- Boucle d'animation partagée et visibilité ---------- */
-    let reduced = motion.matches, rafId = null, lastTs = null;
+    let reduced = motion.matches || html.classList.contains("motion-off"), rafId = null, lastTs = null;
     const running = new Set(), items = [];
     function loop(ts) {
       rafId = null;
@@ -1915,7 +1915,7 @@
     html.classList.remove("scene-wait");
     if (ro) items.forEach(item => ro.observe(item.root));
     else window.addEventListener("resize", () => items.forEach(item => item.resize()));
-    motion.addEventListener("change", () => { reduced = motion.matches; items.forEach(item => item.motionChanged()); });
+    motion.addEventListener("change", () => { reduced = motion.matches || html.classList.contains("motion-off"); items.forEach(item => item.motionChanged()); });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { textWidths.clear(); items.forEach(item => item.redraw()); });
   }
 

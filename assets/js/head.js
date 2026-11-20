@@ -5,7 +5,11 @@
   d.classList.add('js');
   var reduce = false;
   try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-  if (!reduce) {
+  // Interrupteur « Animations » du pied de page : le choix « non », mémorisé, coupe toutes les animations.
+  var off = false;
+  try { off = window.localStorage.getItem('or3l-motion') === 'off'; } catch (e) {}
+  if (off) d.classList.add('motion-off');
+  if (!reduce && !off) {
     d.classList.add('motion');
     // Le titre de l'accueil attend le démarrage de la scène 3D (scene.js), qui gère son apparition.
     d.classList.add('scene-wait');

@@ -208,6 +208,31 @@
     });
   }
 
+  /* ---------- Interrupteur « Animations » du pied de page ----------
+     Le choix est mémorisé et la page se recharge dans ce mode, identique au réglage
+     « réduire les animations » du système (qui reste prioritaire : l'interrupteur est alors masqué). */
+  var motionSwitch = $('[data-motion-switch]');
+  if (motionSwitch) {
+    var systemReduced = false, storable = true;
+    try { systemReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    try { window.localStorage.setItem('or3l-motion-test', '1'); window.localStorage.removeItem('or3l-motion-test'); } catch (e) { storable = false; }
+    if (!systemReduced && storable) {
+      var motionOn = html.classList.contains('motion');
+      var setSwitch = function (on) {
+        var state = $('.motion-switch-state', motionSwitch);
+        motionSwitch.setAttribute('aria-checked', on ? 'true' : 'false');
+        if (state) state.textContent = motionSwitch.getAttribute(on ? 'data-on' : 'data-off');
+      };
+      setSwitch(motionOn);
+      motionSwitch.hidden = false;
+      motionSwitch.addEventListener('click', function () {
+        try { window.localStorage.setItem('or3l-motion', motionOn ? 'off' : 'on'); } catch (e) { return; }
+        setSwitch(!motionOn);
+        window.location.reload();
+      });
+    }
+  }
+
   // Sur l'accueil, home.js signale lui-même la fin de préparation (après l'intro et le hero).
   if (document.body.getAttribute('data-page') !== 'home') html.classList.add('motion-ready');
 
