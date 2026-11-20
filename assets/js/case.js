@@ -10,15 +10,52 @@
   var gsap = window.gsap;
   var anim = !!(AR.hasGsap && !AR.reduce);
 
-  /* ---------- Sommaire : section en cours (dernière section passée sous les 40 % de l'écran) ---------- */
+  /* ---------- Sommaire : section en cours et segments de progression, comme l'introduction ---------- */
   var tocLinks = $$('.case-toc a');
   var secs = $$('.case-section');
+  var toc = $('.case-toc');
   if (tocLinks.length && secs.length) {
+    var fills = [], label = null, percent = null;
+    if (toc) {
+      var track = document.createElement('div');
+      track.className = 'case-track';
+      track.setAttribute('aria-hidden', 'true');
+      track.style.setProperty('--steps', secs.length);
+      secs.forEach(function () {
+        var seg = document.createElement('span'), fill = document.createElement('i');
+        seg.appendChild(fill); track.appendChild(seg); fills.push(fill);
+      });
+      var head = document.createElement('p');
+      head.className = 'case-track-label';
+      head.setAttribute('aria-hidden', 'true');
+      label = document.createElement('span'); percent = document.createElement('span');
+      head.appendChild(label); head.appendChild(percent);
+      var title = $('.case-toc-title', toc);
+      var anchor = title ? title.nextSibling : toc.firstChild;
+      toc.insertBefore(track, anchor);
+      toc.insertBefore(head, anchor);
+    }
+    var nameOf = function (a) {
+      var n = $('.toc-num', a), num = n ? n.textContent : '';
+      return (num ? num + ' / ' : '') + a.textContent.slice(num.length).trim();
+    };
     var ticking = false;
     var updateToc = function () {
       var line = window.innerHeight * 0.4, cur = null;
       secs.forEach(function (s) { if (s.getBoundingClientRect().top <= line) cur = s; });
       tocLinks.forEach(function (a) { a.classList.toggle('is-current', !!cur && a.hash === '#' + cur.id); });
+      if (fills.length) {
+        var done = 0;
+        secs.forEach(function (s, i) {
+          var r = s.getBoundingClientRect(), p = Math.max(0, Math.min(1, (line - r.top) / Math.max(1, r.height)));
+          fills[i].style.transform = 'scaleX(' + p.toFixed(3) + ')';
+          done += p;
+        });
+        var current = cur ? tocLinks.filter(function (a) { return a.hash === '#' + cur.id; })[0] : tocLinks[0];
+        var text = current ? nameOf(current) : '';
+        if (label.textContent !== text) label.textContent = text;
+        percent.textContent = String(Math.round(done / secs.length * 100)).padStart(2, '0') + '%';
+      }
       ticking = false;
     };
     window.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(updateToc); } }, { passive: true });
@@ -28,9 +65,9 @@
 
   if (!anim) return;
 
-  /* ---------- Visuel d'en-tête : le pictogramme se trace ---------- */
+  /* ---------- Visuel d'en-tête : le pictogramme se trace (seulement hors moniteur de scène 3D) ---------- */
   var visual = $('.case-visual .glyph');
-  if (visual && window.DrawSVGPlugin) {
+  if (visual && !visual.closest('[data-scene-view]') && window.DrawSVGPlugin) {
     var strokes = $$('.g-line, .g-accent', visual);
     gsap.from(strokes, { drawSVG: '0%', duration: 1.6, stagger: .04, ease: 'power2.inOut', delay: .2 });
     gsap.from($$('.g-dot', visual), { scale: 0, transformOrigin: '50% 50%', duration: .5, stagger: .1, delay: 1.2, ease: 'back.out(3)' });

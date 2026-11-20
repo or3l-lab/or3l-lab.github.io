@@ -5,20 +5,14 @@
   d.classList.add('js');
   var reduce = false;
   try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-  if (!reduce) d.classList.add('motion');
-  try {
-    if (!reduce && !window.sessionStorage.getItem('ar-intro-seen')) d.classList.add('intro-on');
-  } catch (e) {}
-  document.addEventListener('click', function (event) {
-    var target = event.target;
-    if (!target || !target.closest || !target.closest('[data-skip-intro]')) return;
-    d.classList.remove('intro-on', 'intro-leaving');
-    try { window.sessionStorage.setItem('ar-intro-seen', '1'); }
-    catch (error) { console.warn('Impossible de mémoriser le passage de l’introduction.', error); }
-  });
+  if (!reduce) {
+    d.classList.add('motion');
+    // Le titre de l'accueil attend le démarrage de la scène 3D (scene.js), qui gère son apparition.
+    d.classList.add('scene-wait');
+  }
   // Filets de sécurité : si un script ne démarre pas, le contenu reste visible.
   setTimeout(function () {
     if (!d.classList.contains('motion-ready')) d.classList.add('motion-fallback');
+    if (!d.classList.contains('scene-ready')) d.classList.remove('scene-wait');
   }, 4000);
-  setTimeout(function () { d.classList.remove('intro-on', 'intro-leaving'); }, 6000);
 })();

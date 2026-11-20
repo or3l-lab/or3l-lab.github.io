@@ -2,27 +2,15 @@
   'use strict';
   var AR = window.AR, gsap = window.gsap, ST = window.ScrollTrigger;
   var html = document.documentElement;
-  var hero = document.querySelector('[data-cinematic-hero]');
+  var hero = document.querySelector('[data-scene-intro]');
 
   if (!AR || !AR.hasGsap || AR.reduce || !hero) {
     html.classList.add('motion-ready');
     return;
   }
 
-  var title = hero.querySelector('.hero-role');
-  var artwork = hero.querySelector('.vision-art');
+  // L'apparition du titre est pilotée par la scène 3D (scene.js) ; ici, seulement la profondeur au défilement.
   var copy = hero.querySelector('.hero-copy');
-  var tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-  tl.from('.status-badge', { y: 18, opacity: 0, duration: .65 })
-    .from(title, { y: 34, opacity: 0, duration: 1 }, .08)
-    .from('.hero-lede', { y: 18, opacity: 0, duration: .7 }, .28)
-    .from('.hero-ctas .btn', { y: 14, opacity: 0, duration: .55, stagger: .08 }, .46)
-    .from('.hero-visual', { clipPath: 'inset(0 0 100% 0)', scale: .94, opacity: 0, duration: 1.1, ease: 'expo.out' }, .12);
-
-  if (artwork && ST) {
-    gsap.to(artwork, { yPercent: -7, scale: .95, ease: 'none',
-      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: .8 } });
-  }
   if (copy && ST) {
     gsap.to(copy, { y: -28, opacity: .7, ease: 'none',
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: .8 } });

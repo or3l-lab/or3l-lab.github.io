@@ -9,21 +9,35 @@
   <!-- Page autonome (styles intégrés) : elle s'affiche correctement quelle que soit l'adresse demandée. -->
   <style>
     html{background:#0a0e13;color:#e8eef5;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;box-sizing:border-box;
-      background-image:linear-gradient(rgba(45,226,230,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(45,226,230,.06) 1px,transparent 1px);background-size:48px 48px}
-    main{max-width:560px}
-    .code{font:600 14px/1 ui-monospace,Consolas,monospace;letter-spacing:.2em;color:#ffb547;display:flex;align-items:center;gap:10px}
-    .code::before{content:"";width:10px;height:10px;border-radius:50%;background:#ff5d5d;box-shadow:0 0 12px #ff5d5d}
-    h1{font-size:clamp(32px,6vw,48px);line-height:1.1;margin:16px 0}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:40px 28px;box-sizing:border-box;
+      background:radial-gradient(ellipse at 72% 28%,#10272f,transparent 58%),
+        linear-gradient(rgba(64,148,160,.08) 1px,transparent 1px) 0 0/48px 48px,
+        linear-gradient(90deg,rgba(64,148,160,.08) 1px,transparent 1px) 0 0/48px 48px,#0a0e13}
+    /* Cadre de visée et coins de repère, comme l'introduction 3D du site */
+    body::before{content:"";position:fixed;inset:18px;border:1px solid rgba(132,207,218,.16);border-radius:3px;pointer-events:none}
+    body::after{content:"";position:fixed;inset:17px;pointer-events:none;opacity:.6;
+      background:linear-gradient(#2de2e6,#2de2e6) left top/55px 1px no-repeat,linear-gradient(#2de2e6,#2de2e6) left top/1px 55px no-repeat,
+        linear-gradient(#2de2e6,#2de2e6) right bottom/55px 1px no-repeat,linear-gradient(#2de2e6,#2de2e6) right bottom/1px 55px no-repeat}
+    main{position:relative;max-width:560px}
+    .mark{display:inline-grid;place-items:center;width:38px;height:38px;border:1px solid rgba(45,226,230,.55);background:rgba(10,18,24,.9);color:#2de2e6;font:700 11px/1 system-ui,sans-serif;transform:rotate(-8deg)}
+    .code{margin-top:30px;font:600 12px/1 ui-monospace,"Cascadia Code",Consolas,monospace;letter-spacing:.19em;color:#ffb547;display:flex;align-items:center;gap:12px}
+    .code::before{content:"";width:8px;height:8px;background:#ff5d5d;box-shadow:0 0 12px #ff5d5d;transform:rotate(45deg)}
+    .lost{position:relative;height:2px;margin-top:22px;max-width:320px;background:repeating-linear-gradient(90deg,rgba(132,207,218,.45) 0 6px,transparent 6px 12px)}
+    .lost::after{content:"NULL";position:absolute;right:0;top:-24px;padding:2px 6px;border:1px solid rgba(255,128,128,.45);background:rgba(8,16,22,.8);color:#ff9a9a;font:700 10px/1.2 ui-monospace,Consolas,monospace;letter-spacing:.08em}
+    h1{font-size:clamp(32px,6vw,48px);line-height:1.1;letter-spacing:-.02em;margin:26px 0 16px}
     p{color:#93a1b3}
-    a{display:inline-block;margin-top:16px;padding:12px 20px;border:1px solid #2de2e6;color:#0a0e13;background:#2de2e6;text-decoration:none;font-weight:600;border-radius:4px}
+    a{display:inline-block;margin-top:16px;padding:12px 20px;border:1px solid #2de2e6;color:#0a0e13;background:#2de2e6;text-decoration:none;font-weight:600}
+    a:hover{background:#a2fff5;border-color:#a2fff5}
     a:focus-visible{outline:2px solid #ffb547;outline-offset:3px}
-    .en{margin-top:32px;padding-top:16px;border-top:1px solid #222c38;font-size:14px}
+    .en{margin-top:32px;padding-top:16px;border-top:1px solid rgba(132,207,218,.16);font-size:14px}
+    @media (max-width:600px){body::before{inset:10px}body::after{inset:9px}}
   </style>
 </head>
 <body>
   <main>
+    <span class="mark" aria-hidden="true">Or3L</span>
     <p class="code">ERREUR 404 · DÉFAUT SIGNAL</p>
+    <div class="lost" aria-hidden="true"></div>
     <h1>Cette page n'existe pas (ou plus).</h1>
     <p>Le lien est peut-être incomplet. Revenez à l'accueil pour découvrir le parcours et les projets d'Or3L.</p>
     <!-- Lien d'accueil : remplacé automatiquement avec l'adresse finale du site (voir LISEZ-MOI.md) -->

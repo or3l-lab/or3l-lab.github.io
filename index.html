@@ -34,17 +34,6 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Or3L", "jobTitle": "Responsable projets informatique industrielle", "url": "https://or3l-lab.github.io/", "sameAs": ["https://www.linkedin.com/in/aurelien-ramirez-58a476104/"], "address": {"@type": "PostalAddress", "addressLocality": "Limoges", "addressRegion": "Nouvelle-Aquitaine", "addressCountry": "FR"}, "knowsAbout": ["Industrial automation", "Motion control", "Full-stack development", "Cybersecurity", "Microsoft 365", "Power BI", "CMMS", "MES", "AI engineering", "AI agents", "Project management", "Requirements analysis", "Business process improvement", "Auditing", "Quality management", "Quality assurance", "Continuous improvement", "Lean", "Six Sigma (DMAIC)", "Kaizen", "Problem solving"], "knowsLanguage": ["fr", "en"]}</script>
 </head>
 <body class="page-home page-home-compact" data-page="home">
-  <section class="intro cinematic-intro" data-cinematic-intro aria-label="Animation d’introduction">
-    <canvas class="cinematic-canvas" aria-hidden="true"></canvas>
-    <div class="cinematic-top" aria-hidden="true"><span class="cinematic-mark">Or3L</span><span>Industrie · Données · IA</span></div>
-    <div class="cinematic-copy" aria-hidden="true">
-      <p class="cinematic-kicker"><span></span>Industrie · Données · IA</p>
-      <p class="cinematic-title">Du terrain<span>à l’intelligence.</span></p>
-      <div class="cinematic-steps"><span class="cinematic-step is-active"><b>01</b> Terrain</span><span class="cinematic-step"><b>02</b> Données</span><span class="cinematic-step"><b>03</b> Intelligence</span></div>
-    </div>
-    <div class="cinematic-progress" aria-hidden="true"><span></span></div>
-    <button class="intro-skip cinematic-skip" type="button" data-skip-intro>Passer l&#x27;intro<span aria-hidden="true"> ↗</span></button>
-  </section>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <div class="progress" aria-hidden="true"><span></span></div>
 
@@ -71,42 +60,92 @@
   </header>
 
   <main id="contenu">
-    <section class="hero hero-compact" id="top" data-hud="Accueil" data-cinematic-hero>
-      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    <section class="hero hero-compact hero-scene" id="top" data-hud="Accueil" data-scene-intro aria-label="Accueil : des métiers à l’intelligence">
+      <canvas class="scene-canvas" data-scene-canvas aria-hidden="true"></canvas>
+      <div class="scene-frame" aria-hidden="true"></div>
+      <div class="scene-tags" data-scene-tags aria-hidden="true"></div>
+      <div class="scene-chapter" data-scene-chapter aria-hidden="true" hidden>
+        <p class="scene-eyebrow" data-chapter-num>01 / L&#x27;ENTREPRISE</p>
+        <p class="scene-chapter-title" data-chapter-title>Tout part des métiers.</p>
+        <p class="scene-chapter-detail" data-chapter-detail>Production et services supports : une entreprise vivante, en mouvement.</p>
+        <dl class="scene-metrics" data-chapter-metrics></dl>
+      </div>
       <div class="container hero-inner">
         <div class="hero-copy">
           <p class="status-badge"><span class="led led-signal" aria-hidden="true"></span>Industrie · Numérique · Limoges</p>
           <h1 class="hero-role"><span class="sr-only">Or3L — </span><span class="hero-slogan-line">L’industrie en mouvement.</span> <span class="hero-slogan-line hero-slogan-accent">L’intelligence en action.</span></h1>
           <p class="hero-lede">Automatisme, développement full-stack et ingénierie IA : des projets industriels conduits avec rigueur et une exigence qualité ancrée dans l&#x27;aéronautique.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary magnetic" href="parcours.html">Découvrir mon parcours</a>
+            <a class="btn btn-primary magnetic" href="parcours.html">Découvrir mon parcours <span aria-hidden="true">→</span></a>
             <a class="btn btn-ghost magnetic" href="projets.html">Voir tous les projets</a>
             <a class="btn btn-link cv-download" href="cv-or3l.pdf" download>Télécharger mon CV PDF <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <div class="hero-visual">
-          <figure class="vision-art">
-            <img class="vision-image" src="assets/img/vision-industrielle.svg" width="1000" height="1000" fetchpriority="high" decoding="async" alt="Illustration de l&#x27;intelligence appliquée : une sphère de connexions lumineuses au-dessus d&#x27;un circuit industriel.">
-            <svg class="vision-orbits" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
-              <g class="vision-orbit vision-orbit-outer">
-                <circle cx="500" cy="359" r="260" fill="none" stroke="#8affef" stroke-opacity=".65" stroke-width="2" stroke-dasharray="90 1544"/>
-                <circle cx="500" cy="99" r="5" fill="#c8fff2"/>
-              </g>
-              <g class="vision-orbit vision-orbit-inner">
-                <circle cx="500" cy="359" r="227" fill="none" stroke="#ffce88" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="60 1367"/>
-                <circle cx="500" cy="132" r="3" fill="#ffe2aa"/>
-              </g>
-            </svg>
-          </figure>
+      </div>
+      <div class="scene-hud">
+        <div class="scene-progress" data-scene-progress aria-hidden="true">
+          <p class="scene-progress-label"><span data-scene-phase>ENTREPRISE</span><span data-scene-percent>00%</span></p>
+          <div class="scene-track" data-scene-track><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+        </div>
+        <div class="scene-kpi" data-scene-kpi aria-hidden="true">
+          <p class="scene-kpi-head"><span>Performance · TRS</span><span class="scene-kpi-delta" data-kpi-delta>▲ +0 pt</span></p>
+          <p class="scene-kpi-value" data-kpi-value>64,0 %</p>
+          <svg viewBox="0 0 200 24" preserveAspectRatio="none" focusable="false"><path class="scene-kpi-base" d="M0 23.5H200"/><path class="scene-kpi-line" data-kpi-line d="M0 20"/><circle data-kpi-dot r="2.2" cx="0" cy="20"/></svg>
+        </div>
+        <div class="scene-controls" role="group" aria-label="Lecture de l&#x27;introduction">
+          <button class="scene-control" type="button" data-scene-skip>Passer l&#x27;intro <span aria-hidden="true">↗</span></button>
+          <button class="scene-control" type="button" data-scene-pause aria-pressed="false">Pause</button>
+          <button class="scene-control" type="button" data-scene-replay>Rejouer l&#x27;intro</button>
         </div>
       </div>
-      <a class="scroll-cue" href="#profil"><span>Défiler</span><i aria-hidden="true"></i></a>
+      <p class="sr-only" role="status" aria-live="polite" data-scene-status></p>
+      <a class="scroll-cue" href="#boucle"><span>Défiler</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <section class="section loop-section" id="boucle" aria-labelledby="loop-title" data-hud="La boucle">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-num">01</span>La boucle</p>
+          <h2 class="section-title" id="loop-title" data-reveal="lines">Trois disciplines. Une même boucle.</h2>
+          <p class="section-intro">Capter les signaux de la production et des services supports, fiabiliser la donnée, la transformer en décisions : une boucle continue où l’expertise humaine et l’IA font progresser la performance.</p>
+        </div>
+        <ol class="loop-grid">
+          <li class="loop-card" data-card>
+            <div class="scene-monitor loop-monitor" data-scene-view="factory" aria-hidden="true"><canvas></canvas><span class="scene-monitor-label"><span class="led led-signal"></span>Vue 01 · Métiers</span></div>
+            <div class="loop-body">
+              <p class="loop-step">01 / Capter</p>
+              <h3>Automatisme</h3>
+              <p>Capteurs, automates, réseaux industriels et systèmes des services supports : faire parler chaque machine et chaque service.</p>
+              <a class="text-link" href="projets.html#automation">Projets d’automatisme <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="loop-card" data-card>
+            <div class="scene-monitor loop-monitor" data-scene-view="refinery" aria-hidden="true"><canvas></canvas><span class="scene-monitor-label"><span class="led led-signal"></span>Vue 02 · Donnée</span></div>
+            <div class="loop-body">
+              <p class="loop-step">02 / Fiabiliser</p>
+              <h3>Développement</h3>
+              <p>Nettoyer, standardiser, rationaliser : un référentiel unique et des outils clairs qui rendent la donnée exploitable.</p>
+              <a class="text-link" href="projets.html#maintenance">Projets données &amp; applications <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="loop-card loop-card-ai" data-card>
+            <div class="scene-monitor loop-monitor" data-scene-view="brain" aria-hidden="true"><canvas></canvas><span class="scene-monitor-label"><span class="led led-andon"></span>Vue 03 · Décision</span></div>
+            <div class="loop-body">
+              <p class="loop-step">03 / Décider</p>
+              <h3>Intelligence artificielle</h3>
+              <p>L’IA détecte et prédit, l’expertise humaine arbitre : ensemble, elles transforment la donnée en performance.</p>
+              <a class="text-link" href="projets.html#ai">Projets d’IA <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+        </ol>
+        <p class="loop-return"><span>Chaque décision revient aux métiers</span></p>
+      </div>
     </section>
 
     <section class="section landing-profile" id="profil" data-hud="Profil">
       <div class="container landing-profile-inner">
         <div class="landing-profile-copy">
-          <p class="eyebrow"><span class="eyebrow-num">01</span>À la croisée du terrain et du numérique</p>
+          <p class="eyebrow"><span class="eyebrow-num">02</span>À la croisée du terrain et du numérique</p>
           <h2 class="section-title" data-reveal="lines">Explorer mon profil</h2>
           <p class="landing-summary">Je m&#x27;investis pleinement dans les missions confiées : analyser précisément les besoins, piloter des projets complexes et proposer des améliorations utiles, dans une logique d&#x27;amélioration continue, avec une exigence qualité issue de mon expérience aéronautique.</p>
           <a class="text-link" href="competences.html">Voir les compétences <span aria-hidden="true">→</span></a>
@@ -119,7 +158,7 @@
       <div class="container lean-inner">
         <div class="lean-visual" data-lean-wheel><svg class="lean-wheel" viewBox="0 0 320 320" aria-hidden="true" focusable="false"><circle class="lw-orbit" cx="160" cy="160" r="146"/><circle class="lw-core" cx="160" cy="160" r="54"/><path class="lw-arc" style="--i:0" d="M170.3 42.4A118 118 0 0 1 268.6 113.9"/><text class="lw-letter" style="--i:0" x="211.7" y="95.8" text-anchor="middle">D</text><path class="lw-arc" style="--i:1" d="M275.0 133.5A118 118 0 0 1 237.4 249.1"/><text class="lw-letter" style="--i:1" x="243.7" y="194.2" text-anchor="middle">M</text><path class="lw-arc" style="--i:2" d="M220.8 261.1A118 118 0 0 1 99.2 261.1"/><text class="lw-letter" style="--i:2" x="160.0" y="255.0" text-anchor="middle">A</text><path class="lw-arc" style="--i:3" d="M82.6 249.1A118 118 0 0 1 45.0 133.5"/><text class="lw-letter" style="--i:3" x="76.3" y="194.2" text-anchor="middle">I</text><path class="lw-arc" style="--i:4" d="M51.4 113.9A118 118 0 0 1 149.7 42.4"/><text class="lw-letter" style="--i:4" x="108.3" y="95.8" text-anchor="middle">C</text><path class="lw-trend" pathLength="1" d="M112 190L136 178L152 184L172 160L190 150L208 128"/><path class="lw-trend-head" d="M196 126L208 128L206 140"/></svg></div>
         <div class="lean-copy">
-          <p class="eyebrow"><span class="eyebrow-num">02</span>Amélioration continue</p>
+          <p class="eyebrow"><span class="eyebrow-num">03</span>Amélioration continue</p>
           <h2 class="section-title" id="lean-title" data-reveal="lines">Mesurer, comprendre, améliorer… puis ancrer.</h2>
           <p class="lean-text">Chaque mission est aussi l&#x27;occasion de faire mieux : partir des faits, traiter les causes racines et standardiser ce qui fonctionne. Une approche inspirée du Lean et de Six Sigma, appliquée avec pragmatisme.</p>
           <ul class="chips lean-chips"><li>DMAIC</li><li>PDCA</li><li>Kaizen</li><li>5S</li><li>5 Pourquoi</li></ul>
@@ -130,7 +169,7 @@
 
     <section class="section reading-section" aria-labelledby="reading-title" data-hud="Explorer">
       <div class="container">
-        <div class="section-head"><p class="eyebrow"><span class="eyebrow-num">03</span>Pour aller plus loin</p>
+        <div class="section-head"><p class="eyebrow"><span class="eyebrow-num">04</span>Pour aller plus loin</p>
           <h2 class="section-title" id="reading-title" data-reveal="lines">Un profil, trois angles de lecture.</h2></div>
         <div class="reading-grid">        <a class="reading-card" href="parcours.html" data-card>
           <span class="reading-card-num">01</span>
@@ -155,7 +194,7 @@
 
     <section class="section feature-section" aria-labelledby="feature-title" data-hud="Projets">
       <div class="container">
-        <div class="feature-head"><div><p class="eyebrow"><span class="eyebrow-num">04</span>Quelques réalisations</p>
+        <div class="feature-head"><div><p class="eyebrow"><span class="eyebrow-num">05</span>Quelques réalisations</p>
           <h2 class="section-title" id="feature-title" data-reveal="lines">Du concret, sans entrer dans les détails sensibles.</h2></div>
           <a class="text-link" href="projets.html">Voir tous les projets <span aria-hidden="true">→</span></a></div>
         <div class="feature-projects">        <a class="feature-project" href="projets/came-electronique.html" data-card>
@@ -178,7 +217,7 @@
 
     <section class="section contact contact-compact" id="contact" data-hud="Contact">
       <div class="container contact-inner">
-        <p class="eyebrow"><span class="eyebrow-num">05</span>En lien</p>
+        <p class="eyebrow"><span class="eyebrow-num">06</span>En lien</p>
         <h2 class="contact-title" data-reveal="lines">Le goût du partage.</h2>
         <p class="contact-text">Automatisme, développement et IA : des sujets qui nourrissent ma curiosité au quotidien.</p>
         <div class="contact-actions">
@@ -221,7 +260,7 @@
   <script defer src="assets/js/config.js"></script>
   <script defer src="assets/js/contact.js"></script>
   <script defer src="assets/js/site.js"></script>
-  <script defer src="assets/js/intro.js"></script>
+  <script defer src="assets/js/scene.js"></script>
   <script defer src="assets/js/landing.js"></script>
 </body>
 </html>
