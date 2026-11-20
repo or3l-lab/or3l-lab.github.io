@@ -1,6 +1,6 @@
 /* =====================================================================
    Études de cas : sommaire actif, schéma d'architecture qui se dessine,
-   visuel d'en-tête animé.
+   légère profondeur de l'écran du projet (son animation est dans figures.js).
    ===================================================================== */
 (function () {
   'use strict';
@@ -65,13 +65,6 @@
 
   if (!anim) return;
 
-  /* ---------- Visuel d'en-tête : le pictogramme se trace (seulement hors moniteur de scène 3D) ---------- */
-  var visual = $('.case-visual .glyph');
-  if (visual && !visual.closest('[data-scene-view]') && window.DrawSVGPlugin) {
-    var strokes = $$('.g-line, .g-accent', visual);
-    gsap.from(strokes, { drawSVG: '0%', duration: 1.6, stagger: .04, ease: 'power2.inOut', delay: .2 });
-    gsap.from($$('.g-dot', visual), { scale: 0, transformOrigin: '50% 50%', duration: .5, stagger: .1, delay: 1.2, ease: 'back.out(3)' });
-  }
   /* ---------- Schéma d'architecture : nœuds puis flux ---------- */
   $$('.diagram').forEach(function (svg) {
     var nodes = $$('.dg-node', svg), edges = $$('.dg-edge', svg);

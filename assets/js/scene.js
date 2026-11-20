@@ -7,8 +7,9 @@
    aux métiers.
    - Accueil : [data-scene-intro] joue l'introduction (35 s), puis la scène
      reste vivante derrière le titre.
-   - Pages : [data-scene-view="factory|signals|refinery|hub|brain|performance"]
-     affiche une vue de la même scène dans un moniteur.
+   - Accueil, section « La boucle » : [data-scene-view="factory|signals|refinery|hub|brain|performance"]
+     affiche une vue de la même scène dans un moniteur. Les pages internes ont
+     leurs propres figures (figures.js).
    Mouvement réduit : image fixe. Hors écran ou onglet masqué : pause.
    ===================================================================== */
 (function () {
@@ -47,12 +48,10 @@
       human: ["HUMAN", ["expertise · intuition"]],
       ai: ["AI", ["detection · prediction"]],
       stations: ["01 · CLEANSING", "02 · STANDARDISATION", "03 · RATIONALISATION"],
-      labels: {reduced: "REDUCED MOTION", paused: "PAUSED", final: "LIVE"},
+      labels: {reduced: "REDUCED MOTION", final: "LIVE"},
       status: {
-        done: "Introduction complete. The page content is available.",
-        paused: "Introduction paused."
-      },
-      pause: "Pause", resume: "Resume"
+        done: "Introduction complete. The page content is available."
+      }
     } : {
       locale: "fr-FR", dec: ",", pct: " %",
       chapters: [
@@ -77,12 +76,10 @@
       human: ["HUMAIN", ["expertise · intuition"]],
       ai: ["IA", ["détection · prédiction"]],
       stations: ["01 · NETTOYAGE", "02 · STANDARDISATION", "03 · RATIONALISATION"],
-      labels: {reduced: "MOUVEMENT RÉDUIT", paused: "EN PAUSE", final: "EN DIRECT"},
+      labels: {reduced: "MOUVEMENT RÉDUIT", final: "EN DIRECT"},
       status: {
-        done: "Introduction terminée. Le contenu de la page est disponible.",
-        paused: "Introduction en pause."
-      },
-      pause: "Pause", resume: "Reprendre"
+        done: "Introduction terminée. Le contenu de la page est disponible."
+      }
     };
 
     /* ---------- Chronologie (secondes) ---------- */
@@ -1682,13 +1679,13 @@
       const progress = q("[data-scene-progress]"), phaseLabel = q("[data-scene-phase]"), percent = q("[data-scene-percent]");
       const fills = Array.from(root.querySelectorAll("[data-scene-track] i"));
       const kpi = q("[data-scene-kpi]"), kpiValue = q("[data-kpi-value]"), kpiDelta = q("[data-kpi-delta]"), kpiLine = q("[data-kpi-line]"), kpiDot = q("[data-kpi-dot]");
-      const skip = q("[data-scene-skip]"), pause = q("[data-scene-pause]"), replay = q("[data-scene-replay]"), status = q("[data-scene-status]");
+      const skip = q("[data-scene-skip]"), replay = q("[data-scene-replay]"), status = q("[data-scene-status]");
       const copy = q(".hero-copy"), heroParts = copy ? Array.from(copy.children) : [], ctas = q(".hero-ctas");
       const header = document.querySelector(".site-header");
       const cfg = window.SITE_CONFIG || {};
       const mode = cfg.intro === "off" || cfg.intro === "always" ? cfg.intro : "auto";
       const lenis = () => window.AR && window.AR.lenis;
-      let paused = false, playing = false, played = false, visible = true, chapterIndex = -1, metricRows = [], focusCta = false, kpiPath = "";
+      let playing = false, played = false, visible = true, chapterIndex = -1, metricRows = [], focusCta = false, kpiPath = "";
 
       function remember() {
         try { sessionStorage.setItem("ar-intro-seen", "1"); }
@@ -1814,17 +1811,14 @@
         chapter.style.opacity = (fadeIn * (1 - fadeOut)).toFixed(3);
         chapter.style.transform = `translateY(${((1 - fadeIn) * 12 - fadeOut * 10).toFixed(2)}px)`;
         skip.hidden = t >= REVEAL;
-        pause.disabled = reduced; replay.disabled = reduced;
-        const pauseText = paused ? T.resume : T.pause;
-        if (pause.textContent !== pauseText) pause.textContent = pauseText;
-        pause.setAttribute("aria-pressed", String(paused));
+        replay.disabled = reduced;
         percent.textContent = String(Math.round(t / DURATION * 100)).padStart(2, "0") + "%";
         CHAPTERS.forEach((c, i) => { if (fills[i]) fills[i].style.transform = `scaleX(${clamp((t - c.start) / (c.end - c.start)).toFixed(4)})`; });
-        const label = reduced ? T.labels.reduced : paused ? T.labels.paused : final ? T.labels.final : current.label;
+        const label = reduced ? T.labels.reduced : final ? T.labels.final : current.label;
         if (phaseLabel.textContent !== label) phaseLabel.textContent = label;
         updateKpi(t);
         root.classList.toggle("is-final", t >= REVEAL);
-        const message = reduced ? "" : t >= TEXT_END ? (played ? T.status.done : "") : paused ? T.status.paused
+        const message = reduced ? "" : t >= TEXT_END ? (played ? T.status.done : "")
           : `${current.num.replace(" / ", EN ? ": " : " : ")}. ${current.title}`;
         if (status.textContent !== message) status.textContent = message;
         if (playing && t >= TEXT_END) { lock(false); remember(); }
@@ -1841,7 +1835,6 @@
         resize() { S.fit(); measure(); redraw(); },
         redraw() { measure(); redraw(); },
         motionChanged() {
-          paused = false;
           if (reduced) { staticFrame(); lock(false); }
           update(); redraw();
         },
@@ -1852,18 +1845,16 @@
           if (ctas) ctas.inert = false;
         }
       };
-      function update() { setRunning(api, visible && !paused && !reduced); }
+      function update() { setRunning(api, visible && !reduced); }
       function staticFrame() { S.elapsed = DURATION; S.clock = 7.3; S.work = 2; S.idleT = 0; }
       function finish() {
         if (S.elapsed < TEXT_END) S.elapsed = TEXT_END;
         focusCta = document.activeElement === skip || document.activeElement === document.body;
-        paused = false;
         lock(false); remember(); update(); redraw();
       }
       skip.addEventListener("click", finish);
-      pause.addEventListener("click", () => { paused = !paused; update(); sync(); });
       replay.addEventListener("click", () => {
-        paused = false; S.elapsed = 0; S.clock = 0; S.idleT = 0; S.work = 0; chapterIndex = -1; focusCta = false;
+        S.elapsed = 0; S.clock = 0; S.idleT = 0; S.work = 0; chapterIndex = -1; focusCta = false;
         const l = lenis();
         if (l) l.scrollTo(0, {immediate: true}); else window.scrollTo(0, 0);
         lock(true); update(); redraw();

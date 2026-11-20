@@ -33,7 +33,9 @@
 
   function scrollToTarget(target) {
     if (target !== 0 && !target) return;
-    var y = target === 0 ? 0 : target.getBoundingClientRect().top + window.pageYOffset - headerH() - 12;
+    // La marge de défilement propre à la cible (sommaires collants…) prime si elle dépasse l'en-tête.
+    var offset = target === 0 ? 0 : Math.max(headerH() + 12, parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0);
+    var y = target === 0 ? 0 : target.getBoundingClientRect().top + window.pageYOffset - offset;
     if (lenis) {
       lenis.scrollTo(window.pageYOffset, { immediate: true });
       lenis.scrollTo(y, { duration: 1.2 });
