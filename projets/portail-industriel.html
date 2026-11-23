@@ -172,6 +172,16 @@
 </g></svg>
               <figcaption>Schéma de principe : un socle commun au service des modules métier.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Pas à pas</h3><p class="walk-hint">Cliquez sur une étape pour la suivre sur le schéma.</p><button type="button" class="walk-replay" data-walk-replay>↺ Rejouer</button></div>
+              <ol class="walk-list" aria-label="Étapes du schéma">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Utilisateurs</span><span class="walk-p">Les utilisateurs accèdent à la plateforme depuis l'ordinateur ou le mobile.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Portail</span><span class="walk-p">Un point d'entrée unique pour les applications du site.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Socle commun</span><span class="walk-p">Droits gérés par fonction et contrôlés côté serveur : la sécurité est intégrée dès la conception.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Modules métier</span><span class="walk-p">Maintenance, qualité… chaque module s'appuie sur le même socle ; une recette par profils d'utilisateurs précède chaque mise en service.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="4" aria-pressed="false"><span class="walk-n">05</span><span class="walk-t">Données</span><span class="walk-p">Les données sont centralisées.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="resultats" data-hud="Résultats">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Résultats</h2>
@@ -230,6 +240,7 @@
   <script defer src="../assets/js/site.js"></script>
   <script defer src="../assets/js/figures.js"></script>
   <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/walk.js"></script>
   <script defer src="../assets/js/showcase.js"></script>
   <script defer src="../assets/js/demos/flow.js"></script>
 </body>

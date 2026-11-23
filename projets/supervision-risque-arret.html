@@ -175,6 +175,16 @@
 </g></svg>
               <figcaption>Schéma de principe : des données de maintenance aux décisions.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Pas à pas</h3><p class="walk-hint">Cliquez sur une étape pour la suivre sur le schéma.</p><button type="button" class="walk-replay" data-walk-replay>↺ Rejouer</button></div>
+              <ol class="walk-list" aria-label="Étapes du schéma">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Données</span><span class="walk-p">L'historique de maintenance alimente des indicateurs d'aide à la décision.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Analyse</span><span class="walk-p">Une estimation du risque d'arrêt à court terme en est tirée.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Tableau de bord</span><span class="walk-p">L'état du parc est lisible en un coup d'œil ; il a été conçu avec les équipes de maintenance.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Plan d'actions</span><span class="walk-p">Les actions sont classées par urgence.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="4" aria-pressed="false"><span class="walk-n">05</span><span class="walk-t">Équipes</span><span class="walk-p">L'outil conseille, les équipes tranchent.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="resultats" data-hud="Résultats">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Résultats</h2>
@@ -233,6 +243,7 @@
   <script defer src="../assets/js/site.js"></script>
   <script defer src="../assets/js/figures.js"></script>
   <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/walk.js"></script>
   <script defer src="../assets/js/showcase.js"></script>
   <script defer src="../assets/js/demos/hmi.js"></script>
 </body>

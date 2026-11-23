@@ -152,6 +152,15 @@
       <div class="showcase-progress" aria-hidden="true"><span></span></div>
       
     </div>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Step by step</h3><p class="walk-hint">Click a step to follow it on the diagram.</p><button type="button" class="walk-replay" data-walk-replay>↺ Replay</button></div>
+              <ol class="walk-list" aria-label="Diagram steps">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">ERP</span><span class="walk-p">Starting point: the ERP handles planning, and the applications connect to it.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Common portal</span><span class="walk-p">A common portal gives access to the applications and to shared master data.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2,3,4,5,6" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Business applications</span><span class="walk-p">Production, quality, maintenance, stock, HR: applications born from each department's needs, built close to the teams.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="7" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Workshops</span><span class="walk-p">More than 6 user departments, trained and supported; their feedback and indicators improve the applications, iteration after iteration.</span></button></li>
+              </ol>
+            </div>
           </section>
           <div class="case-overview">
             <dl class="case-meta">
@@ -228,6 +237,7 @@
   <script defer src="../../assets/js/site.js"></script>
   <script defer src="../../assets/js/figures.js"></script>
   <script defer src="../../assets/js/case.js"></script>
+  <script defer src="../../assets/js/walk.js"></script>
   <script defer src="../../assets/js/showcase.js"></script>
 </body>
 </html>

@@ -174,6 +174,15 @@
 </g></svg>
               <figcaption>How it works: the conveyor leads, the axes follow.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Step by step</h3><p class="walk-hint">Click a step to follow it on the diagram.</p><button type="button" class="walk-replay" data-walk-replay>↺ Replay</button></div>
+              <ol class="walk-list" aria-label="Diagram steps">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Conveyor</span><span class="walk-p">The conveyor is the master axis: it sets the product speed.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Sensors</span><span class="walk-p">Sensors detect the incoming product.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Axis control</span><span class="walk-p">The cam profile electronically synchronises the axes with the conveyor.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Applicator head</span><span class="walk-p">The slave axis follows the product, applies, cuts and returns, within a few hundred milliseconds.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="bundling" data-hud="Adhesive-tape bundling">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Adhesive-tape bundling</h2>
@@ -253,6 +262,7 @@
   <script defer src="../../assets/js/site.js"></script>
   <script defer src="../../assets/js/figures.js"></script>
   <script defer src="../../assets/js/case.js"></script>
+  <script defer src="../../assets/js/walk.js"></script>
   <script defer src="../../assets/js/showcase.js"></script>
   <script defer src="../../assets/js/demos/cam.js"></script>
 </body>

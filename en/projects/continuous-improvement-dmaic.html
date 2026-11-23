@@ -206,6 +206,18 @@
 </g></svg>
               <figcaption>How it works: the DMAIC loop, fed by the shop floor and sustained by standards.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Step by step</h3><p class="walk-hint">Click a step to follow it on the diagram.</p><button type="button" class="walk-replay" data-walk-replay>↺ Replay</button></div>
+              <ol class="walk-list" aria-label="Diagram steps">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Define</span><span class="walk-p">The problem and the quantified target are defined and shared with the team.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Measure</span><span class="walk-p">Stops and cycle variability are measured on the line.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Analyse</span><span class="walk-p">Pareto and 5 Whys to isolate the root causes.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Improve</span><span class="walk-p">Solutions are tested in small steps (PDCA).</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="4" aria-pressed="false"><span class="walk-n">05</span><span class="walk-t">Control</span><span class="walk-p">Visual indicators and checkpoints to keep the gains over time.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="6" aria-pressed="false"><span class="walk-n">06</span><span class="walk-t">Standards</span><span class="walk-p">What works is standardised: 5S and a shared procedure.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="5" aria-pressed="false"><span class="walk-n">07</span><span class="walk-t">Shop floor</span><span class="walk-p">The shop-floor teams are involved at every step and tackle the root causes first.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="results" data-hud="Results">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Results</h2>
@@ -265,6 +277,7 @@
   <script defer src="../../assets/js/site.js"></script>
   <script defer src="../../assets/js/figures.js"></script>
   <script defer src="../../assets/js/case.js"></script>
+  <script defer src="../../assets/js/walk.js"></script>
   <script defer src="../../assets/js/showcase.js"></script>
   <script defer src="../../assets/js/demos/dmaic.js"></script>
 </body>

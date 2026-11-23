@@ -211,6 +211,18 @@
 </g></svg>
               <figcaption>Schéma de principe : la boucle DMAIC, nourrie par les métiers et ancrée par les standards.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Pas à pas</h3><p class="walk-hint">Cliquez sur une étape pour la suivre sur le schéma.</p><button type="button" class="walk-replay" data-walk-replay>↺ Rejouer</button></div>
+              <ol class="walk-list" aria-label="Étapes du schéma">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Définir</span><span class="walk-p">Le problème et l'objectif chiffré sont définis et partagés avec l'équipe.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Mesurer</span><span class="walk-p">Mesure des arrêts et de la variabilité du cycle, sur la ligne.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Analyser</span><span class="walk-p">Pareto et 5 Pourquoi pour isoler les causes racines.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Améliorer</span><span class="walk-p">Les solutions sont testées en petits pas (PDCA).</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="4" aria-pressed="false"><span class="walk-n">05</span><span class="walk-t">Maîtriser</span><span class="walk-p">Indicateurs visuels et points de contrôle pour tenir dans la durée.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="6" aria-pressed="false"><span class="walk-n">06</span><span class="walk-t">Standards</span><span class="walk-p">Ce qui fonctionne est standardisé : 5S et mode opératoire partagé.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="5" aria-pressed="false"><span class="walk-n">07</span><span class="walk-t">Métier</span><span class="walk-p">Les équipes métier sont impliquées à chaque étape et traitent les causes racines en priorité.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="resultats" data-hud="Résultats">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Résultats</h2>
@@ -270,6 +282,7 @@
   <script defer src="../assets/js/site.js"></script>
   <script defer src="../assets/js/figures.js"></script>
   <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/walk.js"></script>
   <script defer src="../assets/js/showcase.js"></script>
   <script defer src="../assets/js/demos/dmaic.js"></script>
 </body>

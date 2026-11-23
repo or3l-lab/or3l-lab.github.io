@@ -101,18 +101,35 @@
         <a class="text-link" href="#challenge">Understand the project <span aria-hidden="true">↓</span></a></div>
       <div class="showcase-frame"><div class="demo demo-orelia" data-demo="orelia">
             <div class="demo-bar"><span class="led led-run" aria-hidden="true"></span><span class="demo-title">ORELIA.SIM</span><span class="demo-tag">Simulation</span></div>
-            <div class="agents-body">
-              <div class="agents-graph" data-graph></div>
-              <div class="agents-log"><ol data-log role="log" aria-live="polite"></ol></div>
+            <div class="ol-stage">
+              <div class="ol-win" data-win>
+                <div class="ol-titlebar"><span class="ol-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ol-wtitle" data-wtitle>Orélia</span><span class="ol-local"><i aria-hidden="true"></i>100% local</span></div>
+                <div class="ol-body">
+                  <div class="ol-chat" data-chat aria-hidden="true"></div>
+                  <div class="ol-bench" data-bench aria-hidden="true">
+                  <div class="ol-b" data-b="trig"><span class="ol-b-k">01</span><span class="ol-b-t">Change of model or prompt</span><span class="ol-b-chip">model · prompt</span></div>
+                  <div class="ol-b" data-b="tests"><div class="ol-b-top"><span class="ol-b-k">02</span><span class="ol-b-t">Automated tests</span><b class="ol-b-count" data-count></b></div><canvas class="ol-wall" data-wall width="580" height="40"></canvas></div>
+                  <div class="ol-b" data-b="deleg"><div class="ol-b-top"><span class="ol-b-k">03</span><span class="ol-b-t">Delegation rate per agent</span></div><ul class="ol-deleg"><li data-d="E1"><span class="ol-dn">Root cause</span><i class="ol-track"></i><em>rate measured</em></li><li data-d="E2"><span class="ol-dn">Quality</span><i class="ol-track"></i><em>rate measured</em></li><li data-d="E3"><span class="ol-dn">Databases</span><i class="ol-track"></i><em>rate measured</em></li></ul></div>
+                  <div class="ol-b" data-b="ctx"><div class="ol-b-top"><span class="ol-b-k">04</span><span class="ol-b-t">Context per conversation</span><b class="ol-b-range">−15% to −40%</b></div><div class="ol-ctxrow"><span>Before</span><i class="ol-bar"><u></u></i></div><div class="ol-ctxrow"><span>After</span><i class="ol-bar ol-bar--after"><u></u></i></div><small>measured on real conversations</small></div>
+                  <p class="ol-verdict" data-b="verdict"><span aria-hidden="true">✓</span> Qualified before it is announced</p>
+                </div>
+                </div>
+                <div class="ol-compose" data-compose aria-hidden="true"><span class="ol-typed" data-typed data-ph="Ask Orélia a question…"></span><i class="ol-caret"></i></div>
+                <div class="ol-actions" data-actions hidden><span class="ol-ask">Write these changes?<small class="ol-auto-t" aria-hidden="true">demo: automatic confirmation</small></span><button type="button" class="btn btn-ghost btn-sm" data-act="cancel">Cancel</button><button type="button" class="btn btn-primary btn-sm" data-act="confirm">Confirm</button><span class="ol-auto" aria-hidden="true"><i data-auto></i></span></div>
+              </div>
+              <div class="ol-back" data-graph></div>
             </div>
+            <div class="ol-cap" aria-hidden="true"><span class="ol-capn" data-capn></span><span class="ol-capt" data-capt></span><span class="ol-prog"><i data-prog></i></span></div>
+            <ol class="sr-only" data-journal role="log" aria-live="polite"></ol>
             <ul class="orelia-guards" aria-label="Guardrails involved"><li data-chip="local">100% local</li><li data-chip="zone">Allowed folders</li><li data-chip="read">Read-only by default</li><li data-chip="write">Confirmation before writing</li></ul>
             <div class="agents-controls">
-              <button class="btn btn-primary btn-sm" type="button" data-run="ask">Question with sources</button>
-              <button class="btn btn-ghost btn-sm" type="button" data-run="write">Editing a file</button>
-              <button class="btn btn-ghost btn-sm" type="button" data-run="deny">Unauthorised access</button></div>
+              <button class="btn btn-ghost btn-sm" type="button" data-run="ask" aria-pressed="false">Question with sources</button>
+              <button class="btn btn-ghost btn-sm" type="button" data-run="write" aria-pressed="false">Editing a file</button>
+              <button class="btn btn-ghost btn-sm" type="button" data-run="deny" aria-pressed="false">Unauthorised access</button>
+              <button class="btn btn-ghost btn-sm" type="button" data-run="bench" aria-pressed="false">Quality &amp; tests</button></div>
             <ul class="agents-legend orelia-legend"><li><strong>Conductor</strong> — receives the request and delegates</li><li><strong>Specialised agents</strong> — root cause, quality, databases…, each with its own local model</li><li><strong>Memory</strong> — global, plus a personal one per user</li><li><strong>Guardrails</strong> — allowed folders, read-only, confirmation before writing</li></ul>
             <p class="demo-note">Simplified illustration: requests, files and answers are fictitious.</p>
-            <script type="application/json" class="demo-i18n">{"title": "ORELIA.SIM", "names": {"H": "You", "O": "Conductor", "M": "Memory", "E1": "Root cause", "E2": "Quality", "E3": "Databases", "G": "Guardrails", "F": "Files"}, "steps": {"ask": [["H", "Question: \"Why does line 3 often stop in the morning?\"", "", ""], ["O>M", "Global and personal memory consulted.", "local", ""], ["O>E1", "Delegated to the root-cause agent, with its dedicated local model.", "local", ""], ["E1>G", "Guardrails: allowed folder, read-only access.", "local,zone,read", ""], ["G>F", "3 files read; nothing is modified.", "local,zone,read", ""], ["E1", "Analysis: a hypothesis is drawn from what was read.", "local", ""], ["O>H", "Sourced answer: what was read, what is assumed, what could not be verified.", "local", "ok"]], "write": [["H", "Request: \"Update my quality tracking file.\"", "", ""], ["O>M", "Global and personal memory consulted.", "local", ""], ["O>E2", "Delegated to the quality agent, with its dedicated local model.", "local", ""], ["E2>G", "Guardrails: allowed folder, but a write is requested.", "local,zone", ""], ["G>H", "Preview of the changes shown. Nothing is written without confirmation.", "local,zone,write", ""], ["H", "Confirmation given by the user.", "local,zone,write", ""], ["G>F", "Change written to the allowed file.", "local,zone,write", "ok"]], "deny": [["H", "Request: \"Read the HR files folder.\"", "", ""], ["O>E2", "Delegated to a specialised agent.", "local", ""], ["E2>G", "Guardrails: this folder is not in the allowed-folders list.", "local", ""], ["G", "Access denied!", "zone", "err"], ["O>H", "Answer: access is denied, nothing was read.", "local", "ok"]]}}</script>
+            <script type="application/json" class="demo-i18n">{"title": "ORELIA.SIM", "names": {"H": "You", "O": "Conductor", "M": "Memory", "E1": "Root cause", "E2": "Quality", "E3": "Databases", "G": "Guardrails", "F": "Files"}, "ui": {"nf": "en-US", "win": "Orélia", "benchTitle": "Quality bench", "local": "100% local", "perim": "THIS PC · 100% LOCAL", "cloud": "Cloud · 0 byte sent", "llm": "local LLM", "placeholder": "Ask Orélia a question…", "welcome": "Hello. Everything stays on this PC: models, files and memory.", "idle": "Pick a scenario to follow a request's journey.", "read": "read · read-only", "tags": {"read": "Read", "sup": "Assumed", "nv": "Not verified"}, "confirmAsk": "Write these changes?", "cancel": "Cancel", "confirm": "Confirm", "auto": "demo: automatic confirmation", "waiting": "Confirmation pending: Cancel and Confirm buttons.", "preview": "preview · nothing is written", "denyTitle": "Access denied", "allowed": "Allowed folders", "allowedList": ["D:\\Workshops\\Quality", "D:\\Workshops\\Production"], "mem": "Memory: G global · P personal", "bot": "Orélia", "you": "You"}, "scn": {"ask": {"q": "Why does line 3 often stop in the morning?", "cap": ["You ask your question: it stays on this PC.", "Global and personal memory consulted.", "Delegated to the root-cause agent, with its dedicated local model.", "Guardrails: allowed folder, read-only access.", "3 files read; nothing is modified.", "Analysis: a hypothesis is drawn from what was read.", "Sourced answer: what was read, what is assumed, what could not be verified."], "files": ["line3_stops.xlsx", "morning_shift_log.txt", "changeover_routing.pdf"], "ans": [["read", "morning stops mostly happen right after a product changeover."], ["sup", "the start-up setting may not be stable after that changeover."], ["nv", "no temperature log in the files that were read: a hypothesis to confirm on the line."]]}, "write": {"q": "Update my quality tracking file.", "cap": ["A file edit is requested.", "Global and personal memory consulted.", "Delegated to the quality agent, with its dedicated local model.", "Guardrails: allowed folder, but a write is requested.", "Preview of the changes shown. Nothing is written without confirmation.", "Waiting for your confirmation.", "Change written to the allowed file."], "capCancel": "Change cancelled: nothing was written.", "file": "quality_tracking.xlsx", "intro": "Here are the planned changes:", "diff": [["ctx", "Week 24 · line 3"], ["del", "Open deviations: 4"], ["add", "Open deviations: 5"], ["add", "Lot 2417: put in quarantine"]], "done": "Change written to the allowed file.", "cancelled": "Change cancelled: nothing was written."}, "deny": {"q": "Read the HR files folder.", "cap": ["A folder read is requested.", "Delegated to a specialised agent.", "Guardrails: this folder is not in the allowed-folders list.", "Access denied: nothing is read.", "The user is told: access is denied, nothing was read."], "denyText": "This folder is not in the allowed-folders list.", "answer": "I can't access this folder: it is not in the allowed-folders list. Nothing was read."}, "bench": {"cap": ["A local model only delegates probabilistically: it is measured after every change of model or prompt.", "The automated tests are replayed: every feature is qualified on real cases.", "Each agent's delegation rate is measured.", "Context is measured, then fixed: −15 to −40% on real conversations.", "Qualified before it is announced."]}}}</script>
           </div></div>
       <div class="showcase-progress" aria-hidden="true"><span></span></div>
       <noscript><p class="showcase-fallback">Non-animated version. The principle and explanations remain available below.</p></noscript>
@@ -184,6 +201,17 @@
 </g></svg>
               <figcaption>Principle diagram: everything stays on the workstation; guardrails control access to files and databases.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Step by step</h3><p class="walk-hint">Click a step to follow it on the diagram.</p><button type="button" class="walk-replay" data-walk-replay>↺ Replay</button></div>
+              <ol class="walk-list" aria-label="Diagram steps">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Web interface</span><span class="walk-p">Everything starts on the workstation: the request is typed into the web interface.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Conductor</span><span class="walk-p">It receives the request and decides which agent should handle it.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Memory</span><span class="walk-p">It consults the global memory and the user's personal memory.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Specialised agents</span><span class="walk-p">The suitable agent (root cause, quality, databases…) handles the request with its own local model.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="4" aria-pressed="false"><span class="walk-n">05</span><span class="walk-t">Guardrails</span><span class="walk-p">Allowed folders, read-only by default, preview and confirmation before any write.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="5" aria-pressed="false"><span class="walk-n">06</span><span class="walk-t">Files &amp; databases</span><span class="walk-p">Files and databases stay on the workstation; the answer separates what was read from what is assumed.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="lessons" data-hud="What I learned">
             <h2 class="case-h2"><span class="case-h2-num">05</span>What I learned</h2>
@@ -247,6 +275,7 @@
   <script defer src="../../assets/js/site.js"></script>
   <script defer src="../../assets/js/figures.js"></script>
   <script defer src="../../assets/js/case.js"></script>
+  <script defer src="../../assets/js/walk.js"></script>
   <script defer src="../../assets/js/showcase.js"></script>
   <script defer src="../../assets/js/demos/orelia.js"></script>
 </body>

@@ -179,6 +179,17 @@
 </g></svg>
               <figcaption>Schéma de principe : l&#x27;orchestrateur répartit, les spécialistes produisent, l&#x27;humain valide.</figcaption>
             </figure>
+            <div class="walk" data-walk>
+              <div class="walk-head"><h3 class="walk-title">Pas à pas</h3><p class="walk-hint">Cliquez sur une étape pour la suivre sur le schéma.</p><button type="button" class="walk-replay" data-walk-replay>↺ Rejouer</button></div>
+              <ol class="walk-list" aria-label="Étapes du schéma">
+                <li><button type="button" class="walk-step" data-nodes="0" aria-pressed="false"><span class="walk-n">01</span><span class="walk-t">Demande</span><span class="walk-p">Un besoin métier est exprimé : c'est le point de départ de chaque livraison.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="1" aria-pressed="false"><span class="walk-n">02</span><span class="walk-t">Orchestrateur</span><span class="walk-p">Il répartit le travail entre les agents, selon des règles de travail communes.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="2" aria-pressed="false"><span class="walk-n">03</span><span class="walk-t">Spécialistes</span><span class="walk-p">9 agents spécialisés (code, tests, documentation…) travaillent chacun dans leur périmètre, avec une mémoire de projet partagée.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="3" aria-pressed="false"><span class="walk-n">04</span><span class="walk-t">Revue</span><span class="walk-p">Le travail est relu selon des critères de qualité communs.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="4" aria-pressed="false"><span class="walk-n">05</span><span class="walk-t">Validation</span><span class="walk-p">Un humain valide chaque livraison : il garde la décision finale.</span></button></li>
+                <li><button type="button" class="walk-step" data-nodes="5" aria-pressed="false"><span class="walk-n">06</span><span class="walk-t">Livraison</span><span class="walk-p">La livraison est réversible : tout changement peut être annulé.</span></button></li>
+              </ol>
+            </div>
           </section>
           <section class="case-section" id="resultats" data-hud="Résultats">
             <h2 class="case-h2"><span class="case-h2-num">05</span>Résultats</h2>
@@ -237,6 +248,7 @@
   <script defer src="../assets/js/site.js"></script>
   <script defer src="../assets/js/figures.js"></script>
   <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/walk.js"></script>
   <script defer src="../assets/js/showcase.js"></script>
   <script defer src="../assets/js/demos/agents.js"></script>
 </body>
