@@ -35,13 +35,27 @@
     });
   }
   if (steps.length) setCurrent(steps[0]);
-  if (steps.length && 'IntersectionObserver' in window && !reduce) {
-    var journeyObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setCurrent(entry.target);
+  if (steps.length && !reduce) {
+    var current = steps[0];
+    var ticking = false;
+    var pickCurrent = function () {
+      ticking = false;
+      var mid = window.innerHeight * 0.47;
+      var best = current;
+      var bestDist = Infinity;
+      steps.forEach(function (step) {
+        var r = step.getBoundingClientRect();
+        var d = mid < r.top ? r.top - mid : (mid > r.bottom ? mid - r.bottom : 0);
+        if (d < bestDist) { best = step; bestDist = d; }
       });
-    }, { threshold: 0, rootMargin: '-42% 0px -48% 0px' });
-    steps.forEach(function (step) { journeyObserver.observe(step); });
+      if (best !== current) { current = best; setCurrent(best); }
+    };
+    var schedule = function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(pickCurrent); }
+    };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    pickCurrent();
   }
 
   html.classList.add('motion-pages-ready');

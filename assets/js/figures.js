@@ -141,7 +141,7 @@
     });
     watch(stack, function (visible) { stack.classList.toggle('is-live', visible); });
     if (motion) {
-      // Les couches se posent une à une, du terrain jusqu'à la décision.
+      // Les couches se posent une à une, du métier jusqu'à la décision.
       stack.classList.add('is-arming');
       window.setTimeout(function () {
         stack.classList.add('is-entering');
