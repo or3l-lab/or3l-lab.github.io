@@ -22,6 +22,8 @@ import unicodedata
 import urllib.parse
 from pathlib import Path
 
+import article_figures
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / 'content' / 'articles'
 SITE = 'https://or3l-lab.github.io'
@@ -163,7 +165,7 @@ class Article:
         self.key, self.lang, self.path = key, lang, path
         self.title = self.summary = self.kind = self.image = ''
         self.date = self.updated = None
-        self.tags, self.related, self.sections = [], [], []
+        self.tags, self.related, self.sections, self.figs = [], [], [], []
         self.draft = False
         self.slug = slugify(key)
         self.body = ''
@@ -238,8 +240,8 @@ def load_article(key, lang, path):
 class Md:
     """Sous-ensemble de Markdown, rendu avec les classes du site."""
 
-    def __init__(self, page, label):
-        self.page, self.label = page, label
+    def __init__(self, page, label, lang='fr'):
+        self.page, self.label, self.lang, self.figs = page, label, lang, []
 
     def url(self, href):
         """« /chemin » est relatif à la racine du site ; les adresses du site deviennent relatives."""
@@ -289,7 +291,7 @@ class Md:
 
         def is_special(ln):
             s = ln.strip()
-            return (s.startswith(('```', '>', '### ', '|', '![')) or re.match(r'^([-*]|\d+\.)\s+', s)
+            return (s.startswith(('```', '>', '### ', '|', '![', ':::')) or re.match(r'^([-*]|\d+\.)\s+', s)
                     or re.match(r'^(---+|\*\*\*+)$', s))
 
         while i < n:
@@ -340,6 +342,17 @@ class Md:
                 out.append('<figure class="art-figure"><img src="%s" alt="%s" loading="lazy" decoding="async">%s</figure>'
                            % (esc(src), esc(m.group(1)), cap))
                 i += 1
+            elif s.startswith(':::'):
+                m = re.match(r'^:::figure\s+([a-z][\w-]*)(?:\s+"([^"]*)")?$', s)
+                if not m:
+                    raise BuildError('%s, ligne %d : figure mal formée (attendu : :::figure nom "légende").'
+                                     % (self.label, start + i + 1))
+                if m.group(1) not in article_figures.REGISTRY:
+                    raise BuildError('%s, ligne %d : figure « %s » inconnue (disponibles : %s).' % (
+                        self.label, start + i + 1, m.group(1), ', '.join(sorted(article_figures.REGISTRY))))
+                self.figs.append(m.group(1))
+                out.append(article_figures.figure_html(m.group(1), self.lang, self.inline(m.group(2)) if m.group(2) else ''))
+                i += 1
             elif re.match(r'^([-*]|\d+\.)\s+', s):
                 tag = 'ol' if re.match(r'^\d+\.', s) else 'ul'
                 items = []
@@ -370,7 +383,7 @@ class Md:
 def render_body(a):
     """Découpe le corps en sections (« ## ») : [(id, titre HTML, titre texte, [fragments HTML])]."""
     label = str(a.path.relative_to(ROOT)).replace('\\', '/')
-    md = Md(a.out, label)
+    md = Md(a.out, label, a.lang)
     chunks, cur, in_code, title, cur_start = [], [], False, None, 0
     for idx, ln in enumerate(a.body.replace('\r\n', '\n').split('\n')):
         if ln.strip().startswith('```'):
@@ -402,7 +415,9 @@ def render_body(a):
         sections.append((sid, title_html, plain, frags))
     if not sections:
         raise BuildError("%s : l'article est vide." % label)
-    words = len(re.findall(r'\w+', re.sub(r'<[^>]+>', ' ', ' '.join(f for s in sections for f in s[3]))))
+    a.figs = md.figs
+    text = re.sub(r'<figure class="art-motion.*?</figure>', ' ', ' '.join(f for s in sections for f in s[3]), flags=re.S)
+    words = len(re.findall(r'\w+', re.sub(r'<[^>]+>', ' ', text)))
     a.minutes = max(1, int(math.ceil(words / float(WORDS_PER_MIN))))
     a.sections = sections
 
@@ -468,7 +483,7 @@ def fig_svg():
     return ''.join(parts)
 
 
-def head_html(lang, src, title, desc, canonical, alternates, og_type, og_image, og_alt, extra=''):
+def head_html(lang, src, title, desc, canonical, alternates, og_type, og_image, og_alt, extra='', css_more=()):
     t = L[lang]
     alt = ''
     if alternates:
@@ -504,12 +519,13 @@ def head_html(lang, src, title, desc, canonical, alternates, og_type, og_image, 
   <link rel="manifest" href="{manifest}">
   <link rel="stylesheet" href="{css}">
   <link rel="stylesheet" href="{css2}">
-  <script src="{headjs}"></script>
+{css_more}  <script src="{headjs}"></script>
 </head>
 '''.format(lang=lang, title=esc(title), desc=esc(desc), gen=GEN_MARK, site=SITE, canonical=canonical, alt=alt,
            og_type=og_type, locale=t['locale'], og_image=og_image, og_alt=esc(og_alt), extra=extra,
            favicon=rel(src, 'favicon.svg'), manifest=rel(src, 'site.webmanifest'), css=rel(src, 'assets/css/main.css'),
-           css2=rel(src, 'assets/css/articles.css'), headjs=rel(src, 'assets/js/head.js'))
+           css2=rel(src, 'assets/css/articles.css'), headjs=rel(src, 'assets/js/head.js'),
+           css_more=''.join('  <link rel="stylesheet" href="%s">\n' % rel(src, c) for c in css_more))
 
 
 def header_html(lang, src, switch_to):
@@ -566,9 +582,9 @@ def footer_html(lang, src, hud_total):
 '''.format(cv=rel(src, t['cv']), li=LINKEDIN, on=on, off=off, bt=esc(t['back_top']), bts=esc(t['back_top_short']), total=hud_total)
 
 
-def scripts_html(src, reading):
+def scripts_html(src, reading, more=()):
     vendor = ['gsap', 'ScrollTrigger', 'SplitText', 'ScrambleTextPlugin'] + (['Flip'] if reading else []) + ['DrawSVGPlugin', 'lenis']
-    js = ['config', 'contact', 'site', 'figures'] + (['motion-pages', 'articles'] if reading else ['case', 'articles'])
+    js = ['config', 'contact', 'site', 'figures'] + (['motion-pages', 'articles'] if reading else ['case', 'articles']) + list(more)
     lines = ['  <script defer src="%s"></script>' % rel(src, 'assets/vendor/%s.min.js' % v) for v in vendor]
     lines += ['  <script defer src="%s"></script>' % rel(src, 'assets/js/%s.js' % j) for j in js]
     return '\n  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->\n' + '\n'.join(lines) + '\n</body>\n</html>\n'
@@ -614,7 +630,7 @@ def article_page(a, by_lang, lists):
           'author': {'@type': 'Person', 'name': 'Or3L', 'url': SITE + '/'}, 'keywords': ', '.join(a.tags)}
     extra += '  <script type="application/ld+json">%s</script>\n' % json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
     out = head_html(lang, src, '%s — %s · Or3L' % (a.title, t['article']), a.summary, canonical, alternates_of(a, other),
-                    'article', og_image, a.title, extra)
+                    'article', og_image, a.title, extra, ['assets/css/art-figures.css'] if a.figs else ())
     out += '<body class="page-case page-article" data-page="case">\n' + header_html(lang, src, switch_to)
     n = len(a.sections)
     tags = tag_list(a)
@@ -690,7 +706,7 @@ def article_page(a, by_lang, lists):
 '''.format(na=esc(t['nav_articles']), prev=navlink(older, 'prev', t['prev']), idx=rel(src, t['index']),
            all=esc(t['all_articles']), nxt=navlink(newer, 'next', t['next']))
     out += footer_html(lang, src, n + 1)
-    out += scripts_html(src, reading=False)
+    out += scripts_html(src, reading=False, more=['art-figures'] if a.figs else ())
     return out
 
 

@@ -6,12 +6,14 @@ tags: Données, IA
 type: Démarche
 related: projets/supervision-risque-arret.html | Voir avant que ça casse
 related: projets/assistante-ia-locale.html | Orélia, assistante personnelle souveraine
-draft: true
+draft: false
 ---
 
 Trois disciplines, une même boucle : l'automatisme pour capter, le développement pour fiabiliser, l'intelligence artificielle pour décider. Chaque décision revient aux métiers.
 
 > **En bref** : capter les signaux de la production et des services supports, fiabiliser la donnée, la transformer en décisions. L'IA détecte et prédit, l'expertise humaine arbitre.
+
+:::figure signaux "La boucle : trois étapes, et chaque décision revient aux métiers."
 
 ## Capter : faire parler chaque machine et chaque service
 

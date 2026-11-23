@@ -52,6 +52,7 @@ Entre deux lignes `---`, en haut du fichier :
 - `> texte` : encadré mis en avant.
 - Tableaux : `| A | B |` suivi de la ligne `| --- | --- |`.
 - Image seule sur une ligne : `![description](/assets/img/articles/mon-article/image.png "légende")`. Déposer les images dans `assets/img/articles/<nom-de-l-article>/`.
+- Figure animée seule sur une ligne : `:::figure nom "légende"` (la légende est facultative). Noms disponibles : `boucle` (les 5 étapes de la rétro-ingénierie avec retour), `signaux` (capter, fiabiliser, décider), `derive`, `chrono`, `modele`, `ecart` (exemple fictif du convoyeur, étiqueté comme tel). L'animation se lance quand la figure est visible, un bouton « Rejouer » la relance, et sans mouvement (préférence système) la figure s'affiche à l'état final. Les textes FR/EN sont dans `tools/article_figures.py`.
 - Le premier paragraphe, avant tout `##`, devient l'introduction.
 - Les `#hashtags` collés au texte sont acceptés tels quels.
 

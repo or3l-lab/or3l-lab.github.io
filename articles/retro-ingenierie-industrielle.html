@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rétro-ingénierie industrielle : comprendre avant de modifier — Article · Or3L</title>
+  <meta name="description" content="Un équipement peut tourner des années avec une documentation incomplète ou périmée. Comment retrouver ce qu&#x27;il fait vraiment, le valider contre la mesure, puis décider : réparer, fiabiliser, adapter ou remplacer.">
+  <meta name="author" content="Or3L">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+  <!-- Page générée par tools/build_articles.py à partir de content/articles : ne pas modifier à la main. -->
+
+  <link rel="canonical" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html">
+  <link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html">
+  <link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html">
+  <link rel="alternate" hreflang="x-default" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Or3L">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Rétro-ingénierie industrielle : comprendre avant de modifier — Article · Or3L">
+  <meta property="og:description" content="Un équipement peut tourner des années avec une documentation incomplète ou périmée. Comment retrouver ce qu&#x27;il fait vraiment, le valider contre la mesure, puis décider : réparer, fiabiliser, adapter ou remplacer.">
+  <meta property="og:url" content="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html">
+  <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og/retro-ingenierie-industrielle.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rétro-ingénierie industrielle : comprendre avant de modifier">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="article:published_time" content="2026-11-23">
+  <meta property="article:tag" content="Automatisme">
+  <meta property="article:tag" content="Fiabilité">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Rétro-ingénierie industrielle : comprendre avant de modifier", "description": "Un équipement peut tourner des années avec une documentation incomplète ou périmée. Comment retrouver ce qu'il fait vraiment, le valider contre la mesure, puis décider : réparer, fiabiliser, adapter ou remplacer.", "inLanguage": "fr", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "mainEntityOfPage": "https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html", "image": "https://or3l-lab.github.io/assets/img/og/retro-ingenierie-industrielle.png", "author": {"@type": "Person", "name": "Or3L", "url": "https://or3l-lab.github.io/"}, "keywords": "Automatisme, Fiabilité"}</script>
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/articles.css">
+  <link rel="stylesheet" href="../assets/css/art-figures.css">
+  <script src="../assets/js/head.js"></script>
+</head>
+<body class="page-case page-article" data-page="case">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Or3L — accueil">
+        <span class="brand-mark" aria-hidden="true">Or3L</span>
+        <span class="brand-text">Or3L<small>Informatique industrielle · IA</small></span>
+      </a>
+      <nav class="main-nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="../parcours.html">Parcours</a></li>
+          <li><a href="../competences.html">Compétences</a></li>
+          <li><a href="../projets.html">Projets</a></li>
+          <li><a href="../articles.html">Articles</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="../en/articles/retro-ingenierie-industrielle.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" class="case">
+
+    <section class="case-hero" data-hud="Article">
+      <div class="container case-hero-inner">
+        <div class="case-hero-copy">
+          <nav class="breadcrumb" aria-label="Fil d&#x27;Ariane"><ol><li><a href="../index.html">Accueil</a></li><li><a href="../articles.html">Articles</a></li><li aria-current="page">Article</li></ol></nav>
+          <p class="case-kicker"><span class="case-num">Démarche</span>Automatisme · Fiabilité</p>
+          <h1 class="case-title" data-reveal="lines">Rétro-ingénierie industrielle : comprendre avant de modifier</h1>
+          <p class="case-pitch">Un équipement peut tourner des années avec une documentation incomplète ou périmée. Comment retrouver ce qu&#x27;il fait vraiment, le valider contre la mesure, puis décider : réparer, fiabiliser, adapter ou remplacer.</p>
+          <ul class="card-tags"><li><span class="led-dot tag-full" aria-hidden="true"></span>Automatisme</li><li><span class="led-dot tag-data" aria-hidden="true"></span>Fiabilité</li></ul>
+        </div>
+        <div class="case-visual case-screen" data-case-screen aria-hidden="true"><span class="screen-corner"></span><span class="screen-head"><span class="led led-signal"></span>Article</span><svg class="glyph glyph-article" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="14" y="52" width="58" height="56" rx="2"/><path class="g-line g-thin" d="M26 59l5 5-5 5-5-5z"/><path class="g-line g-thin ga-type" style="--i:0" pathLength="1" d="M36 62h26"/><path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 80h38"/><path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 90h30"/><path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 100h18"/><path class="g-line g-dash" d="M72 80h38M130 80h24"/><path class="g-accent" d="M120 70l10 10-10 10-10-10z"/><path class="g-line g-thin" d="M120 75v10M115 80h10"/><path class="ga-pulse" style="--i:0" pathLength="1" d="M72 80h38"/><path class="ga-pulse" style="--i:1" pathLength="1" d="M130 80h24"/><rect class="g-line" x="154" y="14" width="72" height="132" rx="2"/><path class="g-accent ga-type" style="--i:2" pathLength="1" d="M166 30h40"/><path class="g-line g-thin ga-type" style="--i:2" pathLength="1" d="M166 40h28"/><path class="g-line g-thin" d="M166 58v74"/><path class="g-accent ga-type" style="--i:3" pathLength="1" d="M174 60h20"/><path class="g-line g-thin ga-type" style="--i:3" pathLength="1" d="M174 68h40M174 76h34"/><path class="g-accent ga-type" style="--i:4" pathLength="1" d="M174 90h24"/><path class="g-line g-thin ga-type" style="--i:4" pathLength="1" d="M174 98h40M174 106h30"/><path class="g-accent ga-type" style="--i:5" pathLength="1" d="M174 120h18"/><path class="g-line g-thin ga-type" style="--i:5" pathLength="1" d="M174 128h40M174 136h28"/><circle class="g-dot" cx="120" cy="80" r="2.6"/></g></svg><span class="screen-sig">10 sections · 6 min de lecture</span></div>
+      </div>
+    </section>
+
+    <div class="container case-body">
+      <aside class="case-toc" aria-label="Sommaire">
+        <p class="case-toc-title">Sommaire</p>
+        <ol><li><a href="#introduction"><span class="toc-num">01</span>Introduction</a></li><li><a href="#quand-la-documentation-ne-dit-plus-la-verite"><span class="toc-num">02</span>Quand la documentation ne dit plus la vérité</a></li><li><a href="#le-principe-comprendre-avant-de-modifier"><span class="toc-num">03</span>Le principe : comprendre avant de modifier</a></li><li><a href="#observer-et-relever-sans-rien-toucher"><span class="toc-num">04</span>Observer et relever, sans rien toucher</a></li><li><a href="#reconstituer-le-fonctionnement"><span class="toc-num">05</span>Reconstituer le fonctionnement</a></li><li><a href="#valider-l-ecart-est-une-information"><span class="toc-num">06</span>Valider : l&#x27;écart est une information</a></li><li><a href="#documenter-pour-que-cela-serve"><span class="toc-num">07</span>Documenter pour que cela serve</a></li><li><a href="#decider-en-connaissance-de-cause"><span class="toc-num">08</span>Décider en connaissance de cause</a></li><li><a href="#garde-fous"><span class="toc-num">09</span>Garde-fous</a></li><li><a href="#pour-aller-plus-loin"><span class="toc-num">10</span>Pour aller plus loin</a></li></ol>
+      </aside>
+      <article class="case-content art-body">
+        <details class="art-toc-mobile"><summary>Sommaire</summary><ol><li><a href="#introduction"><span class="toc-num">01</span>Introduction</a></li><li><a href="#quand-la-documentation-ne-dit-plus-la-verite"><span class="toc-num">02</span>Quand la documentation ne dit plus la vérité</a></li><li><a href="#le-principe-comprendre-avant-de-modifier"><span class="toc-num">03</span>Le principe : comprendre avant de modifier</a></li><li><a href="#observer-et-relever-sans-rien-toucher"><span class="toc-num">04</span>Observer et relever, sans rien toucher</a></li><li><a href="#reconstituer-le-fonctionnement"><span class="toc-num">05</span>Reconstituer le fonctionnement</a></li><li><a href="#valider-l-ecart-est-une-information"><span class="toc-num">06</span>Valider : l&#x27;écart est une information</a></li><li><a href="#documenter-pour-que-cela-serve"><span class="toc-num">07</span>Documenter pour que cela serve</a></li><li><a href="#decider-en-connaissance-de-cause"><span class="toc-num">08</span>Décider en connaissance de cause</a></li><li><a href="#garde-fous"><span class="toc-num">09</span>Garde-fous</a></li><li><a href="#pour-aller-plus-loin"><span class="toc-num">10</span>Pour aller plus loin</a></li></ol></details>
+        <div class="case-overview"><dl class="case-meta">
+          <div><dt>Publié</dt><dd><time datetime="2026-11-23">23 novembre 2026</time></dd></div>
+          <div><dt>Lecture</dt><dd>6 min de lecture</dd></div>
+          <div><dt>Type</dt><dd>Démarche</dd></div>
+        </dl></div>
+        <section class="case-section" id="introduction" data-hud="Introduction">
+          <h2 class="case-h2"><span class="case-h2-num">01</span>Introduction</h2>
+          <p class="art-lead">Un équipement peut fonctionner pendant des années avec des plans incomplets, un programme jamais sauvegardé ou une documentation que plus personne n&#x27;a mise à jour. Tant que tout marche, cela ne se voit pas. Le jour d&#x27;un dépannage, d&#x27;une évolution ou d&#x27;un remplacement, tout devient un pari. Cet article décrit une démarche pour retrouver ce que fait vraiment l&#x27;équipement avant d&#x27;y toucher.</p>
+          <blockquote class="art-callout"><p><strong>À savoir</strong> : l&#x27;exemple suivi dans cet article (un convoyeur avec un vérin de poussée), ses chronogrammes et ses valeurs sont <strong>fictifs</strong>. Ils servent à illustrer la démarche, pas à décrire une installation réelle.</p></blockquote>
+        </section>
+        <section class="case-section" id="quand-la-documentation-ne-dit-plus-la-verite" data-hud="Quand la documentation ne dit plus la vérité">
+          <h2 class="case-h2"><span class="case-h2-num">02</span>Quand la documentation ne dit plus la vérité</h2>
+          <p>Au départ, la documentation et l&#x27;installation coïncident. Puis viennent les dépannages en urgence, les petites évolutions, les remplacements de pièces : chacun ajoute un écart, rarement reporté dans les plans. Avec le temps, ce que l&#x27;on croit savoir de l&#x27;équipement s&#x27;éloigne de ce qu&#x27;il fait réellement.</p>
+          <figure class="art-motion art-motion--derive" data-art-fig="derive" data-replay="Rejouer"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Exemple fictif</span></div><svg viewBox="0 0 560 270" aria-hidden="true" focusable="false"><g class="a-fade" style="--d:0s;--t:0.6s"><path class="ln" d="M36 222H524"/><path class="ln" d="M36 216V228"/><path class="ln" d="M190 216V228"/><path class="ln" d="M350 216V228"/><path class="ln" d="M524 216V228"/><text class="m dim" x="36" y="252" text-anchor="start">Origine</text><text class="m dim" x="190" y="252" text-anchor="middle">Dépannage</text><text class="m dim" x="350" y="252" text-anchor="middle">Évolution</text><text class="m dim" x="524" y="252" text-anchor="end">Aujourd&#x27;hui</text></g><polygon class="gapfill a-fade" style="--d:3.4s;--t:0.8s" points="190,96 524,96 524,162 350,162 350,124 190,124"/><path class="ln dot a-fade" style="--d:2.1s;--t:0.5s" d="M190 131V216"/><path class="ln dot a-fade" style="--d:2.95s;--t:0.5s" d="M350 169V216"/><path class="sl s-and a-draw" style="--d:1.2s;--t:2.4s" d="M36 96H190V124H350V162H524" pathLength="1"/><path class="sl s-sig dash a-fade" style="--d:0.3s;--t:0.8s" d="M36 96H524"/><path class="mk a-pop" style="--d:2s" d="M190 117L197 124L190 131L183 124Z"/><path class="mk a-pop" style="--d:2.85s" d="M350 155L357 162L350 169L343 162Z"/><text class="t c-sig a-fade" style="--d:0.3s;--t:0.8s" x="36" y="70" text-anchor="start">Documentation</text><text class="t c-and a-fade" style="--d:3s;--t:0.6s" x="524" y="192" text-anchor="end">Installation réelle</text><text class="m c-fault a-fade" style="--d:3.8s;--t:0.6s" x="437" y="134" text-anchor="middle">écart</text></svg></div><figcaption>La documentation décrit l&#x27;installation d&#x27;origine ; l&#x27;installation réelle s&#x27;en éloigne à chaque intervention non reportée.</figcaption></figure>
+          <p>Quatre situations rendent cet écart critique :</p>
+          <ul><li>Les plans et schémas n&#x27;existent plus, ou ne reflètent pas l&#x27;installation réelle.</li><li>Une pièce, un automate ou un variateur n&#x27;est plus fabriqué : il faut trouver un équivalent sans changer le comportement.</li><li>Le programme n&#x27;a jamais été sauvegardé, ou son auteur n&#x27;est plus là.</li><li>Au fil des dépannages, l&#x27;équipement a été modifié sans que la documentation suive.</li></ul>
+        </section>
+        <section class="case-section" id="le-principe-comprendre-avant-de-modifier" data-hud="Le principe : comprendre avant de modifier">
+          <h2 class="case-h2"><span class="case-h2-num">03</span>Le principe : comprendre avant de modifier</h2>
+          <p>La rétro-ingénierie industrielle consiste à reconstituer le fonctionnement d&#x27;un équipement existant à partir de ce que l&#x27;on peut observer et mesurer, puis à le consigner. L&#x27;idée directrice tient en une phrase : <strong>comprendre ce que fait réellement l&#x27;équipement, pas ce que l&#x27;on croit qu&#x27;il fait.</strong></p>
+          <p>La démarche se déroule en cinq étapes, avec un retour au modèle tant qu&#x27;un écart subsiste entre ce que l&#x27;on a reconstitué et ce que l&#x27;on mesure.</p>
+          <figure class="art-motion art-motion--boucle" data-art-fig="boucle" data-replay="Rejouer"><div class="art-motion-stage"><div class="art-motion-bar"></div><div class="art-flow af-n5" role="list" style="--n:5;--k:2;--c1:3;--c2:5"><div class="af-step" role="listitem" style="--i:0"><span class="af-n">01</span><strong>Observer</strong><span class="af-s">lecture seule</span></div><div class="af-step" role="listitem" style="--i:1"><span class="af-n">02</span><strong>Relever</strong><span class="af-s">signaux, E/S</span></div><div class="af-step" role="listitem" style="--i:2"><span class="af-n">03</span><strong>Reconstituer</strong><span class="af-s">états, séquences</span></div><div class="af-step" role="listitem" style="--i:3"><span class="af-n">04</span><strong>Valider</strong><span class="af-s">modèle vs mesure</span></div><div class="af-step is-last" role="listitem" style="--i:4"><span class="af-n">05</span><strong>Documenter</strong><span class="af-s">dossier à jour</span></div><div class="af-ret" aria-hidden="true"><span>↺ écart : retour à « Reconstituer »</span></div></div></div><figcaption>Cinq étapes ; si la validation révèle un écart, on retourne reconstituer le modèle.</figcaption></figure>
+          <p>Pour la suite, on suit un exemple fictif : un convoyeur amène une pièce, s&#x27;arrête, puis un vérin pousse la pièce vers un bac. Aucun schéma n&#x27;est disponible. Cinq signaux sont repérés : trois entrées (I1 pièce présente, I2 vérin sorti, I3 vérin rentré) et deux sorties (Q1 moteur du tapis, Q2 électrovanne du vérin).</p>
+        </section>
+        <section class="case-section" id="observer-et-relever-sans-rien-toucher" data-hud="Observer et relever, sans rien toucher">
+          <h2 class="case-h2"><span class="case-h2-num">04</span>Observer et relever, sans rien toucher</h2>
+          <p>La première règle est la lecture seule : on regarde fonctionner l&#x27;équipement sans rien forcer ni modifier. Cette observation fait naître une première liste de questions (« pourquoi le vérin attend-il avant de pousser ? »). Ensuite, on relève les signaux pendant plusieurs cycles pour obtenir un chronogramme.</p>
+          <figure class="art-motion art-motion--chrono" data-art-fig="chrono" data-replay="Rejouer"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Exemple fictif</span></div><svg viewBox="0 0 560 270" aria-hidden="true" focusable="false"><path class="ln dot" d="M150 74 H540"/><path class="ln dot" d="M150 138 H540"/><path class="ln dot" d="M150 202 H540"/><text class="t" x="10" y="66" text-anchor="start">Pièce présente</text><text class="t" x="10" y="130" text-anchor="start">Moteur tapis</text><text class="t" x="10" y="194" text-anchor="start">Vérin</text><path class="ln" d="M150 236H540"/><path class="ln" d="M150 230V242"/><text class="m dim" x="150" y="260" text-anchor="middle">0</text><path class="ln" d="M247.5 230V242"/><text class="m dim" x="247.5" y="260" text-anchor="middle">2</text><path class="ln" d="M345 230V242"/><text class="m dim" x="345" y="260" text-anchor="middle">4</text><path class="ln" d="M442.5 230V242"/><text class="m dim" x="442.5" y="260" text-anchor="middle">6</text><path class="ln" d="M540 230V242"/><text class="m dim" x="540" y="260" text-anchor="middle">8 s</text><path class="sl s-sig a-draw" style="--d:0s;--t:1.8s" d="M150 74H267 V48 H325.5 V74 H540" pathLength="1"/><path class="sl s-and a-draw" style="--d:0.4s;--t:1.8s" d="M150 112H267 V138 H413.25 V112 H540" pathLength="1"/><path class="sl s-and a-draw" style="--d:0.8s;--t:1.8s" d="M150 202H306 V176 H374.25 V202 H540" pathLength="1"/><path class="ln hl a-fade" style="--d:3s;--t:0.5s" d="M267 40V222"/><path class="ln hl a-fade" style="--d:3.4s;--t:0.5s" d="M306 40V222"/><g class="a-pop" style="--d:3.2s"><circle class="bdg" cx="267" cy="26" r="11"/><text class="m c-and b" x="267" y="31" text-anchor="middle">1</text></g><g class="a-pop" style="--d:3.6s"><circle class="bdg" cx="306" cy="26" r="11"/><text class="m c-and b" x="306" y="31" text-anchor="middle">2</text></g><text class="m c-and a-fade" style="--d:4.1s;--t:0.6s" x="326" y="31" text-anchor="start">0,8 s ?</text></svg></div><figcaption>Chronogramme fictif d&#x27;un cycle : la pièce est détectée à 2,4 s, mais le vérin ne démarre qu&#x27;à 3,2 s.</figcaption></figure>
+          <p>Sur ce relevé, un détail attire l&#x27;attention : le moteur s&#x27;arrête dès la détection de la pièce, mais le vérin ne sort que 0,8 s plus tard. Ce que l&#x27;on voit à l&#x27;écran ne suffit pas à l&#x27;expliquer : c&#x27;est exactement le genre d&#x27;élément qu&#x27;une documentation absente ne dit pas.</p>
+          <p>Aucune source ne suffit seule. C&#x27;est leur confrontation qui donne un modèle fiable :</p>
+          <div class="art-table"><table><thead><tr><th scope="col">Source</th><th scope="col">Ce qu&#x27;elle apporte</th><th scope="col">Sa limite</th></tr></thead><tbody><tr><td>Schémas et plans</td><td>Le câblage prévu, les références</td><td>Peuvent ne plus refléter l&#x27;installation</td></tr><tr><td>Programme de l&#x27;automate</td><td>La logique, les variables, les temporisations</td><td>Peut être absent, ou différent de celui en service</td></tr><tr><td>Mesure sur l&#x27;installation</td><td>Ce qui se passe réellement, dans quel ordre</td><td>Ne dit pas pourquoi</td></tr><tr><td>Interface opérateur</td><td>Écrans, alarmes, consignes : la logique attendue</td><td>Montre ce qui a été prévu d&#x27;afficher</td></tr><tr><td>Personnes d&#x27;exploitation et de maintenance</td><td>L&#x27;histoire de l&#x27;équipement, les astuces, les pannes passées</td><td>Mémoire individuelle, à recouper</td></tr></tbody></table></div>
+        </section>
+        <section class="case-section" id="reconstituer-le-fonctionnement" data-hud="Reconstituer le fonctionnement">
+          <h2 class="case-h2"><span class="case-h2-num">05</span>Reconstituer le fonctionnement</h2>
+          <p>À partir des relevés, on déduit les états de la machine, les conditions de passage de l&#x27;un à l&#x27;autre et la logique de commande. Pour le convoyeur, une première hypothèse se dessine : le tapis attend la pièce, le vérin pousse dès que la pièce est détectée, puis il rentre.</p>
+          <figure class="art-motion art-motion--modele" data-art-fig="modele" data-replay="Rejouer"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Exemple fictif</span></div><svg viewBox="0 0 560 250" aria-hidden="true" focusable="false"><g class="a-pop" style="--d:0s"><rect class="box h1" x="20" y="40" width="120" height="56"/><text class="t" x="80" y="64" text-anchor="middle">Attente</text><text class="m" x="80" y="83" text-anchor="middle">tapis en marche</text></g><g class="a-pop" style="--d:0.5s"><rect class="box h2" x="220" y="40" width="120" height="56"/><text class="t" x="280" y="64" text-anchor="middle">Poussée</text><text class="m" x="280" y="83" text-anchor="middle">le vérin sort</text></g><g class="a-pop" style="--d:1s"><rect class="box h3" x="420" y="40" width="120" height="56"/><text class="t" x="480" y="64" text-anchor="middle">Retour</text><text class="m" x="480" y="83" text-anchor="middle">le vérin rentre</text></g><g class="a-fade" style="--d:0.8s;--t:0.5s"><path class="ln arr" d="M140 68H214"/><path class="hd" d="M214 63L224 68L214 73Z"/><text class="m c-sig b" x="180" y="56" text-anchor="middle">I1</text></g><g class="a-fade" style="--d:1.3s;--t:0.5s"><path class="ln arr" d="M340 68H414"/><path class="hd" d="M414 63L424 68L414 73Z"/><text class="m c-sig b" x="380" y="56" text-anchor="middle">I2</text></g><g class="a-fade" style="--d:1.8s;--t:0.6s"><path class="ln arr" d="M480 96V172H80V102"/><path class="hd" d="M75 104L80 94L85 104Z"/><text class="m c-sig b" x="280" y="162" text-anchor="middle">I3</text></g><text class="m" style="--d:2.3s;--t:0.6s" x="280" y="226" text-anchor="middle">I1 pièce présente · I2 vérin sorti · I3 vérin rentré</text><g class="tok"><circle class="halo" r="12"/><circle r="5.5"/></g></svg></div><figcaption>Premier modèle d&#x27;états du convoyeur (fictif) : trois états, des transitions déclenchées par les entrées I1, I2 et I3.</figcaption></figure>
+          <p>Ce modèle est une hypothèse, pas une vérité. Il est utile surtout parce qu&#x27;on peut le confronter à la mesure.</p>
+        </section>
+        <section class="case-section" id="valider-l-ecart-est-une-information" data-hud="Valider : l&#x27;écart est une information">
+          <h2 class="case-h2"><span class="case-h2-num">06</span>Valider : l&#x27;écart est une information</h2>
+          <p>On compare le modèle aux relevés, et chaque écart révèle un élément oublié. Ici, l&#x27;hypothèse « le vérin pousse dès que la pièce est détectée » ne colle pas à la mesure : il manque deux temporisations. Une première, de 0,8 s, fait attendre le vérin avant de pousser. Une seconde, de 0,6 s, le maintient sorti avant qu&#x27;il rentre. Le modèle est alors corrigé, puis comparé de nouveau, jusqu&#x27;à zéro écart.</p>
+          <figure class="art-motion art-motion--ecart" data-art-fig="ecart" data-replay="Rejouer"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Exemple fictif</span></div><svg viewBox="0 0 560 300" aria-hidden="true" focusable="false"><path class="ln dot" d="M130 96 H540"/><path class="ln dot" d="M130 196 H540"/><text class="t" x="10" y="88" text-anchor="start">Mesure</text><text class="t" x="10" y="188" text-anchor="start">Modèle</text><path class="ln" d="M130 262H540"/><path class="ln" d="M130 256V268"/><text class="m dim" x="130" y="286" text-anchor="middle">2</text><path class="ln" d="M232.5 256V268"/><text class="m dim" x="232.5" y="286" text-anchor="middle">3</text><path class="ln" d="M335 256V268"/><text class="m dim" x="335" y="286" text-anchor="middle">4</text><path class="ln" d="M437.5 256V268"/><text class="m dim" x="437.5" y="286" text-anchor="middle">5</text><path class="ln" d="M540 256V268"/><text class="m dim" x="540" y="286" text-anchor="middle">6 s</text><g class="gaps"><rect x="171" y="52" width="82" height="156"/><rect x="335" y="52" width="61.5" height="156"/><text class="m c-fault b" x="212" y="44" text-anchor="middle">0,8 s</text><text class="m c-fault b" x="365.75" y="44" text-anchor="middle">0,6 s</text></g><path class="sl s-and a-draw" style="--d:0s;--t:1.6s" d="M130 96H253 V64 H396.5 V96 H540" pathLength="1"/><path class="sl s-pred dash hyp" d="M130 196H171 V164 H335 V196 H540"/><path class="sl s-run a-draw fix" style="--d:4.8s;--t:1.4s" d="M130 196H253 V164 H396.5 V196 H540" pathLength="1"/><g class="brk"><path class="ln s-runl" d="M171 224V232H253 V224"/><path class="ln s-runl" d="M335 224V232H396.5 V224"/><text class="m c-run b" x="212" y="250" text-anchor="middle">T1 = 0,8 s</text><text class="m c-run b" x="365.75" y="250" text-anchor="middle">T2 = 0,6 s</text></g><text class="m c-fault b badA" x="540" y="24" text-anchor="end">2 écarts</text><text class="m c-run b badB" x="540" y="24" text-anchor="end">0 écart · modèle conforme</text></svg></div><figcaption>Le modèle initial s&#x27;écarte de la mesure à deux endroits ; en le corrigeant (T1 et T2), les écarts disparaissent.</figcaption></figure>
+          <p>Quelques précautions :</p>
+          <ul><li>Un modèle conforme sur quelques cycles n&#x27;est pas forcément complet : on vérifie aussi les cas rares (défaut, reprise après arrêt, démarrage à froid).</li><li>Les cas qui ne se produisent presque jamais ne se provoquent pas sur une installation en production : on les traite à part, hors production, sur banc ou en simulation.</li></ul>
+        </section>
+        <section class="case-section" id="documenter-pour-que-cela-serve" data-hud="Documenter pour que cela serve">
+          <h2 class="case-h2"><span class="case-h2-num">07</span>Documenter pour que cela serve</h2>
+          <p>Une compréhension qui reste dans la tête d&#x27;une personne n&#x27;est qu&#x27;une dette de plus. Le résultat de la démarche est un dossier que l&#x27;on peut utiliser pour dépanner, faire évoluer ou remplacer sans deviner :</p>
+          <div class="art-table"><table><thead><tr><th scope="col">Livrable</th><th scope="col">Contenu</th></tr></thead><tbody><tr><td>Liste des entrées/sorties</td><td>Chaque signal, avec son adresse, son rôle et son état de repos</td></tr><tr><td>Analyse fonctionnelle</td><td>Les états, les séquences, les conditions de passage et les temporisations</td></tr><tr><td>Schémas à jour</td><td>Le câblage réel, repéré et corrigé</td></tr><tr><td>Programme commenté et sauvegardé</td><td>Une version lisible, datée et archivée, avec son historique</td></tr><tr><td>Dossier de maintenance</td><td>Références des pièces, équivalents possibles, procédures de remplacement</td></tr><tr><td>Plan de modernisation (optionnel)</td><td>Les options pour remplacer ou moderniser, avec leurs risques et leurs priorités</td></tr></tbody></table></div>
+        </section>
+        <section class="case-section" id="decider-en-connaissance-de-cause" data-hud="Décider en connaissance de cause">
+          <h2 class="case-h2"><span class="case-h2-num">08</span>Décider en connaissance de cause</h2>
+          <p>Avec un équipement compris et documenté, la décision devient un vrai choix plutôt qu&#x27;un pari. Quatre issues sont possibles :</p>
+          <ul><li><strong>Réparer</strong> : remettre en état à l&#x27;identique, quand l&#x27;équipement est sain et que la pièce défaillante est identifiée.</li><li><strong>Fiabiliser</strong> : traiter les causes d&#x27;arrêt répétées (point faible, composant fragile, absence de sauvegarde).</li><li><strong>Adapter</strong> : modifier le comportement pour répondre à un nouveau besoin, avec un modèle de référence pour mesurer l&#x27;effet.</li><li><strong>Remplacer ou moderniser</strong> : changer le matériel ou la commande en conservant le comportement validé, ou en le modifiant en conscience.</li></ul>
+        </section>
+        <section class="case-section" id="garde-fous" data-hud="Garde-fous">
+          <h2 class="case-h2"><span class="case-h2-num">09</span>Garde-fous</h2>
+          <p>Comprendre un équipement existant suppose de ne rien casser. Quatre règles encadrent la démarche :</p>
+          <ol><li><strong>Sécurité d&#x27;abord</strong> : lecture seule par défaut, consignation avant toute intervention, procédures du site respectées.</li><li><strong>Sauvegarder avant d&#x27;intervenir</strong> : une copie datée et vérifiée du programme et des paramètres avant la moindre modification.</li><li><strong>Valider hors production</strong> : tester sur banc ou en simulation avant de toucher à l&#x27;équipement en service.</li><li><strong>Cadre juridique et contractuel</strong> : licences, propriété intellectuelle, confidentialité et contrats. On vérifie ce qui est permis avant de relever ou de modifier.</li></ol>
+        </section>
+        <section class="case-section" id="pour-aller-plus-loin" data-hud="Pour aller plus loin">
+          <h2 class="case-h2"><span class="case-h2-num">10</span>Pour aller plus loin</h2>
+          <p>La compétence est présentée, avec une démo interactive de cette démarche, sur la page <a href="../competences/retro-ingenierie-industrielle.html">Rétro-ingénierie industrielle</a>. Les autres compétences associées sont réunies dans la page <a href="../competences.html">Compétences</a>.</p>
+          <p>On ne fiabilise bien que ce que l&#x27;on comprend.</p>
+        </section>
+        <footer class="art-end">
+          <div class="art-actions"><a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2For3l-lab.github.io%2Farticles%2Fretro-ingenierie-industrielle.html" rel="noopener" target="_blank">Partager sur LinkedIn</a></div>
+          <div><p class="art-end-title">Voir aussi</p><ul class="art-related"><li><a href="../competences/retro-ingenierie-industrielle.html">Compétence : rétro-ingénierie industrielle (avec démo)</a></li><li><a href="../competences.html">Toutes les compétences</a></li></ul></div>
+        </footer>
+      </article>
+    </div>
+
+    <nav class="case-nav container" aria-label="Articles">
+      <a class="case-nav-link prev" href="capter-fiabiliser-decider.html"><span class="case-nav-label">← Article précédent</span><span class="case-nav-title">La boucle : capter, fiabiliser, décider</span></a>
+      <a class="case-nav-link all" href="../articles.html">Tous les articles</a>
+      <span aria-hidden="true"></span>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
+      <ul class="footer-links">
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+      <button class="motion-switch" type="button" role="switch" aria-checked="true" data-motion-switch data-on="oui" data-off="non" hidden><span class="motion-switch-label">Animations</span><span class="motion-switch-track" aria-hidden="true"><i></i></span><span class="motion-switch-state" aria-hidden="true">oui</span></button>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Retour à la navigation" title="Retour à la navigation">
+    <span class="back-to-top-arrow" aria-hidden="true">↑</span>
+    <span>Navigation</span>
+  </a>
+
+  <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">11</span><span class="hud-label"></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->
+  <script defer src="../assets/vendor/gsap.min.js"></script>
+  <script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="../assets/vendor/SplitText.min.js"></script>
+  <script defer src="../assets/vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="../assets/vendor/DrawSVGPlugin.min.js"></script>
+  <script defer src="../assets/vendor/lenis.min.js"></script>
+  <script defer src="../assets/js/config.js"></script>
+  <script defer src="../assets/js/contact.js"></script>
+  <script defer src="../assets/js/site.js"></script>
+  <script defer src="../assets/js/figures.js"></script>
+  <script defer src="../assets/js/case.js"></script>
+  <script defer src="../assets/js/articles.js"></script>
+  <script defer src="../assets/js/art-figures.js"></script>
+</body>
+</html>

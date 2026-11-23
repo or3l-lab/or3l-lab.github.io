@@ -1,0 +1,122 @@
+/* Figures animées des articles : tools/article_figures.py, déclenchées par assets/js/art-figures.js.
+   L'état de base est la figure terminée (animations coupées, préférence système, JavaScript absent).
+   Les animations n'existent que sous « html.motion.art-figs-on » et ne tournent que lorsque la figure est visible. */
+
+.art-motion { margin-block: 2em; --g: 18px; }
+.art-motion-stage { position: relative; padding: 14px 18px 16px; border: 1px solid var(--line-2); background: linear-gradient(180deg, rgba(17, 22, 29, .96), rgba(10, 14, 19, .96)); overflow-x: auto; }
+.art-motion-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 26px; margin-bottom: 6px; }
+.art-motion-tag { padding: 3px 9px; border: 1px solid rgba(255, 181, 71, .4); color: var(--andon); font: 600 10.5px/1.3 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; }
+.art-motion-replay { display: none; margin-left: auto; padding: 4px 12px; border: 1px solid var(--line-2); background: transparent; color: var(--muted); font: 600 11px/1.3 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: color .2s, border-color .2s; }
+.art-motion-replay:hover, .art-motion-replay:focus-visible { color: var(--signal); border-color: var(--signal); }
+.motion .art-motion-replay { display: inline-flex; }
+.art-motion figcaption { margin-top: 12px; color: var(--dim); font: 500 12.5px/1.5 var(--f-mono); }
+
+/* ------------------------------------------------------------ SVG */
+.art-motion svg { display: block; width: 100%; height: auto; min-width: 470px; overflow: visible; }
+.art-motion svg text { fill: var(--text); }
+.art-motion .t { font: 600 16px var(--f-display); }
+.art-motion .m { font: 500 13px var(--f-mono); fill: var(--muted); }
+.art-motion .b { font-weight: 700; }
+.art-motion svg text.dim { fill: var(--dim); }
+.art-motion svg text.c-sig { fill: var(--signal); }
+.art-motion svg text.c-and { fill: var(--andon); }
+.art-motion svg text.c-run { fill: var(--run); }
+.art-motion svg text.c-fault { fill: var(--fault); }
+
+.art-motion .ln { fill: none; stroke: var(--line-2); stroke-width: 1.5; }
+.art-motion .ln.dot { stroke-dasharray: 2 6; stroke-linecap: round; }
+.art-motion .ln.hl { stroke: var(--andon); stroke-dasharray: 4 5; opacity: .75; }
+.art-motion .sl { fill: none; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.art-motion .sl.dash { stroke-dasharray: 8 7; }
+.art-motion .s-sig { stroke: var(--signal); }
+.art-motion .s-and { stroke: var(--andon); }
+.art-motion .s-run { stroke: var(--run); }
+.art-motion .s-pred { stroke: #8fa3b8; stroke-dasharray: 8 7; }
+.art-motion .s-runl { stroke: var(--run); fill: none; }
+.art-motion .gapfill { fill: rgba(255, 93, 93, .22); stroke: var(--fault); stroke-width: 1; stroke-dasharray: 3 4; }
+.art-motion .mk { fill: var(--andon); }
+.art-motion .bdg { fill: rgba(255, 181, 71, .14); stroke: var(--andon); stroke-width: 1.5; }
+.art-motion .gaps rect { fill: rgba(255, 93, 93, .18); stroke: var(--fault); stroke-width: 1; stroke-dasharray: 3 4; }
+.art-motion .box { fill: var(--surface); stroke: var(--line-2); stroke-width: 1.5; }
+.art-motion .arr { fill: none; stroke: var(--signal); stroke-width: 2; stroke-linejoin: round; }
+.art-motion .hd { fill: var(--signal); }
+.art-motion .tok { opacity: 0; }
+.art-motion .tok circle { fill: var(--signal); }
+.art-motion .tok .halo { fill: rgba(45, 226, 230, .22); }
+
+/* « ecart » : l'état de base est le modèle corrigé, sans écart */
+.art-motion .hyp, .art-motion .gaps, .art-motion .badA { opacity: 0; }
+
+/* ------------------------------------------------------------ chaîne d'étapes (HTML) */
+.art-flow { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); column-gap: var(--g); row-gap: 0; padding: 6px 0 40px; }
+.af-step { position: relative; display: grid; gap: 4px; align-content: start; min-height: 104px; padding: 14px 14px 12px; border: 1px solid var(--line-2); background: var(--surface); }
+.af-step:not(.is-last)::after { content: ""; position: absolute; left: 100%; top: 50%; width: var(--g); height: 1.5px; background: var(--line-2); }
+.af-step:not(.is-last)::before { content: ""; position: absolute; left: calc(100% + var(--g) - 7px); top: calc(50% - 4px); z-index: 1; border: 4.5px solid transparent; border-left: 7px solid var(--signal); border-right: 0; }
+.af-step.is-last { border-color: rgba(45, 226, 230, .55); }
+.af-n { color: var(--signal); font: 600 11px/1 var(--f-mono); letter-spacing: .14em; }
+.af-step strong { color: var(--text); font: 600 16.5px/1.25 var(--f-display); }
+.af-s { color: var(--muted); font: 500 12.5px/1.4 var(--f-mono); }
+.af-ret { grid-column: var(--c1) / var(--c2); position: relative; height: 30px; margin: 0 calc((100% - (var(--k) - 1) * var(--g)) / (2 * var(--k))); border: 1.5px dashed rgba(255, 181, 71, .75); border-top: 0; border-radius: 0 0 10px 10px; }
+.af-ret::before { content: ""; position: absolute; left: -6.5px; top: -9px; border: 5px solid transparent; border-top: 0; border-bottom: 8px solid var(--andon); }
+.af-ret span { position: absolute; top: 100%; left: 50%; margin-top: 9px; transform: translateX(-50%); color: var(--andon); font: 600 12.5px/1.3 var(--f-mono); white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .art-motion-stage { padding: 12px 12px 14px; }
+  .art-motion-stage:has(svg) .art-motion-bar::after { content: "\2194"; color: var(--dim); font: 600 14px/1 var(--f-mono); }
+  .art-flow { grid-template-columns: 1fr; row-gap: var(--g); padding-bottom: 8px; }
+  .af-step { min-height: 0; }
+  .af-step:not(.is-last)::after { left: 22px; top: 100%; width: 1.5px; height: var(--g); }
+  .af-step:not(.is-last)::before { left: 16px; top: calc(100% + var(--g) - 7px); border: 4.5px solid transparent; border-top: 7px solid var(--signal); border-bottom: 0; }
+  .af-ret { grid-column: 1; height: auto; margin: 0; padding: 0 0 0 2px; border: 0; }
+  .af-ret::before { display: none; }
+  .af-ret span { position: static; display: block; margin: 0; transform: none; white-space: normal; }
+}
+
+/* ------------------------------------------------------------ animations */
+@keyframes afFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes afPop { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: scale(1); } }
+@keyframes afDraw { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
+@keyframes afIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes afHot3 { 0%, 31% { border-color: var(--signal); box-shadow: 0 0 0 1px rgba(45, 226, 230, .35), 0 0 22px rgba(45, 226, 230, .18); } 34%, 100% { border-color: var(--line-2); box-shadow: none; } }
+@keyframes afHot5 { 0%, 18% { border-color: var(--signal); box-shadow: 0 0 0 1px rgba(45, 226, 230, .35), 0 0 22px rgba(45, 226, 230, .18); } 21%, 100% { border-color: var(--line-2); box-shadow: none; } }
+@keyframes afHotLast3 { 0%, 31% { box-shadow: 0 0 0 1px rgba(45, 226, 230, .35), 0 0 22px rgba(45, 226, 230, .18); } 34%, 100% { box-shadow: none; } }
+@keyframes afHotLast5 { 0%, 18% { box-shadow: 0 0 0 1px rgba(45, 226, 230, .35), 0 0 22px rgba(45, 226, 230, .18); } 21%, 100% { box-shadow: none; } }
+@keyframes afOrbit { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes afTok { from { opacity: 0; } to { opacity: 1; } }
+@keyframes afG1 { 0%, 6% { stroke: var(--signal); fill: rgba(45, 226, 230, .12); } 12%, 90% { stroke: var(--line-2); fill: var(--surface); } 94%, 100% { stroke: var(--signal); fill: rgba(45, 226, 230, .12); } }
+@keyframes afG2 { 0%, 12% { stroke: var(--line-2); fill: var(--surface); } 15%, 26% { stroke: var(--signal); fill: rgba(45, 226, 230, .12); } 30%, 100% { stroke: var(--line-2); fill: var(--surface); } }
+@keyframes afG3 { 0%, 32% { stroke: var(--line-2); fill: var(--surface); } 35%, 46% { stroke: var(--signal); fill: rgba(45, 226, 230, .12); } 50%, 100% { stroke: var(--line-2); fill: var(--surface); } }
+@keyframes afHyp { 0%, 17% { opacity: 0; } 25%, 50% { opacity: 1; } 59%, 100% { opacity: 0; } }
+@keyframes afGaps { 0%, 27% { opacity: 0; } 33%, 50% { opacity: 1; } 59%, 100% { opacity: 0; } }
+@keyframes afBadA { 0%, 27% { opacity: 0; } 33%, 56% { opacity: 1; } 62%, 100% { opacity: 0; } }
+
+.motion.art-figs-on .art-motion .a-fade { animation: afFade var(--t, .6s) var(--ease) var(--d, 0s) both; }
+.motion.art-figs-on .art-motion .a-pop { transform-box: fill-box; transform-origin: center; animation: afPop .55s var(--ease) var(--d, 0s) both; }
+.motion.art-figs-on .art-motion .a-draw { animation: afDraw var(--t, 1.4s) var(--ease) var(--d, 0s) both; }
+
+.motion.art-figs-on .art-motion .af-step { animation: afIn .5s var(--ease) calc(var(--i) * .35s) both; }
+.motion.art-figs-on .art-motion .af-ret { animation: afFade .6s var(--ease) calc(var(--n) * .35s) both; }
+.motion.art-figs-on .art-motion .art-flow.af-n3 .af-step { animation: afIn .5s var(--ease) calc(var(--i) * .35s) both, afHot3 3.6s linear calc(1.6s + var(--i) * 1.2s) infinite; }
+.motion.art-figs-on .art-motion .art-flow.af-n5 .af-step { animation: afIn .5s var(--ease) calc(var(--i) * .35s) both, afHot5 6s linear calc(2.4s + var(--i) * 1.2s) infinite; }
+.motion.art-figs-on .art-motion .art-flow.af-n3 .af-step.is-last { animation: afIn .5s var(--ease) calc(var(--i) * .35s) both, afHotLast3 3.6s linear calc(1.6s + var(--i) * 1.2s) infinite; }
+.motion.art-figs-on .art-motion .art-flow.af-n5 .af-step.is-last { animation: afIn .5s var(--ease) calc(var(--i) * .35s) both, afHotLast5 6s linear calc(2.4s + var(--i) * 1.2s) infinite; }
+
+.motion.art-figs-on .art-motion .box.h1 { animation: afG1 7s linear 2.6s infinite both; }
+.motion.art-figs-on .art-motion .box.h2 { animation: afG2 7s linear 2.6s infinite both; }
+.motion.art-figs-on .art-motion .box.h3 { animation: afG3 7s linear 2.6s infinite both; }
+.motion.art-figs-on .art-motion .tok { offset-path: path("M80 68 H480 V172 H80 V68"); offset-rotate: 0deg; animation: afOrbit 7s linear 2.6s infinite both, afTok .4s linear 2.6s both; }
+
+.motion.art-figs-on .art-motion .hyp { animation: afHyp 9.5s linear both; }
+.motion.art-figs-on .art-motion .gaps { animation: afGaps 9.5s linear both; }
+.motion.art-figs-on .art-motion .badA { animation: afBadA 9.5s linear both; }
+.motion.art-figs-on .art-motion .brk, .motion.art-figs-on .art-motion .badB { animation: afFade .6s var(--ease) 6.4s both; }
+
+/* en pause hors de l'écran, coupées en cas de repli ou de relecture */
+.motion.art-figs-on .art-motion:not(.is-live) *, .motion.art-figs-on .art-motion:not(.is-live) *::before, .motion.art-figs-on .art-motion:not(.is-live) *::after { animation-play-state: paused !important; }
+.art-motion.no-anim *, .art-motion.no-anim *::before, .art-motion.no-anim *::after { animation: none !important; }
+.motion-fallback .art-motion *, .motion-fallback .art-motion *::before, .motion-fallback .art-motion *::after { animation: none !important; }
+
+@media print {
+  .art-motion-replay { display: none !important; }
+  .art-motion-stage { background: none; border-color: #999; }
+}

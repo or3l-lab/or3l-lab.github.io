@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial reverse engineering: understand before you change — Article · Or3L</title>
+  <meta name="description" content="Equipment can run for years with incomplete or outdated documentation. How to find out what it really does, validate it against measurements, then decide: repair, make reliable, adapt or replace.">
+  <meta name="author" content="Or3L">
+  <meta name="theme-color" content="#0a0e13">
+  <meta name="color-scheme" content="dark">
+  <!-- Page générée par tools/build_articles.py à partir de content/articles : ne pas modifier à la main. -->
+
+  <link rel="canonical" href="https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html">
+  <link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html">
+  <link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html">
+  <link rel="alternate" hreflang="x-default" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Or3L">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Industrial reverse engineering: understand before you change — Article · Or3L">
+  <meta property="og:description" content="Equipment can run for years with incomplete or outdated documentation. How to find out what it really does, validate it against measurements, then decide: repair, make reliable, adapt or replace.">
+  <meta property="og:url" content="https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html">
+  <meta property="og:image" content="https://or3l-lab.github.io/assets/img/og/en-industrial-reverse-engineering.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Industrial reverse engineering: understand before you change">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="article:published_time" content="2026-11-23">
+  <meta property="article:tag" content="Automation">
+  <meta property="article:tag" content="Reliability">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Industrial reverse engineering: understand before you change", "description": "Equipment can run for years with incomplete or outdated documentation. How to find out what it really does, validate it against measurements, then decide: repair, make reliable, adapt or replace.", "inLanguage": "en", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "mainEntityOfPage": "https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html", "image": "https://or3l-lab.github.io/assets/img/og/en-industrial-reverse-engineering.png", "author": {"@type": "Person", "name": "Or3L", "url": "https://or3l-lab.github.io/"}, "keywords": "Automation, Reliability"}</script>
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/articles.css">
+  <link rel="stylesheet" href="../../assets/css/art-figures.css">
+  <script src="../../assets/js/head.js"></script>
+</head>
+<body class="page-case page-article" data-page="case">
+  <a class="skip-link" href="#contenu">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Or3L — home">
+        <span class="brand-mark" aria-hidden="true">Or3L</span>
+        <span class="brand-text">Or3L<small>Industrial IT · AI</small></span>
+      </a>
+      <nav class="main-nav" id="menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="../journey.html">Journey</a></li>
+          <li><a href="../skills.html">Skills</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../articles.html">Articles</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-switch" href="../../articles/retro-ingenierie-industrielle.html" hreflang="fr" lang="fr" aria-label="Version française">FR</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-bars" aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu" class="case">
+
+    <section class="case-hero" data-hud="Article">
+      <div class="container case-hero-inner">
+        <div class="case-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../articles.html">Articles</a></li><li aria-current="page">Article</li></ol></nav>
+          <p class="case-kicker"><span class="case-num">Approach</span>Automation · Reliability</p>
+          <h1 class="case-title" data-reveal="lines">Industrial reverse engineering: understand before you change</h1>
+          <p class="case-pitch">Equipment can run for years with incomplete or outdated documentation. How to find out what it really does, validate it against measurements, then decide: repair, make reliable, adapt or replace.</p>
+          <ul class="card-tags"><li><span class="led-dot tag-pilot" aria-hidden="true"></span>Automation</li><li><span class="led-dot tag-auto" aria-hidden="true"></span>Reliability</li></ul>
+        </div>
+        <div class="case-visual case-screen" data-case-screen aria-hidden="true"><span class="screen-corner"></span><span class="screen-head"><span class="led led-signal"></span>Article</span><svg class="glyph glyph-article" viewBox="0 0 240 160" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect class="g-line" x="14" y="52" width="58" height="56" rx="2"/><path class="g-line g-thin" d="M26 59l5 5-5 5-5-5z"/><path class="g-line g-thin ga-type" style="--i:0" pathLength="1" d="M36 62h26"/><path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 80h38"/><path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 90h30"/><path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 100h18"/><path class="g-line g-dash" d="M72 80h38M130 80h24"/><path class="g-accent" d="M120 70l10 10-10 10-10-10z"/><path class="g-line g-thin" d="M120 75v10M115 80h10"/><path class="ga-pulse" style="--i:0" pathLength="1" d="M72 80h38"/><path class="ga-pulse" style="--i:1" pathLength="1" d="M130 80h24"/><rect class="g-line" x="154" y="14" width="72" height="132" rx="2"/><path class="g-accent ga-type" style="--i:2" pathLength="1" d="M166 30h40"/><path class="g-line g-thin ga-type" style="--i:2" pathLength="1" d="M166 40h28"/><path class="g-line g-thin" d="M166 58v74"/><path class="g-accent ga-type" style="--i:3" pathLength="1" d="M174 60h20"/><path class="g-line g-thin ga-type" style="--i:3" pathLength="1" d="M174 68h40M174 76h34"/><path class="g-accent ga-type" style="--i:4" pathLength="1" d="M174 90h24"/><path class="g-line g-thin ga-type" style="--i:4" pathLength="1" d="M174 98h40M174 106h30"/><path class="g-accent ga-type" style="--i:5" pathLength="1" d="M174 120h18"/><path class="g-line g-thin ga-type" style="--i:5" pathLength="1" d="M174 128h40M174 136h28"/><circle class="g-dot" cx="120" cy="80" r="2.6"/></g></svg><span class="screen-sig">10 sections · 6 min read</span></div>
+      </div>
+    </section>
+
+    <div class="container case-body">
+      <aside class="case-toc" aria-label="Contents">
+        <p class="case-toc-title">Contents</p>
+        <ol><li><a href="#introduction"><span class="toc-num">01</span>Introduction</a></li><li><a href="#when-the-documentation-no-longer-tells-the-truth"><span class="toc-num">02</span>When the documentation no longer tells the truth</a></li><li><a href="#the-principle-understand-before-you-change"><span class="toc-num">03</span>The principle: understand before you change</a></li><li><a href="#observe-and-capture-without-touching-anything"><span class="toc-num">04</span>Observe and capture, without touching anything</a></li><li><a href="#reconstruct-how-it-works"><span class="toc-num">05</span>Reconstruct how it works</a></li><li><a href="#validate-the-gap-is-information"><span class="toc-num">06</span>Validate: the gap is information</a></li><li><a href="#document-so-that-it-is-useful"><span class="toc-num">07</span>Document so that it is useful</a></li><li><a href="#decide-with-full-knowledge"><span class="toc-num">08</span>Decide with full knowledge</a></li><li><a href="#safeguards"><span class="toc-num">09</span>Safeguards</a></li><li><a href="#going-further"><span class="toc-num">10</span>Going further</a></li></ol>
+      </aside>
+      <article class="case-content art-body">
+        <details class="art-toc-mobile"><summary>Contents</summary><ol><li><a href="#introduction"><span class="toc-num">01</span>Introduction</a></li><li><a href="#when-the-documentation-no-longer-tells-the-truth"><span class="toc-num">02</span>When the documentation no longer tells the truth</a></li><li><a href="#the-principle-understand-before-you-change"><span class="toc-num">03</span>The principle: understand before you change</a></li><li><a href="#observe-and-capture-without-touching-anything"><span class="toc-num">04</span>Observe and capture, without touching anything</a></li><li><a href="#reconstruct-how-it-works"><span class="toc-num">05</span>Reconstruct how it works</a></li><li><a href="#validate-the-gap-is-information"><span class="toc-num">06</span>Validate: the gap is information</a></li><li><a href="#document-so-that-it-is-useful"><span class="toc-num">07</span>Document so that it is useful</a></li><li><a href="#decide-with-full-knowledge"><span class="toc-num">08</span>Decide with full knowledge</a></li><li><a href="#safeguards"><span class="toc-num">09</span>Safeguards</a></li><li><a href="#going-further"><span class="toc-num">10</span>Going further</a></li></ol></details>
+        <div class="case-overview"><dl class="case-meta">
+          <div><dt>Published</dt><dd><time datetime="2026-11-23">23 November 2026</time></dd></div>
+          <div><dt>Reading</dt><dd>6 min read</dd></div>
+          <div><dt>Type</dt><dd>Approach</dd></div>
+        </dl></div>
+        <section class="case-section" id="introduction" data-hud="Introduction">
+          <h2 class="case-h2"><span class="case-h2-num">01</span>Introduction</h2>
+          <p class="art-lead">A piece of equipment can run for years with incomplete drawings, a program that was never backed up, or documentation nobody has updated. As long as everything works, it goes unnoticed. The day it needs repair, a change or a replacement, everything becomes a gamble. This article describes an approach to find out what the equipment really does before touching it.</p>
+          <blockquote class="art-callout"><p><strong>Worth knowing</strong>: the example followed in this article (a conveyor with a pusher cylinder), its timing diagrams and its values are <strong>fictional</strong>. They illustrate the approach; they do not describe a real installation.</p></blockquote>
+        </section>
+        <section class="case-section" id="when-the-documentation-no-longer-tells-the-truth" data-hud="When the documentation no longer tells the truth">
+          <h2 class="case-h2"><span class="case-h2-num">02</span>When the documentation no longer tells the truth</h2>
+          <p>At the start, the documentation and the installation match. Then come the emergency repairs, the small changes, the part replacements: each one adds a gap that is rarely reported in the drawings. Over time, what we think we know about the equipment drifts away from what it actually does.</p>
+          <figure class="art-motion art-motion--derive" data-art-fig="derive" data-replay="Replay"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Fictional example</span></div><svg viewBox="0 0 560 270" aria-hidden="true" focusable="false"><g class="a-fade" style="--d:0s;--t:0.6s"><path class="ln" d="M36 222H524"/><path class="ln" d="M36 216V228"/><path class="ln" d="M190 216V228"/><path class="ln" d="M350 216V228"/><path class="ln" d="M524 216V228"/><text class="m dim" x="36" y="252" text-anchor="start">Commissioning</text><text class="m dim" x="190" y="252" text-anchor="middle">Repair</text><text class="m dim" x="350" y="252" text-anchor="middle">Change</text><text class="m dim" x="524" y="252" text-anchor="end">Today</text></g><polygon class="gapfill a-fade" style="--d:3.4s;--t:0.8s" points="190,96 524,96 524,162 350,162 350,124 190,124"/><path class="ln dot a-fade" style="--d:2.1s;--t:0.5s" d="M190 131V216"/><path class="ln dot a-fade" style="--d:2.95s;--t:0.5s" d="M350 169V216"/><path class="sl s-and a-draw" style="--d:1.2s;--t:2.4s" d="M36 96H190V124H350V162H524" pathLength="1"/><path class="sl s-sig dash a-fade" style="--d:0.3s;--t:0.8s" d="M36 96H524"/><path class="mk a-pop" style="--d:2s" d="M190 117L197 124L190 131L183 124Z"/><path class="mk a-pop" style="--d:2.85s" d="M350 155L357 162L350 169L343 162Z"/><text class="t c-sig a-fade" style="--d:0.3s;--t:0.8s" x="36" y="70" text-anchor="start">Documentation</text><text class="t c-and a-fade" style="--d:3s;--t:0.6s" x="524" y="192" text-anchor="end">Actual installation</text><text class="m c-fault a-fade" style="--d:3.8s;--t:0.6s" x="437" y="134" text-anchor="middle">gap</text></svg></div><figcaption>The documentation describes the original installation; the actual installation drifts away with every unreported change.</figcaption></figure>
+          <p>Four situations make this gap critical:</p>
+          <ul><li>Drawings and diagrams no longer exist, or do not reflect the actual installation.</li><li>A part, a PLC or a drive is no longer manufactured: an equivalent must be found without changing the behaviour.</li><li>The program was never backed up, or its author is gone.</li><li>Over successive repairs, the equipment was modified without the documentation following.</li></ul>
+        </section>
+        <section class="case-section" id="the-principle-understand-before-you-change" data-hud="The principle: understand before you change">
+          <h2 class="case-h2"><span class="case-h2-num">03</span>The principle: understand before you change</h2>
+          <p>Industrial reverse engineering means reconstructing how existing equipment works from what can be observed and measured, then recording it. The guiding idea fits in one sentence: <strong>understand what the equipment actually does, not what we believe it does.</strong></p>
+          <p>The approach runs in five steps, going back to the model as long as a gap remains between what was reconstructed and what is measured.</p>
+          <figure class="art-motion art-motion--boucle" data-art-fig="boucle" data-replay="Replay"><div class="art-motion-stage"><div class="art-motion-bar"></div><div class="art-flow af-n5" role="list" style="--n:5;--k:2;--c1:3;--c2:5"><div class="af-step" role="listitem" style="--i:0"><span class="af-n">01</span><strong>Observe</strong><span class="af-s">read-only</span></div><div class="af-step" role="listitem" style="--i:1"><span class="af-n">02</span><strong>Capture</strong><span class="af-s">signals, I/O</span></div><div class="af-step" role="listitem" style="--i:2"><span class="af-n">03</span><strong>Reconstruct</strong><span class="af-s">states, sequences</span></div><div class="af-step" role="listitem" style="--i:3"><span class="af-n">04</span><strong>Validate</strong><span class="af-s">model vs measurement</span></div><div class="af-step is-last" role="listitem" style="--i:4"><span class="af-n">05</span><strong>Document</strong><span class="af-s">file up to date</span></div><div class="af-ret" aria-hidden="true"><span>↺ gap: back to « Reconstruct »</span></div></div></div><figcaption>Five steps; if validation reveals a gap, go back and reconstruct the model.</figcaption></figure>
+          <p>For the rest of the article we follow a fictional example: a conveyor brings a part, stops, then a cylinder pushes the part into a bin. No diagram is available. Five signals are identified: three inputs (I1 part present, I2 cylinder out, I3 cylinder in) and two outputs (Q1 belt motor, Q2 cylinder solenoid valve).</p>
+        </section>
+        <section class="case-section" id="observe-and-capture-without-touching-anything" data-hud="Observe and capture, without touching anything">
+          <h2 class="case-h2"><span class="case-h2-num">04</span>Observe and capture, without touching anything</h2>
+          <p>The first rule is read-only: we watch the equipment run without forcing or changing anything. This observation produces a first list of questions (&quot;why does the cylinder wait before pushing?&quot;). Then the signals are recorded over several cycles to obtain a timing diagram.</p>
+          <figure class="art-motion art-motion--chrono" data-art-fig="chrono" data-replay="Replay"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Fictional example</span></div><svg viewBox="0 0 560 270" aria-hidden="true" focusable="false"><path class="ln dot" d="M150 74 H540"/><path class="ln dot" d="M150 138 H540"/><path class="ln dot" d="M150 202 H540"/><text class="t" x="10" y="66" text-anchor="start">Part present</text><text class="t" x="10" y="130" text-anchor="start">Belt motor</text><text class="t" x="10" y="194" text-anchor="start">Cylinder</text><path class="ln" d="M150 236H540"/><path class="ln" d="M150 230V242"/><text class="m dim" x="150" y="260" text-anchor="middle">0</text><path class="ln" d="M247.5 230V242"/><text class="m dim" x="247.5" y="260" text-anchor="middle">2</text><path class="ln" d="M345 230V242"/><text class="m dim" x="345" y="260" text-anchor="middle">4</text><path class="ln" d="M442.5 230V242"/><text class="m dim" x="442.5" y="260" text-anchor="middle">6</text><path class="ln" d="M540 230V242"/><text class="m dim" x="540" y="260" text-anchor="middle">8 s</text><path class="sl s-sig a-draw" style="--d:0s;--t:1.8s" d="M150 74H267 V48 H325.5 V74 H540" pathLength="1"/><path class="sl s-and a-draw" style="--d:0.4s;--t:1.8s" d="M150 112H267 V138 H413.25 V112 H540" pathLength="1"/><path class="sl s-and a-draw" style="--d:0.8s;--t:1.8s" d="M150 202H306 V176 H374.25 V202 H540" pathLength="1"/><path class="ln hl a-fade" style="--d:3s;--t:0.5s" d="M267 40V222"/><path class="ln hl a-fade" style="--d:3.4s;--t:0.5s" d="M306 40V222"/><g class="a-pop" style="--d:3.2s"><circle class="bdg" cx="267" cy="26" r="11"/><text class="m c-and b" x="267" y="31" text-anchor="middle">1</text></g><g class="a-pop" style="--d:3.6s"><circle class="bdg" cx="306" cy="26" r="11"/><text class="m c-and b" x="306" y="31" text-anchor="middle">2</text></g><text class="m c-and a-fade" style="--d:4.1s;--t:0.6s" x="326" y="31" text-anchor="start">0.8 s ?</text></svg></div><figcaption>Fictional timing diagram of one cycle: the part is detected at 2.4 s, but the cylinder only starts at 3.2 s.</figcaption></figure>
+          <p>One detail stands out in this recording: the motor stops as soon as the part is detected, yet the cylinder only moves out 0.8 s later. What is visible on screen does not explain it: this is exactly the kind of thing missing documentation fails to say.</p>
+          <p>No single source is enough on its own. It is by comparing them that a reliable model emerges:</p>
+          <div class="art-table"><table><thead><tr><th scope="col">Source</th><th scope="col">What it provides</th><th scope="col">Its limit</th></tr></thead><tbody><tr><td>Drawings and diagrams</td><td>The intended wiring, the references</td><td>May no longer reflect the installation</td></tr><tr><td>PLC program</td><td>The logic, the variables, the timers</td><td>May be missing, or differ from the one in service</td></tr><tr><td>Measurement on the installation</td><td>What really happens, and in which order</td><td>Does not say why</td></tr><tr><td>Operator interface</td><td>Screens, alarms, setpoints: the expected logic</td><td>Shows what was meant to be displayed</td></tr><tr><td>Operations and maintenance staff</td><td>The equipment&#x27;s history, tricks, past failures</td><td>Individual memory, to be cross-checked</td></tr></tbody></table></div>
+        </section>
+        <section class="case-section" id="reconstruct-how-it-works" data-hud="Reconstruct how it works">
+          <h2 class="case-h2"><span class="case-h2-num">05</span>Reconstruct how it works</h2>
+          <p>From the recordings, we deduce the machine&#x27;s states, the conditions for moving from one to the next, and the control logic. For the conveyor, a first hypothesis emerges: the belt waits for the part, the cylinder pushes as soon as the part is detected, then it retracts.</p>
+          <figure class="art-motion art-motion--modele" data-art-fig="modele" data-replay="Replay"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Fictional example</span></div><svg viewBox="0 0 560 250" aria-hidden="true" focusable="false"><g class="a-pop" style="--d:0s"><rect class="box h1" x="20" y="40" width="120" height="56"/><text class="t" x="80" y="64" text-anchor="middle">Wait</text><text class="m" x="80" y="83" text-anchor="middle">belt running</text></g><g class="a-pop" style="--d:0.5s"><rect class="box h2" x="220" y="40" width="120" height="56"/><text class="t" x="280" y="64" text-anchor="middle">Push</text><text class="m" x="280" y="83" text-anchor="middle">cylinder out</text></g><g class="a-pop" style="--d:1s"><rect class="box h3" x="420" y="40" width="120" height="56"/><text class="t" x="480" y="64" text-anchor="middle">Return</text><text class="m" x="480" y="83" text-anchor="middle">cylinder in</text></g><g class="a-fade" style="--d:0.8s;--t:0.5s"><path class="ln arr" d="M140 68H214"/><path class="hd" d="M214 63L224 68L214 73Z"/><text class="m c-sig b" x="180" y="56" text-anchor="middle">I1</text></g><g class="a-fade" style="--d:1.3s;--t:0.5s"><path class="ln arr" d="M340 68H414"/><path class="hd" d="M414 63L424 68L414 73Z"/><text class="m c-sig b" x="380" y="56" text-anchor="middle">I2</text></g><g class="a-fade" style="--d:1.8s;--t:0.6s"><path class="ln arr" d="M480 96V172H80V102"/><path class="hd" d="M75 104L80 94L85 104Z"/><text class="m c-sig b" x="280" y="162" text-anchor="middle">I3</text></g><text class="m" style="--d:2.3s;--t:0.6s" x="280" y="226" text-anchor="middle">I1 part present · I2 cylinder out · I3 cylinder in</text><g class="tok"><circle class="halo" r="12"/><circle r="5.5"/></g></svg></div><figcaption>First state model of the conveyor (fictional): three states, with transitions triggered by inputs I1, I2 and I3.</figcaption></figure>
+          <p>This model is a hypothesis, not a truth. It is useful mainly because it can be compared against measurements.</p>
+        </section>
+        <section class="case-section" id="validate-the-gap-is-information" data-hud="Validate: the gap is information">
+          <h2 class="case-h2"><span class="case-h2-num">06</span>Validate: the gap is information</h2>
+          <p>The model is compared with the recordings, and every gap reveals something that was overlooked. Here, the hypothesis &quot;the cylinder pushes as soon as the part is detected&quot; does not match the measurement: two timers are missing. A first one, 0.8 s, makes the cylinder wait before pushing. A second one, 0.6 s, keeps it extended before it retracts. The model is then corrected and compared again, until there is zero gap.</p>
+          <figure class="art-motion art-motion--ecart" data-art-fig="ecart" data-replay="Replay"><div class="art-motion-stage"><div class="art-motion-bar"><span class="art-motion-tag">Fictional example</span></div><svg viewBox="0 0 560 300" aria-hidden="true" focusable="false"><path class="ln dot" d="M130 96 H540"/><path class="ln dot" d="M130 196 H540"/><text class="t" x="10" y="88" text-anchor="start">Measured</text><text class="t" x="10" y="188" text-anchor="start">Model</text><path class="ln" d="M130 262H540"/><path class="ln" d="M130 256V268"/><text class="m dim" x="130" y="286" text-anchor="middle">2</text><path class="ln" d="M232.5 256V268"/><text class="m dim" x="232.5" y="286" text-anchor="middle">3</text><path class="ln" d="M335 256V268"/><text class="m dim" x="335" y="286" text-anchor="middle">4</text><path class="ln" d="M437.5 256V268"/><text class="m dim" x="437.5" y="286" text-anchor="middle">5</text><path class="ln" d="M540 256V268"/><text class="m dim" x="540" y="286" text-anchor="middle">6 s</text><g class="gaps"><rect x="171" y="52" width="82" height="156"/><rect x="335" y="52" width="61.5" height="156"/><text class="m c-fault b" x="212" y="44" text-anchor="middle">0.8 s</text><text class="m c-fault b" x="365.75" y="44" text-anchor="middle">0.6 s</text></g><path class="sl s-and a-draw" style="--d:0s;--t:1.6s" d="M130 96H253 V64 H396.5 V96 H540" pathLength="1"/><path class="sl s-pred dash hyp" d="M130 196H171 V164 H335 V196 H540"/><path class="sl s-run a-draw fix" style="--d:4.8s;--t:1.4s" d="M130 196H253 V164 H396.5 V196 H540" pathLength="1"/><g class="brk"><path class="ln s-runl" d="M171 224V232H253 V224"/><path class="ln s-runl" d="M335 224V232H396.5 V224"/><text class="m c-run b" x="212" y="250" text-anchor="middle">T1 = 0.8 s</text><text class="m c-run b" x="365.75" y="250" text-anchor="middle">T2 = 0.6 s</text></g><text class="m c-fault b badA" x="540" y="24" text-anchor="end">2 gaps</text><text class="m c-run b badB" x="540" y="24" text-anchor="end">0 gap · model matches</text></svg></div><figcaption>The initial model differs from the measurement in two places; once corrected (T1 and T2), the gaps disappear.</figcaption></figure>
+          <p>A few precautions:</p>
+          <ul><li>A model that matches over a few cycles is not necessarily complete: rare cases are checked too (fault, restart after a stop, cold start).</li><li>Cases that almost never happen are not provoked on a production installation: they are handled separately, off production, on a test bench or in simulation.</li></ul>
+        </section>
+        <section class="case-section" id="document-so-that-it-is-useful" data-hud="Document so that it is useful">
+          <h2 class="case-h2"><span class="case-h2-num">07</span>Document so that it is useful</h2>
+          <p>Understanding that stays in one person&#x27;s head is just one more debt. The result of the approach is a file that can be used to repair, upgrade or replace without guessing:</p>
+          <div class="art-table"><table><thead><tr><th scope="col">Deliverable</th><th scope="col">Content</th></tr></thead><tbody><tr><td>I/O list</td><td>Each signal, with its address, its role and its rest state</td></tr><tr><td>Functional analysis</td><td>The states, sequences, transition conditions and timers</td></tr><tr><td>Up-to-date diagrams</td><td>The actual wiring, identified and corrected</td></tr><tr><td>Commented and backed-up program</td><td>A readable, dated and archived version, with its history</td></tr><tr><td>Maintenance file</td><td>Part references, possible equivalents, replacement procedures</td></tr><tr><td>Modernisation plan (optional)</td><td>The options to replace or modernise, with their risks and priorities</td></tr></tbody></table></div>
+        </section>
+        <section class="case-section" id="decide-with-full-knowledge" data-hud="Decide with full knowledge">
+          <h2 class="case-h2"><span class="case-h2-num">08</span>Decide with full knowledge</h2>
+          <p>With equipment that is understood and documented, the decision becomes a real choice instead of a gamble. Four outcomes are possible:</p>
+          <ul><li><strong>Repair</strong>: restore to the identical state, when the equipment is sound and the faulty part is identified.</li><li><strong>Make reliable</strong>: address repeated causes of stops (weak point, fragile component, missing backup).</li><li><strong>Adapt</strong>: change the behaviour to meet a new need, with a reference model to measure the effect.</li><li><strong>Replace or modernise</strong>: change the hardware or the control while keeping the validated behaviour, or changing it deliberately.</li></ul>
+        </section>
+        <section class="case-section" id="safeguards" data-hud="Safeguards">
+          <h2 class="case-h2"><span class="case-h2-num">09</span>Safeguards</h2>
+          <p>Understanding existing equipment means breaking nothing. Four rules frame the approach:</p>
+          <ol><li><strong>Safety first</strong>: read-only by default, lockout before any intervention, site procedures followed.</li><li><strong>Back up before intervening</strong>: a dated and verified copy of the program and the parameters before any modification.</li><li><strong>Validate off production</strong>: test on a bench or in simulation before touching equipment in service.</li><li><strong>Legal and contractual framework</strong>: licences, intellectual property, confidentiality and contracts. We check what is permitted before capturing or modifying anything.</li></ol>
+        </section>
+        <section class="case-section" id="going-further" data-hud="Going further">
+          <h2 class="case-h2"><span class="case-h2-num">10</span>Going further</h2>
+          <p>The skill is presented, with an interactive demo of this approach, on the <a href="../skills/industrial-reverse-engineering.html">Industrial reverse engineering</a> page. The related skills are gathered on the <a href="../skills.html">Skills</a> page.</p>
+          <p>You can only make reliable what you understand.</p>
+        </section>
+        <footer class="art-end">
+          <div class="art-actions"><a class="btn btn-ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2For3l-lab.github.io%2Fen%2Farticles%2Fretro-ingenierie-industrielle.html" rel="noopener" target="_blank">Share on LinkedIn</a></div>
+          <div><p class="art-end-title">See also</p><ul class="art-related"><li><a href="../skills/industrial-reverse-engineering.html">Skill: industrial reverse engineering (with demo)</a></li><li><a href="../skills.html">All skills</a></li></ul></div>
+        </footer>
+      </article>
+    </div>
+
+    <nav class="case-nav container" aria-label="Articles">
+      <a class="case-nav-link prev" href="capter-fiabiliser-decider.html"><span class="case-nav-label">← Previous article</span><span class="case-nav-title">The loop: capture, refine, decide</span></a>
+      <a class="case-nav-link all" href="../articles.html">All articles</a>
+      <span aria-hidden="true"></span>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">Or3L</span> © <span data-year>2026</span> Or3L</p>
+      <ul class="footer-links">
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="https://www.linkedin.com/in/aurelien-ramirez-58a476104/" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+      <button class="motion-switch" type="button" role="switch" aria-checked="true" data-motion-switch data-on="on" data-off="off" hidden><span class="motion-switch-label">Animations</span><span class="motion-switch-track" aria-hidden="true"><i></i></span><span class="motion-switch-state" aria-hidden="true">on</span></button>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Back to navigation" title="Back to navigation">
+    <span class="back-to-top-arrow" aria-hidden="true">↑</span>
+    <span>Navigation</span>
+  </a>
+
+  <div class="hud" aria-hidden="true"><span class="hud-led"></span><span class="hud-num">01</span><span class="hud-sep">/</span><span class="hud-total">11</span><span class="hud-label"></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts : bibliothèques (GSAP, Lenis), configuration, puis animations du site -->
+  <script defer src="../../assets/vendor/gsap.min.js"></script>
+  <script defer src="../../assets/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="../../assets/vendor/SplitText.min.js"></script>
+  <script defer src="../../assets/vendor/ScrambleTextPlugin.min.js"></script>
+  <script defer src="../../assets/vendor/DrawSVGPlugin.min.js"></script>
+  <script defer src="../../assets/vendor/lenis.min.js"></script>
+  <script defer src="../../assets/js/config.js"></script>
+  <script defer src="../../assets/js/contact.js"></script>
+  <script defer src="../../assets/js/site.js"></script>
+  <script defer src="../../assets/js/figures.js"></script>
+  <script defer src="../../assets/js/case.js"></script>
+  <script defer src="../../assets/js/articles.js"></script>
+  <script defer src="../../assets/js/art-figures.js"></script>
+</body>
+</html>

@@ -6,12 +6,14 @@ tags: Data, AI
 type: Approach
 related: en/projects/downtime-risk-monitoring.html | See it before it breaks
 related: en/projects/local-ai-assistant.html | Orélia, a sovereign personal assistant
-draft: true
+draft: false
 ---
 
 Three disciplines, one loop: automation to capture, development to refine, artificial intelligence to decide. Every decision goes back to the business teams.
 
 > **In brief**: capture signals from production and support services, make the data reliable, turn it into decisions. AI detects and predicts, human expertise arbitrates.
+
+:::figure signaux "The loop: three steps, and every decision goes back to the business teams."
 
 ## Capture: make every machine and every department speak
 
