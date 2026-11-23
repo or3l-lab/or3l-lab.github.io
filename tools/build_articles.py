@@ -48,21 +48,21 @@ L = {
         'back_top': 'Retour à la navigation', 'back_top_short': 'Navigation',
         'breadcrumb': "Fil d'Ariane", 'home_label': 'Accueil', 'articles': 'Articles', 'article': 'Article',
         'idx_title': 'Articles — Or3L',
-        'idx_desc': "Mes publications LinkedIn développées en articles complets : industrie, données, IA appliquée et amélioration continue.",
-        'idx_lede': "Mes publications LinkedIn, reprises et développées : le contexte, la méthode, les limites et ce que j'en retire.",
+        'idx_desc': "Mes articles, réflexions, idées et retours sur projets.",
+        'idx_lede': "Mes articles, mes réflexions, mes idées et mes retours sur projets.",
         'back_home': "← Retour à l'accueil",
-        'fig_head': "Du post à l'article", 'fig_small': 'format long',
-        'plates': [('01 · Post', "L'idée, en bref"), ('02 · Détail', 'Contexte, méthode'), ('03 · Article', 'Complet, avec sommaire')],
+        'fig_head': "De l'idée à l'article", 'fig_small': 'format long',
+        'plates': [('01 · Idée', 'Le point de départ'), ('02 · Réflexion', 'Contexte, méthode'), ('03 · Article', 'Structuré, avec sommaire')],
         'latest': 'Dernier article', 'contents': 'Sommaire', 'all_articles': 'Tous les articles',
         'filter_label': 'Filtrer par thème', 'all': 'Tous', 'search': 'Rechercher un article', 'search_ph': 'Rechercher…',
         'one': 'article', 'many': 'articles', 'none': "Aucun article ne correspond à ces critères.",
         'soon_title': 'Les premiers articles arrivent bientôt.',
-        'soon_text': "Cette rubrique accueillera mes publications LinkedIn, reprises de façon plus détaillée et complète.",
-        'follow': 'Ces articles prolongent mes publications LinkedIn.', 'follow_link': 'Me suivre sur LinkedIn',
+        'soon_text': "Cette rubrique accueillera mes articles, mes réflexions et mes retours sur projets.",
+        'follow': 'Les projets sont présentés en détail dans la rubrique Projets.', 'follow_link': 'Voir les projets',
         'min': 'min de lecture', 'sections': 'sections',
-        'published': 'Publié', 'reading': 'Lecture', 'format': 'Format', 'format_li': "Développé d'un post LinkedIn", 'format_art': 'Article',
-        'toc_note': "Version développée d'une publication LinkedIn.", 'intro': 'Introduction',
-        'share': 'Partager sur LinkedIn', 'origin': "Voir le post d'origine", 'related': 'Voir aussi', 'updated': 'Mis à jour le',
+        'published': 'Publié', 'reading': 'Lecture', 'format': 'Type', 'format_art': 'Article',
+        'intro': 'Introduction',
+        'share': 'Partager sur LinkedIn', 'related': 'Voir aussi', 'updated': 'Mis à jour le',
         'prev': '← Article précédent', 'next': 'Article suivant →', 'nav_articles': 'Articles',
         'teaser_title': 'Le détail derrière chaque idée.', 'teaser_all': 'Tous les articles', 'teaser_open': "Lire l'article",
         'img_alt_default': 'Or3L — Articles',
@@ -77,21 +77,21 @@ L = {
         'back_top': 'Back to navigation', 'back_top_short': 'Navigation',
         'breadcrumb': 'Breadcrumb', 'home_label': 'Home', 'articles': 'Articles', 'article': 'Article',
         'idx_title': 'Articles — Or3L',
-        'idx_desc': 'My LinkedIn posts expanded into full articles: industry, data, applied AI and continuous improvement.',
-        'idx_lede': 'My LinkedIn posts, expanded: the context, the method, the limits and what I take away from them.',
+        'idx_desc': 'My articles, reflections, ideas and project write-ups.',
+        'idx_lede': 'My articles, my reflections, my ideas and my project write-ups.',
         'back_home': '← Back to home',
-        'fig_head': 'From post to article', 'fig_small': 'long form',
-        'plates': [('01 · Post', 'The idea, in brief'), ('02 · Depth', 'Context, method'), ('03 · Article', 'Full, with contents')],
+        'fig_head': 'From idea to article', 'fig_small': 'long form',
+        'plates': [('01 · Idea', 'The starting point'), ('02 · Thinking', 'Context, method'), ('03 · Article', 'Structured, with contents')],
         'latest': 'Latest article', 'contents': 'Contents', 'all_articles': 'All articles',
         'filter_label': 'Filter by topic', 'all': 'All', 'search': 'Search articles', 'search_ph': 'Search…',
         'one': 'article', 'many': 'articles', 'none': 'No article matches these criteria.',
         'soon_title': 'The first articles are coming soon.',
-        'soon_text': 'This section will gather my LinkedIn posts, expanded into more detailed and complete articles.',
-        'follow': 'These articles extend my LinkedIn posts.', 'follow_link': 'Follow me on LinkedIn',
+        'soon_text': 'This section will gather my articles, reflections and project write-ups.',
+        'follow': 'The projects are presented in detail in the Projects section.', 'follow_link': 'See the projects',
         'min': 'min read', 'sections': 'sections',
-        'published': 'Published', 'reading': 'Reading', 'format': 'Format', 'format_li': 'Expanded from a LinkedIn post', 'format_art': 'Article',
-        'toc_note': 'Expanded version of a LinkedIn post.', 'intro': 'Introduction',
-        'share': 'Share on LinkedIn', 'origin': 'See the original post', 'related': 'See also', 'updated': 'Updated on',
+        'published': 'Published', 'reading': 'Reading', 'format': 'Type', 'format_art': 'Article',
+        'intro': 'Introduction',
+        'share': 'Share on LinkedIn', 'related': 'See also', 'updated': 'Updated on',
         'prev': '← Previous article', 'next': 'Next article →', 'nav_articles': 'Articles',
         'teaser_title': 'The detail behind every idea.', 'teaser_all': 'All articles', 'teaser_open': 'Read the article',
         'img_alt_default': 'Or3L — Articles',
@@ -161,7 +161,7 @@ def write_if_changed(path, text, written):
 class Article:
     def __init__(self, key, lang, path):
         self.key, self.lang, self.path = key, lang, path
-        self.title = self.summary = self.linkedin = self.image = ''
+        self.title = self.summary = self.kind = self.image = ''
         self.date = self.updated = None
         self.tags, self.related, self.sections = [], [], []
         self.draft = False
@@ -212,7 +212,7 @@ def load_article(key, lang, path):
             except ValueError:
                 errors.append('%s : « %s » doit être une date AAAA-MM-JJ (reçu : %s).' % (path, fld, meta[fld]))
     a.tags = [t.strip() for t in meta.get('tags', '').split(',') if t.strip()]
-    a.linkedin = meta.get('linkedin', '')
+    a.kind = meta.get('type', '')
     a.image = meta.get('image', '').lstrip('/')
     a.draft = meta.get('draft', '').lower() in ('true', 'oui', 'yes', '1')
     if meta.get('slug'):
@@ -412,7 +412,7 @@ DOC_GLYPH = (
     '<svg class="glyph glyph-article" viewBox="0 0 240 160" aria-hidden="true" focusable="false">'
     '<g fill="none" stroke-linecap="round" stroke-linejoin="round">'
     '<rect class="g-line" x="14" y="52" width="58" height="56" rx="2"/>'
-    '<circle class="g-line g-thin" cx="26" cy="64" r="5"/>'
+    '<path class="g-line g-thin" d="M26 59l5 5-5 5-5-5z"/>'
     '<path class="g-line g-thin ga-type" style="--i:0" pathLength="1" d="M36 62h26"/>'
     '<path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 80h38"/>'
     '<path class="g-line g-thin ga-type" style="--i:1" pathLength="1" d="M24 90h30"/>'
@@ -438,13 +438,13 @@ DOC_GLYPH = (
 
 
 def fig_svg():
-    """Figure animée « du post à l'article » (viewBox 640 × 480), pilotée par assets/js/articles.js."""
+    """Figure animée « de l'idée à l'article » (viewBox 640 × 480), pilotée par assets/js/articles.js."""
     def w(cls, d, s=None):
         return '<path class="%s aw" pathLength="1"%s d="%s"/>' % (cls, ' data-s="%d"' % s if s is not None else '', d)
     parts = ['<svg viewBox="0 0 640 480" focusable="false"><g class="a-all">',
              '<path class="a-glow" d="M148 234H350"/>',
              '<g class="a-card-g"><rect class="a-card" x="28" y="176" width="120" height="116"/>'
-             '<circle class="a-av" cx="50" cy="200" r="9"/>',
+             '<path class="a-av" d="M50 188L54 197L63 201L54 205L50 214L46 205L37 201L46 197Z"/>',
              w('a-line', 'M68 197H112'), w('a-line', 'M68 207H96'),
              w('a-line', 'M44 238H132'), w('a-line', 'M44 252H124'), w('a-line', 'M44 266H96'),
              '</g>',
@@ -620,8 +620,7 @@ def article_page(a, by_lang, lists):
     tags = tag_list(a)
     toc = ''.join('<li><a href="#%s"><span class="toc-num">%02d</span>%s</a></li>' % (sid, i + 1, esc(plain))
                   for i, (sid, _, plain, _) in enumerate(a.sections))
-    fmt = (('<a class="text-link" style="margin:0" href="%s" rel="noopener" target="_blank">%s</a>' % (esc(a.linkedin), esc(t['format_li'])))
-           if a.linkedin else esc(t['format_art']))
+    fmt = esc(a.kind or t['format_art'])
     out += '''
   <main id="contenu" class="case">
 
@@ -629,7 +628,7 @@ def article_page(a, by_lang, lists):
       <div class="container case-hero-inner">
         <div class="case-hero-copy">
           <nav class="breadcrumb" aria-label="{bc}"><ol><li><a href="{home}">{homelabel}</a></li><li><a href="{idx}">{articles}</a></li><li aria-current="page">{article}</li></ol></nav>
-          <p class="case-kicker"><span class="case-num">{article}</span>{kick}</p>
+          <p class="case-kicker"><span class="case-num">{kind}</span>{kick}</p>
           <h1 class="case-title" data-reveal="lines">{title}</h1>
           <p class="case-pitch">{summary}</p>
           {tagsul}
@@ -642,7 +641,7 @@ def article_page(a, by_lang, lists):
       <aside class="case-toc" aria-label="{contents}">
         <p class="case-toc-title">{contents}</p>
         <ol>{toc}</ol>
-{note}      </aside>
+      </aside>
       <article class="case-content art-body">
         <details class="art-toc-mobile"><summary>{contents}</summary><ol>{toc}</ol></details>
         <div class="case-overview"><dl class="case-meta">
@@ -650,11 +649,10 @@ def article_page(a, by_lang, lists):
           <div><dt>{reading}</dt><dd>{mins} {minlabel}</dd></div>
           <div><dt>{format}</dt><dd>{fmt}</dd></div>
         </dl></div>
-'''.format(article=esc(t['article']), bc=esc(t['breadcrumb']), home=rel(src, t['home']), homelabel=esc(t['home_label']),
+'''.format(article=esc(t['article']), kind=esc(a.kind or t['article']), bc=esc(t['breadcrumb']), home=rel(src, t['home']), homelabel=esc(t['home_label']),
            idx=rel(src, t['index']), articles=esc(t['articles']), kick=' · '.join(esc(x) for x in a.tags), title=esc(a.title),
            summary=esc(a.summary), tagsul='<ul class="card-tags">%s</ul>' % tags if tags else '', glyph=DOC_GLYPH, n=n,
            sections=t['sections'], mins=a.minutes, minlabel=t['min'], contents=esc(t['contents']), toc=toc,
-           note='        <p class="case-conf">%s</p>\n' % esc(t['toc_note']) if a.linkedin else '',
            published=t['published'], reading=t['reading'], format=t['format'], iso=a.date.isoformat(),
            date=fmt_date(a.date, lang), fmt=fmt)
     for i, (sid, title_html, plain, frags) in enumerate(a.sections):
@@ -663,10 +661,7 @@ def article_page(a, by_lang, lists):
         out += ''.join('          %s\n' % f for f in frags)
         out += '        </section>\n'
     share = 'https://www.linkedin.com/sharing/share-offsite/?url=' + urllib.parse.quote(canonical_url, safe='')
-    end = '<div class="art-actions"><a class="btn btn-ghost" href="%s" rel="noopener" target="_blank">%s</a>' % (esc(share), esc(t['share']))
-    if a.linkedin:
-        end += '<a class="text-link" href="%s" rel="noopener" target="_blank">%s <span aria-hidden="true">→</span></a>' % (esc(a.linkedin), esc(t['origin']))
-    end += '</div>'
+    end = '<div class="art-actions"><a class="btn btn-ghost" href="%s" rel="noopener" target="_blank">%s</a></div>' % (esc(share), esc(t['share']))
     out += '        <footer class="art-end">\n          %s\n' % end
     if a.related:
         out += '          <div><p class="art-end-title">%s</p><ul class="art-related">%s</ul></div>\n' % (
@@ -702,19 +697,20 @@ def article_page(a, by_lang, lists):
 def row_html(a, num, src):
     t = L[a.lang]
     tags = tag_list(a)
+    kind = '<span class="art-row-kind">%s</span>' % esc(a.kind) if a.kind else ''
     return ('<li class="art-row" data-tags="%s" data-search="%s"><a class="art-row-link" href="%s">'
             '<span class="art-row-num" aria-hidden="true">%02d</span>'
-            '<span class="art-row-main"><h3 class="art-row-title">%s</h3><p class="art-row-sum">%s</p>%s</span>'
+            '<span class="art-row-main">%s<h3 class="art-row-title">%s</h3><p class="art-row-sum">%s</p>%s</span>'
             '<span class="art-row-meta"><time datetime="%s">%s</time><span>%d %s</span><span class="art-row-arrow" aria-hidden="true">→</span></span>'
-            '</a></li>') % (esc(' '.join(slugify(x) for x in a.tags)), esc(norm(' '.join([a.title, a.summary] + a.tags))),
-                            rel(src, a.out), num, esc(a.title), esc(a.summary),
+            '</a></li>') % (esc(' '.join(slugify(x) for x in a.tags)), esc(norm(' '.join([a.title, a.summary, a.kind] + a.tags))),
+                            rel(src, a.out), num, kind, esc(a.title), esc(a.summary),
                             '<ul class="art-row-tags">%s</ul>' % tags if tags else '', a.date.isoformat(),
                             fmt_date(a.date, a.lang), a.minutes, t['min'])
 
 
 def card_html(a, num, src, flagship):
     t = L[a.lang]
-    kick = ' · '.join(esc(x) for x in a.tags) or esc(t['article'])
+    kick = ' · '.join(esc(x) for x in ([a.kind] if a.kind else []) + a.tags) or esc(t['article'])
     meta = '%s · %d %s' % (fmt_date(a.date, a.lang), a.minutes, t['min'])
     badge = '<span class="card-badge">%s</span>' % esc(t['latest']) if flagship else ''
     return ('<a class="feature-project{cls}" href="{h}" data-card>'
@@ -807,11 +803,11 @@ def index_page(lang, lists):
         {tools}
         <div class="art-index">{blocks}</div>
         <p class="art-empty" hidden>{none}</p>
-        <div class="reading-outro art-follow"><p>{follow}</p><a class="text-link" href="{li}" rel="noopener" target="_blank">{fl} <span aria-hidden="true">→</span></a></div>
+        <div class="reading-outro art-follow"><p>{follow}</p><a class="text-link" href="{proj}">{fl} <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
 '''.format(c=esc(t['contents']), eb=eb, all=esc(t['all_articles']), tools=tools, blocks=blocks, none=esc(t['none']),
-           follow=esc(t['follow']), li=LINKEDIN, fl=esc(t['follow_link']))
+           follow=esc(t['follow']), proj=rel(src, t['nav'][2][1]), fl=esc(t['follow_link']))
     out += '\n  </main>\n'
     out += footer_html(lang, src, hud)
     out += scripts_html(src, reading=True)

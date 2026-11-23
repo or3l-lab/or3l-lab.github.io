@@ -1,6 +1,6 @@
 # Articles : mode d'emploi
 
-Les articles sont de simples fichiers texte (Markdown) dans ce dossier. Un script les transforme en pages du site : GitHub Pages n'a pas de base de données, donc **on écrit, on génère, on publie**.
+Les articles sont de simples fichiers texte (Markdown) dans ce dossier : mes articles, réflexions, idées et retours sur projets. Un script les transforme en pages du site : GitHub Pages n'a pas de base de données, donc **on écrit, on génère, on publie**.
 
 ## Publier un article
 
@@ -35,7 +35,7 @@ Entre deux lignes `---`, en haut du fichier :
 | `date` | oui | date de publication, au format `AAAA-MM-JJ` (classe le sommaire) |
 | `summary` | oui | résumé de 1 à 2 phrases (sommaire, accueil, aperçu de partage) |
 | `tags` | non | thèmes séparés par des virgules (filtres du sommaire) |
-| `linkedin` | non | adresse du post LinkedIn d'origine (affiche un lien « Voir le post d'origine ») |
+| `type` | non | nature du texte : `Article`, `Réflexion`, `Idée`, `Retour d'expérience`, `Projet`… (affiché en tête de l'article et dans le sommaire ; « Article » par défaut) |
 | `updated` | non | date de mise à jour, `AAAA-MM-JJ` |
 | `image` | non | image d'aperçu de partage, ex. `assets/img/articles/mon-article/apercu.png` (1200 × 630) |
 | `related` | non | page liée, à répéter si besoin : `projets/page.html \| Libellé` |

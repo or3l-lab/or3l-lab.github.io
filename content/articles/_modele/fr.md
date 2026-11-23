@@ -3,7 +3,7 @@ title: Le titre de l'article
 date: 2026-01-31
 summary: Une ou deux phrases qui résument l'article. Elles apparaissent dans le sommaire, sur l'accueil et dans les aperçus de partage.
 tags: Thème 1, Thème 2
-linkedin: https://www.linkedin.com/posts/...
+type: Réflexion
 related: projets/assistante-ia-locale.html | Orélia, assistante personnelle souveraine
 ---
 

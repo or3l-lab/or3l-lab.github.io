@@ -3,7 +3,7 @@ title: The article title
 date: 2026-01-31
 summary: One or two sentences summarising the article. They appear in the contents page, on the home page and in share previews.
 tags: Topic 1, Topic 2
-linkedin: https://www.linkedin.com/posts/...
+type: Reflection
 related: en/projects/local-ai-assistant.html | Orélia, a sovereign personal assistant
 ---
 

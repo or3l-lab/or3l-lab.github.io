@@ -1,16 +1,16 @@
 /* =====================================================================
-   ARTICLES : figure « du post à l'article », sommaire, pages d'article
+   ARTICLES : figure « de l'idée à l'article », sommaire, pages d'article
    et bandeau « Articles » de l'accueil.
    Même charte que le reste du site (filaire, cyan et ambre, plaques monospace).
    Tout reste lisible sans JavaScript : le JS n'ajoute que le mouvement,
    la recherche et les filtres.
    ===================================================================== */
 
-/* ---------- Figure « du post à l'article » (en-tête de la page Articles) ---------- */
+/* ---------- Figure « de l'idée à l'article » (en-tête de la page Articles) ---------- */
 .fig-articles .aw { stroke-dasharray: 1 1; }
 .fig-articles .a-card { fill: rgba(11, 29, 37, .92); stroke: rgba(143, 238, 240, .5); stroke-width: 1.2; }
 .fig-articles .a-sheet { fill: rgba(8, 20, 27, .97); stroke: rgba(143, 238, 240, .55); stroke-width: 1.2; }
-.fig-articles .a-av { fill: none; stroke: var(--signal); stroke-width: 1.6; }
+.fig-articles .a-av { fill: rgba(255, 181, 71, .16); stroke: var(--andon); stroke-width: 1.6; stroke-linejoin: round; }
 .fig-articles .a-line { fill: none; stroke: rgba(143, 238, 240, .3); stroke-width: 3; stroke-linecap: round; }
 .fig-articles .a-title { stroke: var(--signal); stroke-width: 5; filter: drop-shadow(0 0 6px rgba(45, 226, 230, .45)); }
 .fig-articles .a-head { stroke: rgba(255, 181, 71, .85); stroke-width: 3.6; }
@@ -69,6 +69,7 @@
 .art-row-link:hover::after, .art-row-link:focus-visible::after { transform: scaleX(1); }
 .art-row-num { padding-top: .5em; color: var(--dim); font: 500 13px/1.4 var(--f-mono); letter-spacing: .1em; transition: color .25s; }
 .art-row-link:hover .art-row-num { color: var(--signal); }
+.art-row-kind { display: block; margin-bottom: 8px; color: var(--andon); font: 600 11px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; }
 .art-row-title { font: 600 clamp(21px, 2.4vw, 30px)/1.2 var(--f-display); letter-spacing: -.02em; transition: color .25s, transform .4s var(--ease); }
 .art-row-link:hover .art-row-title { color: var(--signal); transform: translateX(6px); }
 .art-row-sum { margin-top: 10px; max-width: 68ch; color: var(--muted); font-size: 16px; line-height: 1.6; }

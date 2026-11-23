@@ -161,17 +161,5 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles.html"/>
   </url>
-  <url>
-    <loc>https://or3l-lab.github.io/articles/capter-fiabiliser-decider.html</loc>
-    <lastmod>2026-11-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/capter-fiabiliser-decider.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/capter-fiabiliser-decider.html"/>
-  </url>
-  <url>
-    <loc>https://or3l-lab.github.io/en/articles/capter-fiabiliser-decider.html</loc>
-    <lastmod>2026-11-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/capter-fiabiliser-decider.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/capter-fiabiliser-decider.html"/>
-  </url>
   <!-- articles:end -->
 </urlset>

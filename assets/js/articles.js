@@ -1,5 +1,5 @@
 /* =====================================================================
-   Articles : figure « du post à l'article » (page Articles), filtres et
+   Articles : figure « de l'idée à l'article » (page Articles), filtres et
    recherche du sommaire. Tout est facultatif : sans JavaScript ou avec les
    animations coupées, la page reste complète (figure à l'état final, liste
    entière visible, filtres masqués).
@@ -14,7 +14,7 @@
   var $$ = AR.$$ || function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var anim = html.classList.contains('motion') && !!gsap;
 
-  /* ---------- Figure : un post court devient un article structuré ---------- */
+  /* ---------- Figure : une idée devient un article structuré ---------- */
   var fig = $('.fig-articles');
   if (fig && anim) {
     var all = $('.a-all', fig);
