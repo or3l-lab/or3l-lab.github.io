@@ -5,6 +5,7 @@ summary: Capter les signaux de la production et des services supports, fiabilise
 tags: Données, IA
 type: Démarche
 related: projets/supervision-risque-arret.html | Voir avant que ça casse
+related: projets/kpi-usine-power-bi.html | KPI centralisé usine
 related: projets/assistante-ia-locale.html | Orélia, assistante personnelle souveraine
 draft: false
 ---
@@ -26,6 +27,8 @@ Cette étape relève de l'automatisme. Les projets correspondants sont réunis d
 Nettoyer, standardiser, rationaliser : l'objectif est un référentiel unique et des outils clairs qui rendent la donnée exploitable.
 
 Cette étape relève du développement. Les projets correspondants sont réunis dans la rubrique [Applications et transformation industrielle](/projets.html#applications).
+
+Un projet à consulter pour cette étape : [Une donnée unique et fiable pour piloter l'usine](/projets/kpi-usine-power-bi.html), un rapport Power BI centralisé qui rassemble les données, les contrôle et les met à jour automatiquement.
 
 ## Décider : l'humain et l'IA, ensemble
 

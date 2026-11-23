@@ -1,0 +1,248 @@
+/* =====================================================================
+   KPI CENTRALISÉ USINE (Power BI) : démo BI.SIM, tuiles de la page et
+   carte de présentation sur la page Compétences.
+   Chargé en plus de main.css (et de retro.css sur la page de l'étude).
+   Sans JavaScript ou animations coupées : les quatre scènes sont
+   visibles ensemble, dans leur état final.
+   ===================================================================== */
+
+/* ---------- Démo BI.SIM : structure ---------- */
+.demo-bi { --bi-bad: var(--andon); --bi-ok: var(--run); }
+.bi-steps, .bi-cap { display: none; }
+.bi-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border-top: 1px solid var(--hud-line); background: var(--hud-line); }
+.bi-scene { container-type: inline-size; min-width: 0; padding: 18px 20px 22px; background: var(--bg-2); }
+.bi-scene-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: start; margin-bottom: 16px; }
+.bi-scene-n { grid-row: span 2; padding: 4px 6px; border: 1px solid var(--signal); color: var(--signal); font: 600 11px/1 var(--f-mono); letter-spacing: .1em; }
+.bi-scene-t { margin: 0; color: var(--text); font: 600 16px/1.3 var(--f-display); }
+.bi-scene-c { grid-column: 2; margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+
+/* ---------- Mode animé : une scène à la fois ---------- */
+.motion .demo-bi.is-ready .bi-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
+.motion .demo-bi.is-ready .bi-steps li + li { border-left: 1px solid var(--line); }
+.bi-step {
+  position: relative; display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; border: 0; background: transparent;
+  color: var(--dim); cursor: pointer; font: 600 11.5px/1.2 var(--f-mono); letter-spacing: .08em; text-align: left; text-transform: uppercase; transition: color .2s, background .2s;
+}
+.bi-step:hover { color: var(--text); background: rgba(45, 226, 230, .04); }
+.bi-step:focus-visible { outline: 2px solid var(--andon); outline-offset: -2px; }
+.bi-step-n { display: grid; place-items: center; flex: none; min-width: 24px; height: 22px; padding: 0 4px; border: 1px solid var(--line-2); font-size: 10px; letter-spacing: .04em; }
+.bi-step::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--signal); box-shadow: 0 0 10px rgba(45, 226, 230, .6); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+.bi-step.is-current { color: var(--signal); }
+.bi-step.is-current .bi-step-n { border-color: var(--signal); background: rgba(45, 226, 230, .1); }
+.bi-step.is-current::after { transform: scaleX(1); }
+.bi-step.is-done { color: var(--muted); }
+.bi-step.is-done .bi-step-n { border-color: var(--run); color: var(--run); }
+.motion .demo-bi.is-ready .bi-stage { grid-template-columns: minmax(0, 1fr); border-top: 0; background: none; }
+.motion .demo-bi.is-ready .bi-scene { grid-area: 1 / 1; visibility: hidden; }
+.motion .demo-bi.is-ready .bi-scene.is-current { visibility: visible; }
+.motion .demo-bi.is-ready .bi-cap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 12px 18px; border-top: 1px solid var(--line); }
+.bi-cap-ctl { display: flex; gap: 8px; }
+.bi-prog { display: block; flex: 1 1 120px; height: 3px; background: var(--line-2); }
+.bi-prog i { display: block; height: 100%; background: var(--signal); box-shadow: 0 0 8px rgba(45, 226, 230, .6); transform: scaleX(0); transform-origin: left; }
+.bi-btn { min-height: 34px; padding: 7px 12px; border: 1px solid var(--line-2); background: transparent; color: var(--muted); cursor: pointer; font: 600 11px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; transition: color .2s, border-color .2s; }
+.bi-btn:hover { color: var(--signal); border-color: rgba(45, 226, 230, .55); }
+.bi-btn:focus-visible { outline: 2px solid var(--andon); outline-offset: 2px; }
+
+/* ---------- Scène 1 : des sources dispersées ---------- */
+.bi-src { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.bi-card { position: relative; display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 12px; border: 1px solid var(--hud-line-2); background: var(--hud-plate); }
+.bi-card-ic { width: 24px; height: 24px; color: var(--signal); }
+.bi-card-ic * { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.bi-card b { color: var(--text); font: 600 13px/1.3 var(--f-display); }
+.bi-card small { color: var(--muted); font: 500 11px/1.4 var(--f-mono); }
+.bi-rows { display: grid; gap: 4px; margin-top: 4px; }
+.bi-rows i { display: block; height: 5px; background: var(--line-2); transform-origin: left; }
+.bi-rows i:nth-child(1) { width: 92%; }
+.bi-rows i:nth-child(2) { width: 68%; }
+.bi-rows i:nth-child(3) { width: 80%; }
+.bi-rows i.is-bad { background: var(--bi-bad); }
+.bi-flag { position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid var(--bi-bad); color: var(--bi-bad); font: 700 10px/1 var(--f-mono); }
+.bi-merge { display: block; width: 100%; height: auto; margin-top: 2px; }
+.bi-merge path { fill: none; stroke: var(--signal); stroke-width: 1.6; stroke-linecap: round; opacity: .85; }
+.bi-pq { display: flex; align-items: center; justify-content: center; gap: 12px; width: max-content; max-width: 100%; margin: 0 auto; padding: 10px 16px; border: 1px solid var(--signal); background: rgba(45, 226, 230, .08); color: var(--signal); font: 600 12px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 0 18px rgba(45, 226, 230, .2); }
+.bi-pq small { color: var(--muted); font: 500 11px/1 var(--f-mono); letter-spacing: .04em; text-transform: none; }
+
+/* ---------- Scène 2 : Power Query ---------- */
+.bi-pqv { display: grid; grid-template-columns: minmax(180px, .9fr) minmax(0, 1.5fr); gap: 16px 22px; align-items: start; }
+.bi-q { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; }
+.bi-q li { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-left: 2px solid transparent; color: var(--text); font: 500 13px/1.35 var(--f-display); }
+.bi-box { position: relative; flex: none; width: 16px; height: 16px; border: 1px solid var(--run); background: rgba(61, 220, 132, .14); }
+.bi-box::after { content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: solid var(--run); border-width: 0 2px 2px 0; transform: rotate(40deg); }
+.bi-table { border: 1px solid var(--hud-line-2); background: var(--hud-plate); font: 500 12px/1.3 var(--f-mono); }
+.bi-tr { display: grid; grid-template-columns: 1.15fr .8fr .7fr 1fr; gap: 8px; max-height: 34px; padding: 8px 10px; overflow: hidden; border-top: 1px solid var(--line); color: var(--text); }
+.bi-tr > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bi-th { border-top: 0; background: rgba(45, 226, 230, .06); color: var(--signal); font-weight: 600; letter-spacing: .04em; }
+.bi-th em { margin-left: 5px; padding: 1px 3px; border: 1px solid var(--line-2); color: var(--dim); font-size: 9px; font-style: normal; letter-spacing: 0; }
+.bi-r-bad { max-height: 0; padding-block: 0; border-top-width: 0; opacity: 0; background: rgba(255, 181, 71, .12); color: var(--bi-bad); }
+.bi-nil { color: var(--bi-bad); font-style: italic; }
+.bi-loaded { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; color: var(--run); font: 600 11px/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; }
+.bi-loaded::before { content: "✓"; }
+
+/* ---------- Scène 3 : modèle unique et contrôle qualité ---------- */
+.bi-mdl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 18px 26px; align-items: center; }
+.bi-star { display: block; width: 100%; max-width: 360px; height: auto; margin-inline: auto; }
+.bi-nd { transform-box: fill-box; transform-origin: center; }
+.bi-nd rect { fill: rgba(6, 14, 20, .92); stroke: var(--signal); stroke-width: 1.2; }
+.bi-nd--fact rect { fill: rgba(45, 226, 230, .14); stroke-width: 1.8; }
+.bi-nd text { fill: var(--text); font: 600 10.5px var(--f-mono); text-anchor: middle; dominant-baseline: central; }
+.bi-ln { fill: none; stroke: var(--signal); stroke-width: 1.4; stroke-linecap: round; opacity: .8; }
+.bi-checks { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.bi-checks li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border: 1px solid var(--hud-line-2); background: var(--hud-plate); color: var(--text); font: 500 12.5px/1.3 var(--f-display); }
+.bi-st { display: inline-grid; justify-items: end; min-width: 80px; font: 600 10.5px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; }
+.bi-st b { grid-area: 1 / 1; font-weight: 600; }
+.bi-st-run { color: var(--dim); opacity: 0; }
+.bi-st-fix { color: var(--bi-bad); opacity: 0; }
+.bi-st-ok { color: var(--bi-ok); }
+.bi-rate { display: flex; align-items: center; gap: 14px; margin-top: 10px; padding: 10px 12px; border: 1px solid var(--hud-line-2); background: var(--hud-plate); }
+.bi-rate-l { flex: 1 1 auto; color: var(--muted); font: 500 11px/1.35 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; }
+.bi-val { display: inline-grid; }
+.bi-val b { grid-area: 1 / 1; font: 700 22px/1 var(--f-display); letter-spacing: -.01em; }
+.bi-v1 { opacity: 0; color: var(--bi-bad); }
+.bi-v2 { color: var(--bi-ok); }
+.bi-trend { display: flex; align-items: flex-end; gap: 3px; height: 24px; }
+.bi-trend i { display: block; width: 5px; height: 100%; background: var(--bi-ok); transform: scaleY(var(--s2)); transform-origin: bottom; }
+.bi-stamp { width: max-content; max-width: 100%; margin: 12px 0 0 auto; padding: 7px 12px; border: 2px solid var(--run); color: var(--run); font: 700 11px/1.2 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; transform: rotate(-3deg); }
+
+/* ---------- Scène 4 : pilotage ---------- */
+.bi-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.bi-flt-l { margin-right: 4px; color: var(--dim); font: 600 10.5px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; }
+.bi-flt { position: relative; display: inline-flex; gap: 6px; padding: 6px 10px; border: 1px solid var(--hud-line-2); background: var(--hud-plate); color: var(--muted); font: 500 11.5px/1 var(--f-mono); }
+.bi-flt .bi-val b { font: 600 11.5px/1 var(--f-mono); }
+.bi-flt--set { border-color: var(--signal); background: rgba(45, 226, 230, .1); color: var(--signal); }
+.bi-flt--set .bi-v1, .bi-flt--set .bi-v2 { color: inherit; }
+.bi-ptr { position: absolute; right: -8px; bottom: -14px; width: 16px; height: 16px; opacity: 0; pointer-events: none; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .6)); }
+.bi-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.bi-kpi { display: grid; gap: 6px; min-width: 0; padding: 10px 12px 12px; border: 1px solid var(--hud-line-2); background: var(--hud-plate); }
+.bi-kpi-l { color: var(--muted); font: 600 10.5px/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; }
+.bi-kpi .bi-val b { font-size: 22px; }
+.bi-kpi .bi-v1 { color: var(--text); }
+.bi-kpi .bi-v2 { color: var(--text); }
+.bi-viz { height: 38px; }
+.bi-bars { display: flex; align-items: flex-end; gap: 4px; }
+.bi-bars i { display: block; flex: 1; height: 100%; background: var(--signal); opacity: .85; transform: scaleY(var(--s2)); transform-origin: bottom; }
+.bi-hbars { display: grid; align-content: center; gap: 6px; }
+.bi-hbars i { display: block; height: 7px; background: var(--signal); opacity: .85; transform: scaleX(var(--s2)); transform-origin: left; }
+.bi-svgviz { display: block; width: 100%; height: 100%; overflow: visible; }
+.bi-svgviz * { fill: none; stroke: var(--signal); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bi-svgviz .bi-track { stroke: var(--line-2); }
+.bi-svgviz .bi-ring-a, .bi-svgviz .bi-ring-b { stroke-dasharray: 100; stroke-width: 4; transform: rotate(-90deg); transform-origin: 50% 50%; transform-box: fill-box; }
+.bi-ring-a { stroke-dashoffset: var(--o1); }
+.bi-ring-b { stroke-dashoffset: var(--o2); }
+.bi-live { display: flex; align-items: center; gap: 9px; margin: 12px 0 0; color: var(--muted); font: 500 11.5px/1.3 var(--f-mono); letter-spacing: .04em; }
+.bi-live .led { width: 7px; height: 7px; }
+.bi-live-t { color: var(--text); }
+
+/* Valeurs avant / après filtre : on affiche l'état final par défaut. */
+.bi-v1 { opacity: 0; }
+
+/* ---------- Animations (scène courante uniquement) ---------- */
+.motion .demo-bi.is-ready .is-current .bi-card { animation: bi-pop .55s var(--ease) var(--d, 0s) both; }
+.motion .demo-bi.is-ready .is-current .bi-rows i { animation: bi-row .6s var(--ease) calc(var(--d, 0s) + .45s) both; }
+.motion .demo-bi.is-ready .is-current .bi-rows i.is-bad { animation: bi-row .6s var(--ease) calc(var(--d, 0s) + .45s) both, bi-bad 1.3s ease-in-out calc(var(--d, 0s) + 1.5s) 2; }
+.motion .demo-bi.is-ready .is-current .bi-flag { animation: bi-pop .4s ease calc(var(--d, 0s) + 1.3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-merge path { stroke-dasharray: 1; animation: bi-draw 1.1s ease-in-out calc(3.6s + var(--i, 0) * .25s) both; }
+.motion .demo-bi.is-ready .is-current .bi-pq { animation: bi-pop .6s var(--ease) 5.2s both, bi-glow 2.4s ease-in-out 5.9s infinite; }
+
+.motion .demo-bi.is-ready .is-current .bi-table { animation: bi-pop .5s var(--ease) .1s both; }
+.motion .demo-bi.is-ready .is-current .bi-q li { animation: bi-now 1.2s ease var(--d) both; }
+.motion .demo-bi.is-ready .is-current .bi-box { animation: bi-tick .35s ease var(--d) both; }
+.motion .demo-bi.is-ready .is-current .bi-box::after { animation: bi-mark .35s ease var(--d) both; }
+.motion .demo-bi.is-ready .is-current .bi-r-bad { animation: bi-collapse .6s var(--ease) var(--d) both; }
+.motion .demo-bi.is-ready .is-current .bi-ty { animation: bi-pop .4s ease 2.6s both; }
+.motion .demo-bi.is-ready .is-current .bi-c-fam { animation: bi-fade .6s ease 7.2s both; }
+.motion .demo-bi.is-ready .is-current .bi-loaded { animation: bi-fade .5s ease 9.2s both; }
+
+.motion .demo-bi.is-ready .is-current .bi-nd { animation: bi-pop .5s var(--ease) var(--d, 0s) both; }
+.motion .demo-bi.is-ready .is-current .bi-ln { stroke-dasharray: 1; animation: bi-draw .6s ease-in-out var(--d, 0s) both; }
+.motion .demo-bi.is-ready .is-current .bi-checks, .motion .demo-bi.is-ready .is-current .bi-rate { animation: bi-pop .5s var(--ease) 2.4s both; }
+.motion .demo-bi.is-ready .is-current .bi-st-run { animation: bi-hide .3s ease var(--d) both; }
+.motion .demo-bi.is-ready .is-current .bi-st-ok { animation: bi-show .4s ease var(--d2, var(--d)) both; }
+.motion .demo-bi.is-ready .is-current .bi-st-fix { animation: bi-fix var(--fx, 2.8s) linear var(--d) both; }
+.motion .demo-bi.is-ready .is-current .bi-rate .bi-v1 { animation: bi-hide .4s ease 7.2s both; }
+.motion .demo-bi.is-ready .is-current .bi-rate .bi-v2 { animation: bi-show .4s ease 7.2s both; }
+.motion .demo-bi.is-ready .is-current .bi-trend i { animation: bi-scale-y .7s var(--ease) 7.2s both; }
+.motion .demo-bi.is-ready .is-current .bi-stamp { animation: bi-stamp .5s var(--ease) 8.4s both; }
+
+.motion .demo-bi.is-ready .is-current .bi-flt--set { animation: bi-chip .4s ease 5s both; }
+.motion .demo-bi.is-ready .is-current .bi-ptr { animation: bi-ptr 2.2s ease 3.1s both; }
+.motion .demo-bi.is-ready .is-current .bi-flt--set .bi-v1 { animation: bi-hide .3s ease 5s both; }
+.motion .demo-bi.is-ready .is-current .bi-flt--set .bi-v2 { animation: bi-show .3s ease 5s both; }
+.motion .demo-bi.is-ready .is-current .bi-kpi { animation: bi-pop .5s var(--ease) var(--d, 0s) both; }
+.motion .demo-bi.is-ready .is-current .bi-kpi .bi-v1 { animation: bi-hide .5s ease 5.1s both; }
+.motion .demo-bi.is-ready .is-current .bi-kpi .bi-v2 { animation: bi-show .5s ease 5.1s both; }
+.motion .demo-bi.is-ready .is-current .bi-bars { animation: bi-wipe-y .9s var(--ease) calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-hbars { animation: bi-wipe-x .9s var(--ease) calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-bars i { animation: bi-scale-y .9s var(--ease) 5.1s both; }
+.motion .demo-bi.is-ready .is-current .bi-hbars i { animation: bi-scale-x .9s var(--ease) 5.1s both; }
+.motion .demo-bi.is-ready .is-current .bi-spark { stroke-dasharray: 1; animation: bi-draw 1.1s ease-in-out calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-ring-a, .motion .demo-bi.is-ready .is-current .bi-ring-b { animation: bi-dash-in 1.1s var(--ease) calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-svgviz .bi-v1 { animation: bi-hide .5s ease 5.1s both, bi-draw 1.1s ease-in-out calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-svgviz .bi-v2 { animation: bi-show .5s ease 5.1s both, bi-draw 1.1s ease-in-out calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-svgviz .bi-ring-a { animation: bi-hide .5s ease 5.1s both, bi-dash-in 1.1s var(--ease) calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-svgviz .bi-ring-b { animation: bi-show .5s ease 5.1s both, bi-dash-in 1.1s var(--ease) calc(var(--d, 0s) + .3s) both; }
+.motion .demo-bi.is-ready .is-current .bi-live { animation: bi-fade .6s ease 8s both; }
+
+@keyframes bi-pop { from { opacity: 0; transform: translateY(10px) scale(.97); } }
+@keyframes bi-fade { from { opacity: 0; } }
+@keyframes bi-row { from { transform: scaleX(0); } }
+@keyframes bi-bad { 0%, 100% { box-shadow: 0 0 0 rgba(255, 181, 71, 0); } 50% { box-shadow: 0 0 10px rgba(255, 181, 71, .9); } }
+@keyframes bi-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes bi-glow { 0%, 100% { box-shadow: 0 0 10px rgba(45, 226, 230, .15); } 50% { box-shadow: 0 0 24px rgba(45, 226, 230, .45); } }
+@keyframes bi-now { 0%, 100% { background: transparent; border-left-color: transparent; } 12%, 70% { background: rgba(45, 226, 230, .09); border-left-color: var(--signal); } }
+@keyframes bi-tick { from { border-color: var(--line-2); background: transparent; } }
+@keyframes bi-mark { from { opacity: 0; transform: rotate(40deg) scale(.3); } }
+@keyframes bi-collapse { from { max-height: 34px; padding-block: 8px; border-top-width: 1px; opacity: 1; } }
+@keyframes bi-hide { from { opacity: 1; } }
+@keyframes bi-show { from { opacity: 0; } }
+@keyframes bi-fix { 0% { opacity: 0; } 8%, 92% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes bi-stamp { from { opacity: 0; transform: rotate(-9deg) scale(1.7); } }
+@keyframes bi-chip { from { border-color: var(--hud-line-2); background: var(--hud-plate); color: var(--muted); } }
+@keyframes bi-ptr {
+  0% { opacity: 0; transform: translate(70px, 54px); }
+  25% { opacity: 1; }
+  62% { opacity: 1; transform: translate(0, 0); }
+  74% { transform: translate(0, 0) scale(.8); }
+  86% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(0, 0); }
+}
+@keyframes bi-wipe-y { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0); } }
+@keyframes bi-wipe-x { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes bi-scale-y { from { transform: scaleY(var(--s1)); } }
+@keyframes bi-scale-x { from { transform: scaleX(var(--s1)); } }
+@keyframes bi-dash-in { from { stroke-dashoffset: 100; } }
+
+/* Pause, onglet masqué ou démo hors écran : les animations s'arrêtent. */
+.demo-bi.is-hold *, .demo-bi.is-hold *::before, .demo-bi.is-hold *::after { animation-play-state: paused !important; }
+html:not(.motion) .demo-bi *, html:not(.motion) .bi-measures * { transition: none !important; animation: none !important; }
+
+/* ---------- Pages d'étude et Compétences ---------- */
+.bi-measures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; counter-reset: bm; }
+.bi-measures li { position: relative; margin: 0; padding: 14px 14px 16px 16px; border: 1px solid var(--hud-line-2); background: var(--hud-plate); color: var(--text); font: 600 14.5px/1.35 var(--f-display); counter-increment: bm; }
+.bi-measures li::before { content: counter(bm, decimal-leading-zero); display: block; margin-bottom: 8px; color: var(--signal); font: 600 10.5px/1 var(--f-mono); letter-spacing: .14em; }
+.bi-measures li::after { content: ""; position: absolute; left: -1px; top: -1px; width: 22px; height: 2px; background: var(--signal); box-shadow: 0 0 10px rgba(45, 226, 230, .6); }
+.bi-note { margin-top: 18px; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+
+.skill-focus-pair { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin-bottom: clamp(28px, 4vw, 40px); }
+.skill-focus-pair .skill-focus { margin-bottom: 0; }
+@media (min-width: 1180px) {
+  .skill-focus-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-focus-pair .skill-focus { grid-template-columns: minmax(0, 1fr) 150px; gap: 18px; padding: 22px 22px 24px; }
+  .skill-focus-pair .skill-focus h2 { font-size: clamp(22px, 2vw, 26px); }
+}
+
+/* ---------- Adaptation : selon la largeur de chaque scène ---------- */
+@container (max-width: 600px) {
+  .bi-src { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bi-merge { display: none; }
+  .bi-pq { margin-top: 14px; }
+  .bi-pq::before { content: "↓"; }
+  .bi-pqv, .bi-mdl { grid-template-columns: minmax(0, 1fr); }
+  .bi-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .bi-stage { grid-template-columns: minmax(0, 1fr); }
+  .bi-scene { padding: 16px 14px 20px; }
+  .bi-step { justify-content: center; padding: 10px 4px; }
+  .bi-step-t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .motion .demo-bi.is-ready .bi-cap { padding-inline: 14px; }
+}

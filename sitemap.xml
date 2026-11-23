@@ -62,6 +62,18 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects.html"/>
   </url>
+  <!-- bi:start -->
+  <url>
+    <loc>https://or3l-lab.github.io/projets/kpi-usine-power-bi.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/kpi-usine-power-bi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/factory-kpi-power-bi.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/projects/factory-kpi-power-bi.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/kpi-usine-power-bi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/projects/factory-kpi-power-bi.html"/>
+  </url>
+  <!-- bi:end -->
   <url>
     <loc>https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets/amelioration-continue-dmaic.html"/>

@@ -5,6 +5,7 @@ summary: Capture signals from production and support services, make the data rel
 tags: Data, AI
 type: Approach
 related: en/projects/downtime-risk-monitoring.html | See it before it breaks
+related: en/projects/factory-kpi-power-bi.html | Centralised factory KPI
 related: en/projects/local-ai-assistant.html | Orélia, a sovereign personal assistant
 draft: false
 ---
@@ -26,6 +27,8 @@ This step belongs to automation. The related projects are gathered under [Automa
 Cleanse, standardise, rationalise: the aim is a single source of truth and clear tools that make data usable.
 
 This step belongs to development. The related projects are gathered under [Applications and industrial transformation](/en/projects.html#applications).
+
+A project to look at for this step: [One reliable dataset to steer the factory](/en/projects/factory-kpi-power-bi.html), a centralised Power BI report that brings the data together, checks it and refreshes it automatically.
 
 ## Decide: people and AI, together
 
