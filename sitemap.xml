@@ -40,6 +40,18 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/competences.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/skills.html"/>
   </url>
+  <!-- retro:start -->
+  <url>
+    <loc>https://or3l-lab.github.io/competences/retro-ingenierie-industrielle.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/competences/retro-ingenierie-industrielle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/skills/industrial-reverse-engineering.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/skills/industrial-reverse-engineering.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/competences/retro-ingenierie-industrielle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/skills/industrial-reverse-engineering.html"/>
+  </url>
+  <!-- retro:end -->
   <url>
     <loc>https://or3l-lab.github.io/projets.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/projets.html"/>
