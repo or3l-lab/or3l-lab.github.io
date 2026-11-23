@@ -52,7 +52,7 @@ Entre deux lignes `---`, en haut du fichier :
 - `> texte` : encadré mis en avant.
 - Tableaux : `| A | B |` suivi de la ligne `| --- | --- |`.
 - Image seule sur une ligne : `![description](/assets/img/articles/mon-article/image.png "légende")`. Déposer les images dans `assets/img/articles/<nom-de-l-article>/`.
-- Figure animée seule sur une ligne : `:::figure nom "légende"` (la légende est facultative). Noms disponibles : `boucle` (les 5 étapes de la rétro-ingénierie avec retour), `signaux` (capter, fiabiliser, décider), `derive`, `chrono`, `modele`, `ecart` (exemple fictif du convoyeur, étiqueté comme tel). L'animation se lance quand la figure est visible, un bouton « Rejouer » la relance, et sans mouvement (préférence système) la figure s'affiche à l'état final. Les textes FR/EN sont dans `tools/article_figures.py`.
+- Figure animée seule sur une ligne : `:::figure nom "légende"` (la légende est facultative). Noms disponibles : `boucle` (les 5 étapes de la rétro-ingénierie avec retour), `signaux` (capter, fiabiliser, décider), `derive`, `chrono`, `modele`, `ecart` (exemple fictif du convoyeur), `donnees-ia` (lot de données inspecté, dédoublonné puis distribué), `plan-b` (coupure réseau et trafic redirigé vers le repli), `boucle-agents` (brouillon, retour critique, modification et sas humain), `signaux-expertise` (oscilloscope, balayage, réseau de neurones et hypothèse). Les exemples fictifs sont étiquetés. Chaque simulation possède ses mouvements et ses actions propres. Elle démarre à l'écran ; « Pause » fige le mouvement, « Rejouer » recommence et les actions déclenchent la phase correspondante. Sans JavaScript ou sans mouvement, le schéma final et toutes les explications restent lisibles. Les textes FR/EN sont dans `tools/article_figures.py`.
 - Le premier paragraphe, avant tout `##`, devient l'introduction.
 - Les `#hashtags` collés au texte sont acceptés tels quels.
 
@@ -66,7 +66,7 @@ Entre deux lignes `---`, en haut du fichier :
 
 ## Points d'attention
 
-- **Brouillons** : `draft: true` empêche la publication de la page, mais le fichier `.md` reste lisible dans le dépôt public. Ne rien y écrire de confidentiel.
+- **Brouillons** : `draft: true` empêche la génération de la page, mais le fichier `.md` reste lisible dans le dépôt public s'il est envoyé. Ne rien y écrire de confidentiel. Le contrôle `--check` vérifie leurs métadonnées, mais pas leur contenu : prévisualiser et relire le corps avant de les publier.
 - **Aucun article** : la section « Articles » de l'accueil disparaît (la numérotation des sections suivantes s'ajuste) et la page Articles affiche « Les premiers articles arrivent bientôt ».
 - **Modifier ou retirer un article** : modifier le `.md` (ou supprimer son dossier), relancer le script, puis publier. Les pages devenues inutiles sont supprimées automatiquement.
 - Le script n'a besoin que de Python 3.8 ou plus récent, sans installation supplémentaire.

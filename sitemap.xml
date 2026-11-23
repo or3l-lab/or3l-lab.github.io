@@ -186,10 +186,34 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles.html"/>
   </url>
   <url>
+    <loc>https://or3l-lab.github.io/articles/souverainete-numerique-plan-b.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/souverainete-numerique-plan-b.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/souverainete-numerique-plan-b.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/articles/retroaction-agents-ia.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/retroaction-agents-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/retroaction-agents-ia.html"/>
+  </url>
+  <url>
     <loc>https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html</loc>
     <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/articles/donnees-fiables-avant-ia.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/donnees-fiables-avant-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/donnees-fiables-avant-ia.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/articles/deep-learning-experience-industrielle.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/deep-learning-experience-industrielle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/deep-learning-experience-industrielle.html"/>
   </url>
   <url>
     <loc>https://or3l-lab.github.io/articles/capter-fiabiliser-decider.html</loc>
@@ -198,10 +222,34 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/capter-fiabiliser-decider.html"/>
   </url>
   <url>
+    <loc>https://or3l-lab.github.io/en/articles/souverainete-numerique-plan-b.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/souverainete-numerique-plan-b.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/souverainete-numerique-plan-b.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/articles/retroaction-agents-ia.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/retroaction-agents-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/retroaction-agents-ia.html"/>
+  </url>
+  <url>
     <loc>https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html</loc>
     <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/retro-ingenierie-industrielle.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/retro-ingenierie-industrielle.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/articles/donnees-fiables-avant-ia.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/donnees-fiables-avant-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/donnees-fiables-avant-ia.html"/>
+  </url>
+  <url>
+    <loc>https://or3l-lab.github.io/en/articles/deep-learning-experience-industrielle.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://or3l-lab.github.io/articles/deep-learning-experience-industrielle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://or3l-lab.github.io/en/articles/deep-learning-experience-industrielle.html"/>
   </url>
   <url>
     <loc>https://or3l-lab.github.io/en/articles/capter-fiabiliser-decider.html</loc>

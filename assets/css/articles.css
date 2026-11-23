@@ -89,6 +89,7 @@
 }
 
 /* ---------- Page d'article ---------- */
+.page-article .case-toc { max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; scrollbar-width: thin; }
 .art-body { font-size: clamp(17px, 1.3vw, 19px); line-height: 1.78; color: #c6d1dd; }
 .art-body .case-section { max-width: 760px; }
 .art-body .case-section > * + * { margin-top: 1.15em; }
